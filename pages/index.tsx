@@ -11,13 +11,16 @@ import ActionButton from "../components/shared/material/ActionButton";
 
 const IndexPage = () => (
   <Layout title="Iván Velasteguí" className="bg-gray-50">
-    <div className="flex justify-center my-8">
+    <div className="flex flex-col items-center mt-8 mb-4">
       <Image
         width={200}
         height={200}
         src={profileImage}
         alt="Picture of me"
       ></Image>
+      <a href="https://linkedin.com/in/ivanfvj" target="blank">
+        <p className="text-blue-500 hover:text-blue-600 mt-2 underline text-lg">@ivanfvj</p>
+      </a>
     </div>
 
     {/* Maybe a little game with a rocket to carry your startup to the moon*/}

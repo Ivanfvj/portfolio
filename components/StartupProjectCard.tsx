@@ -1,5 +1,4 @@
-import { useState } from "react";
-import Card from "../components/shared/material/Card";
+import Image from "next/image";
 
 interface IProjectCardProps {
   title: string;
@@ -21,8 +20,10 @@ const ProjectCard = (props: IProjectCardProps) => {
       }`}
       onClick={props.onClick}
     >
-      <img width={150} height={150} src={props.image} alt={props.imageAlt} />
-      <h1>{props.title}</h1>
+      <Image width={150} height={150} src={props.image} alt={props.imageAlt} />
+      <h1 className="text-sm mt-4 sm:mt-2 sm:text-lg lg:text-xl font-semibold">
+        {props.title}
+      </h1>
     </div>
   );
 };

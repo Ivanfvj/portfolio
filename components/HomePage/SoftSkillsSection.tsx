@@ -105,7 +105,7 @@ const SoftSkillsSection = () => {
           {softSkills.map((e) => {
             return (
               <MaterialChip
-                className="mt-2 hover:scale-[1.1]"
+                className="mt-2 hover:scale-110"
                 text={e.text}
                 size={e.size}
                 color={e.color}
