@@ -7,9 +7,9 @@ import StartupProjectsSection from "../components/HomePage/StartupProjectsSectio
 import HardSkillsSection from "../components/HomePage/HardSkillsSection";
 import SoftSkillsSection from "../components/HomePage/SoftSkillsSection";
 import ActionButton from "../components/shared/material/ActionButton";
-// import EasterEggDialog from "../components/HomePage/EasterEggDialog";
 import { HomePageContext } from "../contexts/HomePage";
 import { useState } from "react";
+import OpenToWorkBanner from "../components/HomePage/OpenToWorkBanner";
 
 const DynamicComponent = dynamic(
   () => import("../components/HomePage/EasterEggDialog")
@@ -17,6 +17,7 @@ const DynamicComponent = dynamic(
 
 const IndexPage = () => {
   const [showEasterEgg, setShowEasterEgg] = useState(false);
+  const [showBanner, setShowBanner] = useState(true);
 
   return (
     <HomePageContext.Provider
@@ -26,6 +27,7 @@ const IndexPage = () => {
       }}
     >
       <Layout title="Iván Velasteguí" className="bg-gray-50 relative">
+        {showBanner && <OpenToWorkBanner close={() => setShowBanner(false)} />}
         {showEasterEgg && <DynamicComponent />}
         <div className="flex flex-col items-center mt-8 mb-4">
           <Image
@@ -54,7 +56,9 @@ const IndexPage = () => {
         </div>
 
         <div className="mx-auto bg-white flex flex-col border  max-w-xl my-5 container space-y-3 p-5">
-          <p className="mx-auto text-2xl">Entrepreneur</p>
+          <p className="mx-auto text-2xl">
+            Entrepreneur <span>•</span> Startuper
+          </p>
           <p className="mx-auto text-xl">
             Software Engineer <span>•</span> Full-Stack Developer
           </p>
