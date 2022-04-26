@@ -2,6 +2,7 @@ interface ButtonProps {
   text: string;
   href?: string;
   className?: string;
+  onClick?: () => void;
 }
 
 const ActionButton = (props: ButtonProps) => {
@@ -11,6 +12,7 @@ const ActionButton = (props: ButtonProps) => {
       hover:text-white border border-blue-500 hover:border-transparent rounded ${
         props.className ? props.className : ""
       }`.trim()}
+      onClick={props.onClick}
     >
       {props.text}
     </button>

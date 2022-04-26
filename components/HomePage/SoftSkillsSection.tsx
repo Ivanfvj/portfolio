@@ -98,13 +98,16 @@ const SoftSkillsSection = () => {
   return (
     <div>
       <div className="border border-gray-200 bg-white p-5">
-      <h1 className="text-5xl text-center my-5">Soft Skills - Mental Map</h1>
+        <h1 className="text-4xl md:text-5xl text-center my-5">
+          Soft Skills - Mental Map
+        </h1>
         <h2 className="text-center">Some things i have inside my head</h2>
 
         <div className="my-5 flex flex-wrap justify-center items-center max-w-4xl mx-auto space-x-2">
           {softSkills.map((e) => {
             return (
               <MaterialChip
+                key={e.text}
                 className="mt-2 hover:scale-110"
                 text={e.text}
                 size={e.size}

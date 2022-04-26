@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import LogoCard from "../../components/LogoCard";
 import Chip from "../../components/shared/Chip";
 import ActionButton from "../shared/material/ActionButton";
+import { HomePageContext } from "../../contexts/HomePage";
 
 const SkillCategories = {
   BACKEND: "backend",
@@ -261,8 +262,10 @@ const HardSkillsSection = () => {
 
   return (
     <div className="bg-white">
-      <div  id="hard-skills" className="border border-gray-200">
-        <h1 className="text-5xl mx-auto text-center my-5">Hard Skills</h1>
+      <div id="hard-skills" className="border border-gray-200">
+        <h1 className="text-4xl md:text-5xl mx-auto text-center my-5">
+          Hard Skills
+        </h1>
         <div className="px-5 py-5 text-center bg-gray-800 sticky top-0">
           <div
             id="hard-skills-filter"
@@ -276,6 +279,7 @@ const HardSkillsSection = () => {
             />
             {categories.map((e) => (
               <Chip
+                key={e.text}
                 className="my-2"
                 text={e.text}
                 active={e.active}
@@ -293,10 +297,9 @@ const HardSkillsSection = () => {
               <EasiestEasterEgg />
             ) : (
               skillsFiltered.map((e, index) => (
-                <div className="w-full sm:w-1/2 md:w-1/4 mb-4 px-2">
+                <div key={index} className="w-1/2 md:w-1/4 mb-4 px-2">
                   <LogoCard
                     className="mx-auto"
-                    key={index}
                     text={e.text}
                     imageUrl={e.image}
                     proficiency={e.proficiency}
@@ -312,13 +315,22 @@ const HardSkillsSection = () => {
 };
 
 const EasiestEasterEgg = () => {
+  const { setShowEasterEgg } = useContext(HomePageContext);
+
   return (
     <div className="flex flex-col mx-auto items-center justify-center p-5 bg-gray-100 border">
-      <h1 className="text-yellow-400 text-5xl mb-5">🎉 Congratulations 🎉</h1>
+      <small>No filters selected - nothing here</small>
+      <h1 className="text-yellow-400 text-3xl md:text-5xl mb-5">
+        🎉 Congratulations 🎉
+      </h1>
       <p>
         <u>You found the easiest Easter Egg</u>
       </p>
-      <ActionButton className="mt-5" text="Claim my reward" />
+      <ActionButton
+        className="mt-5"
+        text="Claim my reward"
+        onClick={() => setShowEasterEgg(true)}
+      />
     </div>
   );
 };

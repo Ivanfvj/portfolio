@@ -20,7 +20,7 @@ const Layout = ({
 }: Props) => {
   const imgUrl = thumbnailImg || "/portrait.jpg";
 
-  // Recommended max length of these meta tags
+  // Recommended max length for these meta tags
   description = description.substring(0, 160);
 
   return (
