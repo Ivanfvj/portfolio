@@ -78,7 +78,11 @@ const IndexPage = () => (
       <div className="p-8 border flex bg-white">
         <h1 className="text-4xl">More Projects</h1>
         <div className="grow"></div>
-        <ActionButton text="Show me more" />
+        <Link href="/projects" passHref>
+          <a>
+            <ActionButton text="Show me more" />
+          </a>
+        </Link>
       </div>
     </section>
 

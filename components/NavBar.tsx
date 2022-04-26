@@ -42,16 +42,16 @@ const ActionButton = (props: any) => {
 
 const NavBar = ({}: Props) => (
   <nav className="px-4 py-3 bg-blue-100">
-    <ul className="flex items-center">
+    <ul className="flex items-center max-w-6xl mx-auto">
       <li>
         <NavBarItem href="/" text="Home" />
       </li>
       <li>
         <NavBarItem href="/projects" text="Portfolio" />
       </li>
-      <li>
+      {/* <li>
         <NavBarItem href="/api/users" text="Users API" />
-      </li>
+      </li> */}
       <div className="flex-grow"></div>
       {/* <Switch className="mr-6" /> */}
       <ActionButton text="Contact Me" href="https://linkedin.com/in/ivanfvj" />

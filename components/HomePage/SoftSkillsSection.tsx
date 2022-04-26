@@ -71,6 +71,18 @@ const softSkills: SoftSkillChipType[] = [
     size: "x-large",
     color: colors.red["200"],
   },
+  {
+    text: "Positive Attitude",
+    description: "Positive Attitude",
+    size: "x-large",
+    color: colors.green["200"],
+  },
+  {
+    text: "Innovation",
+    description: "Innovation",
+    size: "x-large",
+    color: colors.rose["300"],
+  },
 ];
 
 {
@@ -89,7 +101,7 @@ const SoftSkillsSection = () => {
       <h1 className="text-5xl text-center my-5">Soft Skills - Mental Map</h1>
         <h2 className="text-center">Some things i have inside my head</h2>
 
-        <div className="my-5 flex flex-wrap justify-center items-center max-w-3xl mx-auto space-x-2">
+        <div className="my-5 flex flex-wrap justify-center items-center max-w-4xl mx-auto space-x-2">
           {softSkills.map((e) => {
             return (
               <MaterialChip

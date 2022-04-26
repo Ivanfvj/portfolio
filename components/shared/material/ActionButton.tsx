@@ -6,17 +6,14 @@ interface ButtonProps {
 
 const ActionButton = (props: ButtonProps) => {
   return (
-    <a
-      className={`underline text-blue-500 hover:text-blue-600 ${
+    <button
+      className={`bg-transparent py-2 px-4 hover:bg-blue-500 text-blue-700 font-semibold 
+      hover:text-white border border-blue-500 hover:border-transparent rounded ${
         props.className ? props.className : ""
       }`.trim()}
-      href={props.href}
-      target="_blank"
     >
-      <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-        {props.text}
-      </button>
-    </a>
+      {props.text}
+    </button>
   );
 };
 
