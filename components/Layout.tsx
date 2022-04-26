@@ -1,14 +1,16 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
 import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 type Props = {
   children?: ReactNode;
   title?: string;
+  className?: string;
 };
 
-const Layout = ({ children, title = "This is the default title" }: Props) => (
-  <div>
+const Layout = ({ children, title = "This is the default title", className }: Props) => (
+  <div className={className}>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -18,10 +20,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
       <NavBar />
     </header>
     {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
+    <Footer />
   </div>
 );
 

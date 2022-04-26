@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+// import Switch from "../components/shared/material/Switch";
 
 type Props = {
   //   children?: ReactNode;
@@ -13,20 +14,48 @@ type NavBarItemProps = {
 
 const NavBarItem = ({ text, href }: NavBarItemProps) => {
   return (
-    <div className="bg-white px-3 py-3 rounded hover:drop-shadow-md transition ease-in-out delay-150 cursor-pointer">
-      <Link href={href}>
-        <a>{text}</a>
-      </Link>
-    </div>
+    <Link href={href}>
+      <a className="text-xl px-3 py-3 hover:text-blue-500 hover:underline cursor-pointer font-semibold">
+        {text}
+      </a>
+    </Link>
+  );
+};
+
+const ActionButton = (props: any) => {
+  return (
+    <Link href={props.href}>
+      <a
+        className={`underline text-blue-500 hover:text-blue-600 ${
+          props.className ? props.className : ""
+        }`.trim()}
+        href={props.href}
+        target="_blank"
+      >
+        <button className="bg-blue-500 text-lg hover:bg-blue-600 font-semibold text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+          {props.text}
+        </button>
+      </a>
+    </Link>
   );
 };
 
 const NavBar = ({}: Props) => (
-  <nav className="p-8 border-2 border-slate-50 flex justify-end space-x-2">
-    <NavBarItem href="/" text="Home" />
-    <NavBarItem href="/about" text="About" />
-    <NavBarItem href="/users" text="Users List" />
-    <NavBarItem href="/api/users" text="Users API" />
+  <nav className="px-4 py-3 bg-blue-100">
+    <ul className="flex items-center">
+      <li>
+        <NavBarItem href="/" text="Home" />
+      </li>
+      <li>
+        <NavBarItem href="/projects" text="Portfolio" />
+      </li>
+      <li>
+        <NavBarItem href="/api/users" text="Users API" />
+      </li>
+      <div className="flex-grow"></div>
+      {/* <Switch className="mr-6" /> */}
+      <ActionButton text="Contact Me" href="https://linkedin.com/in/ivanfvj" />
+    </ul>
   </nav>
 );
 
