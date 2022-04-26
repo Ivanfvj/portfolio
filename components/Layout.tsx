@@ -18,7 +18,7 @@ const Layout = ({
   className,
   thumbnailImg,
 }: Props) => {
-  const imgUrl = thumbnailImg || "/portrait.jpg";
+  const imgUrl = thumbnailImg || "https://ivan.unamacro.com/portrait.jpg";
 
   // Recommended max length for these meta tags
   description = description.substring(0, 160);

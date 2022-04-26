@@ -6,6 +6,7 @@ Deployed in Vercel to ivan.unamacro.com domain
 ## TODO
 
 - [x] Add SEO meta tags
+- [ ] Add env variable to control "OpenToWorkBanner" display
 - [ ] Add portfolio projects to /projects route
 - [ ] Make all existing pages responsive
 
