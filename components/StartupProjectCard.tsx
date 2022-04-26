@@ -2,6 +2,7 @@ import Image from "next/image";
 
 interface IProjectCardProps {
   title: string;
+  description?: string;
   image: string;
   imageAlt?: string;
   webUrl: string;
@@ -24,6 +25,7 @@ const ProjectCard = (props: IProjectCardProps) => {
       <h1 className="text-sm mt-4 sm:mt-2 sm:text-lg lg:text-xl font-semibold">
         {props.title}
       </h1>
+      {props.description && <small>{props.description}</small>}
     </div>
   );
 };

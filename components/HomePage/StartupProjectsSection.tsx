@@ -167,6 +167,7 @@ const StartupProjectsSection = (props: IProps) => {
           image="/mejorate.online-circular-logo.png"
           imageAlt="Mejorate.online Logo"
           title="Mejorate.online"
+          description="Side project"
           webUrl="https://mejorate.online"
           webUrlText="mejorate.online"
           active={activeCard === 3}

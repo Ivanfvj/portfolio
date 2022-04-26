@@ -88,8 +88,13 @@ const IndexPage = () => {
             <p>
               I'm an Engineer, passionate about Technology, but also a
               self-taught person in different topics. I consider myself a
-              continuous learner. I have been chasing the dream of creating a
-              high-impact startup since I was 17 years old, 8 years now.
+              continuous learner.
+            </p>
+            <p>
+              <u>
+                I have been chasing the dream of creating a high-impact startup
+                since I was 17 years old, 8 years now.
+              </u>
             </p>
             <p>
               <strong>I never give up.</strong>
