@@ -46,7 +46,7 @@ const Chip = (props: Props) => {
   const paddingClasses = () => {
     switch (props.size) {
       case "x-small":
-        return "px-2.5 py-1";
+        return "px-2 py-1";
       case "medium":
       case "small":
       case "x-large":

@@ -61,7 +61,14 @@ const Footer = ({ children }: Props) => (
     </div>
     <div className="flex justify-center space-x-2 mt-3">
       {socialNetworks.map((e) => {
-        return <SocialMediaIcon title={e.title} image={e.image} url={e.url} />;
+        return (
+          <SocialMediaIcon
+            key={e.title}
+            title={e.title}
+            image={e.image}
+            url={e.url}
+          />
+        );
       })}
     </div>
   </footer>
