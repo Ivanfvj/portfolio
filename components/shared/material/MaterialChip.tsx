@@ -43,9 +43,22 @@ const Chip = (props: Props) => {
     }
   };
 
+  const paddingClasses = () => {
+    switch (props.size) {
+      case "x-small":
+        return "px-2.5 py-1";
+      case "medium":
+      case "small":
+      case "x-large":
+      case "large":
+      default:
+        return "px-4 py-2";
+    }
+  };
+
   return (
     <span
-      className={`px-4 py-2 rounded-full  bg-gray-200 font-semibold flex align-center w-max cursor-pointer
+      className={`${paddingClasses()} rounded-full  bg-gray-200 font-semibold flex align-center w-max cursor-pointer
         transition duration-200 ease ${textSizeClasses()} ${
         props.active
           ? "bg-blue-600 text-white hover:bg-blue-700"

@@ -3,6 +3,8 @@ import LogoCard from "../../components/LogoCard";
 import Chip from "../../components/shared/Chip";
 import ActionButton from "../shared/material/ActionButton";
 import { HomePageContext } from "../../contexts/HomePage";
+import Tabs from "../shared/material/tabs/Tabs";
+import Tab from "../shared/material/tabs/Tab";
 
 const SkillCategories = {
   BACKEND: "backend",
@@ -266,6 +268,12 @@ const HardSkillsSection = () => {
         <h1 className="text-4xl md:text-5xl mx-auto text-center my-5">
           Hard Skills
         </h1>
+        {/* <div className="flex">
+          <Tabs grow className="w-full">
+            <Tab text="Software Development" />
+            <Tab text="Marketing/Design" />
+          </Tabs>
+        </div> */}
         <div className="px-5 py-5 text-center bg-gray-800 sticky top-0">
           <div
             id="hard-skills-filter"
