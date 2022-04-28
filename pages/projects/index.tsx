@@ -259,6 +259,54 @@ const projects: ProjectInfo[] = [
   },
 ];
 
+const landingPagesCreated = [
+  {
+    text: "Unamacro - Marketing sin Confusión",
+    image: "",
+    url: "https://www.unamacro.com/marketing-sin-confusion/",
+  },
+  {
+    text: "Unamacro - Kit Email Marketing",
+    image: "",
+    url: "https://www.unamacro.com/kit-email-marketing/",
+  },
+  {
+    text: "Drones y SIG para la gestión del territorio",
+    image: "",
+    url: "https://mejorate.online/drones-y-sig-para-gestion-del-territorio/",
+  },
+  {
+    text: "Pisos con Resina epóxica",
+    image: "",
+    url: "https://mejorate.online/pisos-con-resina/",
+  },
+  {
+    text: "Terapia con Imanes",
+    image: "",
+    url: "https://mejorate.online/terapia-con-imanes/",
+  },
+  {
+    text: "Yoga Facial con Aromaterapia",
+    image: "",
+    url: "https://mejorate.online/yoga-facial-con-aromaterapia/",
+  },
+  {
+    text: "Pastelería Canina y Felina",
+    image: "",
+    url: "https://mejorate.online/pasteleria-canina-y-felina/",
+  },
+  {
+    text: "Costura Premium",
+    image: "",
+    url: "https://mejorate.online/costura-premium/",
+  },
+  {
+    text: "Curso de Drones",
+    image: "",
+    url: "https://mejorate.online/curso-manejo-de-drones/",
+  },
+];
+
 const AboutPage = () => (
   <Layout title="Projects | Portfolio" className="bg-gray-50 bg-opacity-50">
     <section className="py-5 bg-black">
@@ -273,18 +321,36 @@ const AboutPage = () => (
         })}
       </div>
     </div>
-    {/* <section className="py-5 bg-black">
+    <section className="py-5 bg-black">
       <h1 className="text-center text-4xl text-white lg:text-5xl my-10">
         Marketing Projects
       </h1>
     </section>
     <div className="p-5 my-8 max-w-6xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-3">
-        {projects.map((e) => {
-          return <ProjectCard key={e.id} {...e} />;
+      {/* <p>
+        I have created different Marketing Strategies and Sales Funnels for
+        multiple products:
+      </p> */}
+
+      <h2>Landing pages</h2>
+
+      <ul className="list-inside list-disc">
+        {landingPagesCreated.map((e) => {
+          return (
+            <li key={e.text}>
+              <a
+                className="text-blue-500 text-lg underline hover:text-blue-600"
+                href={e.url}
+                target="_blank"
+              >
+                {e.text}
+              </a>
+            </li>
+          );
         })}
-      </div>
-    </div> */}
+      </ul>
+
+    </div>
   </Layout>
 );
 

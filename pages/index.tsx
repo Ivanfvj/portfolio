@@ -76,9 +76,9 @@ const IndexPage = () => {
               </u>{" "}
               As entrepreneur I'm happy to have developed and tested several
               startup ideas, create MVP's from scratch, work with amazing
-              people, help our customers, learn from all this process and do
-              marketing to make these ideas known. Valuable lessons all along
-              the way.
+              people, help our customers, lead teams, learn from all this
+              process and do marketing to make these ideas known. Valuable
+              lessons all along the way.
             </p>
             <p>
               I have <u>+8 years of experience coding</u>. I started developing
