@@ -1,7 +1,9 @@
+import Link from "next/link";
 import MaterialChip, {
   MaterialChipSize,
 } from "../shared/material/MaterialChip";
 import colors from "tailwindcss/colors";
+import ActionButton from "../shared/material/ActionButton";
 
 type SoftSkillChipType = {
   text: string;
@@ -115,7 +117,15 @@ const SoftSkillsSection = () => {
               />
             );
           })}
-          {/* <div className="">
+        </div>
+        {/* <div className="text-center">
+          <Link href="#" passHref>
+            <a>
+              <ActionButton text="Tell me more" />
+            </a>
+          </Link>
+        </div> */}
+        {/* <div className="">
             <p>
               Here a link{" "}
               <a href="https://blog.unamacro.com/ivanfvj" className="underline">
@@ -125,7 +135,6 @@ const SoftSkillsSection = () => {
             </p>
             <p>Team communication is a must.</p>
           </div> */}
-        </div>
       </div>
     </div>
   );

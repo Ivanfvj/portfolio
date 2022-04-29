@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import StartupProjectCard from "../StartupProjectCard";
 
@@ -22,92 +24,124 @@ const ActionButton = (props: ButtonProps) => {
 
 const UnamacroProject = () => {
   return (
-    <div className="space-y-3">
-      <h1>Unamacro</h1>
-      <p className="!mt-0 !mb-3">Founder - CEO</p>
-      <div className="flex space-x-2">
-        <ActionButton text="Visit site" href="https://www.unamacro.com" />
-        <ActionButton text="Details" href="https://www.unamacro.com" />
+    <div className="">
+      <div className="space-y-3">
+        {/* <div className="relative w-full h-80 overflow-hidden border-1 border-b">
+          <Image
+            src="/portrait.jpg"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+          />
+        </div> */}
+        <div className="space-y-3 p-5">
+          <h1>Unamacro</h1>
+          <p className="!mt-0 !mb-3">Founder - CEO</p>
+          <div className="flex space-x-2">
+            <ActionButton text="Visit site" href="https://www.unamacro.com" />
+            <Link href="/projects/unamacro" passHref>
+              <a>
+                <ActionButton text="Details" />
+              </a>
+            </Link>
+          </div>
+          <p>
+            <strong>Marketing Automation SaaS</strong>
+          </p>
+          <p>
+            At Unamacro we want to generate growth for everyone using digital
+            tools for Marketing and Sales.
+          </p>
+          <p>
+            We create a Marketing SaaS solution for small businesses, including
+            CRM, Email Marketing and third party integrations with tools like
+            Facebook Lead Ads. We also worked as Digital Marketing Agency with
+            some clients.
+          </p>
+          <p>
+            We offer fully automated Marketing Solutions and sales funnels for
+            Small Businesses. I know the value of community, so we created a
+            public community platform to share Marketing knowledge with
+            entrepreneurs and small businesses. Unamacro is community first.
+          </p>
+          <p>
+            <strong>Actually we have 2 principal projects:</strong>
+          </p>
+          <ul className="list-disc list-inside">
+            <li>Unamacro SaaS application</li>
+            <li>Community Blog Platform</li>
+          </ul>
+        </div>
       </div>
-      <p>
-        <strong>Marketing Automation SaaS</strong>
-      </p>
-      <p>
-        At Unamacro we want to generate growth for everyone using digital tools
-        for Marketing and Sales.
-      </p>
-      <p>
-        We create a Marketing SaaS solution for small businesses, including CRM,
-        Email Marketing and third party integrations with tools like Facebook
-        Lead Ads. We also worked as Digital Marketing Agency with some clients.
-      </p>
-      <p>
-        We offer fully automated Marketing Solutions and sales funnels for Small
-        Businesses. I know the value of community, so we created a public
-        community platform to share Marketing knowledge with entrepreneurs and
-        small businesses. Unamacro is community first.
-      </p>
-      <p>
-        <strong>Actually we have 2 principal projects:</strong>
-      </p>
-      <ul className="list-disc list-inside">
-        <li>Unamacro SaaS application</li>
-        <li>Community Blog Platform</li>
-      </ul>
+      {/* <div className="col-span-4">Some text here</div> */}
     </div>
   );
 };
 
 const TrimmProject = () => {
   return (
-    <div className="space-y-3">
-      <h1>Trimm.tv</h1>
-      <p className="!mt-0 !mb-3">Founder - CEO</p>
-      <div className="flex space-x-2">
-        <ActionButton text="Visit site" href="https://trimm.tv" />
-        <ActionButton text="Details" href="https://trimm.tv" />
+    <div className="">
+      <div className="p-5 space-y-3">
+        <h1>Trimm.tv</h1>
+        <p className="!mt-0 !mb-3">Founder - CEO</p>
+        <div className="flex space-x-2">
+          <ActionButton text="Visit site" href="https://trimm.tv" />
+          <Link href="/projects/trimm" passHref>
+            <a>
+              <ActionButton text="Details" />
+            </a>
+          </Link>
+        </div>
+        <p>
+          <strong>Video Platform</strong>
+        </p>
+        <p>Trimm videos from the internet and share only relevant content.</p>
+        <p>
+          I've created all this whole video platform from scratch. I was testing
+          this startup idea because I know it has potential. This project is
+          working but it's not my priority at the moment until i can get a team
+          working on this. The MVP is available but i have decided to put my
+          effort into Unamacro, also because i have some clients to take care
+          of.
+        </p>
       </div>
-      <p>
-        <strong>Video Platform</strong>
-      </p>
-      <p>Trimm videos from the internet and share only relevant content.</p>
-      <p>
-        I've created all this whole video platform from scratch. I was testing this
-        startup idea because I know it has potential. This project is working
-        but it's not my priority at the moment until i can get a team working
-        on this. The MVP is available but i have decided to put my effort into
-        Unamacro, also because i have some clients to take care of.
-      </p>
     </div>
   );
 };
 
 const MejorateProject = () => {
   return (
-    <div className="space-y-3">
-      <h1>Mejorate.online</h1>
-      <p className="!mt-0 !mb-3">Founder - CEO</p>
-      <div className="flex space-x-2">
-        <ActionButton text="Visit site" href="https://mejorate.online" />
-        <ActionButton text="Details" href="https://mejorate.online" />
+    <div className="">
+      <div className="p-5 space-y-3">
+        <h1>Mejorate.online</h1>
+        <p className="!mt-0 !mb-3">Founder - CEO</p>
+        <div className="flex space-x-2">
+          <ActionButton text="Visit site" href="https://mejorate.online" />
+          <ActionButton text="Details" href="https://mejorate.online" />
+          {/* <Link href="/projects/mejorate" passHref>
+          <a>
+            <ActionButton text="Details" />
+          </a>
+        </Link> */}
+        </div>
+        <p>
+          <strong>E-commerce platform</strong>
+        </p>
+        <p>
+          Validated online courses. Acquire specific skills to generate more
+          income.
+        </p>
+        <p>
+          I create this ecommerce platform made in Wordpress to promote Digital
+          Courses with multiple Marketing Strategies. We only add courses
+          validated by our team in our catalog.
+        </p>
+        <p>
+          I made some viral Tiktok Videos for the pets niche. We got 28.1Million
+          views on our most viewed video and several millions on others. This
+          generated us 100K followers in one week.
+        </p>
       </div>
-      <p>
-        <strong>E-commerce platform</strong>
-      </p>
-      <p>
-        Validated online courses. Acquire specific skills to generate more
-        income.
-      </p>
-      <p>
-        I create this ecommerce platform made in Wordpress to promote Digital
-        Courses with multiple Marketing Strategies. We only add courses
-        validated by our team in our catalog.
-      </p>
-      <p>
-        I made some viral Tiktok Videos for the pets niche. We got 28.1Million
-        views on our most viewed video and several millions on others. This
-        generated us 100K followers in one week.
-      </p>
 
       {/* <p>Redirect here to Mejorate.online with all landings</p> */}
     </div>
@@ -134,9 +168,6 @@ const StartupProjectsSection = (props: IProps) => {
   const [activeCard, setActiveCard] = useState(1);
 
   const changeActiveCard = (cardNumber: number) => {
-    // if (activeCard === cardNumber) {
-    //   setActiveCard(0);
-    // } else
     setActiveCard(cardNumber);
   };
 
@@ -144,7 +175,7 @@ const StartupProjectsSection = (props: IProps) => {
     <div
       className={`bg-white ${props.className ? props.className : ""}`.trim()}
     >
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap" id="startup-projects">
         <StartupProjectCard
           image="/unamacro-logo.png"
           imageAlt="Unamacro logo"
@@ -174,7 +205,7 @@ const StartupProjectsSection = (props: IProps) => {
           onClick={() => changeActiveCard(3)}
         />
       </div>
-      <div className="bg-white border p-5 text-left">
+      <div className="bg-white border text-left">
         {selectedProject(activeCard)}
       </div>
     </div>

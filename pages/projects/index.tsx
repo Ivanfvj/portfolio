@@ -78,6 +78,7 @@ const projects: ProjectInfo[] = [
       "https://www.unamacro.com/wp-content/uploads/2021/08/PortfolioUnamacro-CRM.png",
     categories: [{ text: "website" }],
     stack: [
+      { text: "DDD" },
       { text: "Typescript" },
       { text: "Vue.js" },
       { text: "Nuxt.js" },
@@ -97,8 +98,9 @@ const projects: ProjectInfo[] = [
     featured: true,
     headline: "Marketing Blog for Entrepreneurs",
     image: "https://blog.unamacro.com/img/workflow-screenshot.jpg",
-    categories: [{ text: "website" }],
+    categories: [{ text: "website" }, { text: "DDD" }],
     stack: [
+      { text: "DDD" },
       { text: "Typescript" },
       { text: "Vue.js" },
       { text: "Vuetify" },
@@ -133,12 +135,12 @@ const projects: ProjectInfo[] = [
     headline: "Video platform",
     categories: [{ text: "website" }],
     stack: [
+      { text: "DDD" },
       { text: "Typescript" },
       { text: "Vue.js" },
       { text: "Vuetify" },
       { text: "Nuxt.js" },
       { text: "Node.js" },
-      { text: "DDD" },
       { text: "MongoDB" },
     ],
     tags: ["marketing"],
@@ -314,6 +316,8 @@ const AboutPage = () => (
         Portfolio and Projects
       </h1>
     </section>
+    {/* <section className="p-5 my-8 max-w-6xl mx-auto">
+    </section> */}
     <div className="p-5 my-8 max-w-6xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-3">
         {projects.map((e) => {
@@ -327,12 +331,7 @@ const AboutPage = () => (
       </h1>
     </section>
     <div className="p-5 my-8 max-w-6xl mx-auto">
-      {/* <p>
-        I have created different Marketing Strategies and Sales Funnels for
-        multiple products:
-      </p> */}
-
-      <h2>Landing pages</h2>
+      <h2 className="mt-5 font-semibold mb-3">Landing pages</h2>
 
       <ul className="list-inside list-disc">
         {landingPagesCreated.map((e) => {
@@ -349,7 +348,6 @@ const AboutPage = () => (
           );
         })}
       </ul>
-
     </div>
   </Layout>
 );

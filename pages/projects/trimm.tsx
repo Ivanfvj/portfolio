@@ -2,11 +2,11 @@ import Link from "next/link";
 import Layout from "../../components/Layout";
 import ActionButton from "../../components/shared/material/ActionButton";
 
-const UnamacroProjectPage = () => (
-  <Layout title="Projects | Portfolio" className="bg-gray-50 bg-opacity-50">
+const TrimmProjectPage = () => (
+  <Layout title="Trimm.tv Project" className="bg-gray-50 bg-opacity-50">
     <section className="py-5 bg-black">
       <h1 className="text-center text-4xl text-white lg:text-5xl my-10">
-        Unamacro Startup
+        Trimm Startup
       </h1>
     </section>
     <div className="p-5 my-8 text-center">
@@ -16,17 +16,13 @@ const UnamacroProjectPage = () => (
           <ActionButton text="Back to HomePage" />
         </a>
       </Link>
-      <Link href="https://www.unamacro.com" passHref>
+      <Link href="https://trimm.tv" passHref>
         <a target="_blank">
           <ActionButton text="Visit Site" />
         </a>
       </Link>
     </div>
-    {/* <p>
-      We do it easy for you, to implement and automatize digital tools in your
-      business. We are focused on Marketing Workflows and Funnels
-    </p> */}
   </Layout>
 );
 
-export default UnamacroProjectPage;
+export default TrimmProjectPage;
