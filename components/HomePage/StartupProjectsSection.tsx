@@ -1,24 +1,26 @@
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import StartupProjectCard from "../StartupProjectCard";
 
 interface ButtonProps {
   text: string;
   href?: string;
+  link?: boolean;
+  target?: string;
 }
 
 const ActionButton = (props: ButtonProps) => {
   return (
-    <a
-      className="underline text-blue-500 hover:text-blue-600"
-      href={props.href}
-      target="_blank"
-    >
-      <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-        {props.text}
-      </button>
-    </a>
+    <Link href={props.href} passHref>
+      <a
+        className="underline text-blue-500 hover:text-blue-600"
+        target={props.target}
+      >
+        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+          {props.text}
+        </button>
+      </a>
+    </Link>
   );
 };
 
@@ -38,12 +40,12 @@ const UnamacroProject = () => {
           <h1>Unamacro</h1>
           <p className="!mt-0 !mb-3">Founder - CEO</p>
           <div className="flex space-x-2">
-            <ActionButton text="Visit site" href="https://www.unamacro.com" />
-            <Link href="/projects/unamacro" passHref>
-              <a>
-                <ActionButton text="Details" />
-              </a>
-            </Link>
+            <ActionButton
+              target="_blank"
+              text="Visit site"
+              href="https://www.unamacro.com"
+            />
+            <ActionButton link text="Details" href="/projects/unamacro" />
           </div>
           <p>
             <strong>Marketing Automation SaaS</strong>
@@ -85,12 +87,12 @@ const TrimmProject = () => {
         <h1>Trimm.tv</h1>
         <p className="!mt-0 !mb-3">Founder - CEO</p>
         <div className="flex space-x-2">
-          <ActionButton text="Visit site" href="https://trimm.tv" />
-          <Link href="/projects/trimm" passHref>
-            <a>
-              <ActionButton text="Details" />
-            </a>
-          </Link>
+          <ActionButton
+            target="_blank"
+            text="Visit site"
+            href="https://trimm.tv"
+          />
+          <ActionButton link text="Details" href="/projects/trimm" />
         </div>
         <p>
           <strong>Video Platform</strong>
@@ -116,8 +118,16 @@ const MejorateProject = () => {
         <h1>Mejorate.online</h1>
         <p className="!mt-0 !mb-3">Founder - CEO</p>
         <div className="flex space-x-2">
-          <ActionButton text="Visit site" href="https://mejorate.online" />
-          <ActionButton text="Details" href="https://mejorate.online" />
+          <ActionButton
+            target="_blank"
+            text="Visit site"
+            href="https://mejorate.online"
+          />
+          <ActionButton
+            target="_blank"
+            text="Details"
+            href="https://mejorate.online"
+          />
           {/* <Link href="/projects/mejorate" passHref>
           <a>
             <ActionButton text="Details" />

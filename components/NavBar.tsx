@@ -10,12 +10,16 @@ type Props = {
 type NavBarItemProps = {
   text?: string;
   href?: string;
+  target?: string;
 };
 
-const NavBarItem = ({ text, href }: NavBarItemProps) => {
+const NavBarItem = ({ text, href, target }: NavBarItemProps) => {
   return (
-    <Link href={href}>
-      <a className="text-xl px-3 py-3 hover:text-blue-500 hover:underline cursor-pointer font-semibold">
+    <Link href={href} passHref>
+      <a
+        target={target}
+        className="text-md md:text-xl px-3 py-3 hover:text-blue-500 hover:underline cursor-pointer font-semibold"
+      >
         {text}
       </a>
     </Link>
@@ -24,15 +28,14 @@ const NavBarItem = ({ text, href }: NavBarItemProps) => {
 
 const ActionButton = (props: any) => {
   return (
-    <Link href={props.href}>
+    <Link href={props.href} passHref>
       <a
         className={`underline text-blue-500 hover:text-blue-600 ${
           props.className ? props.className : ""
         }`.trim()}
-        href={props.href}
         target="_blank"
       >
-        <button className="bg-blue-500 text-lg hover:bg-blue-600 font-semibold text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        <button className="bg-blue-500 text-md md:text-lg hover:bg-blue-600 font-semibold text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
           {props.text}
         </button>
       </a>
@@ -49,10 +52,15 @@ const NavBar = ({}: Props) => (
       <li>
         <NavBarItem href="/projects" text="Portfolio" />
       </li>
-      {/* <li>
-        <NavBarItem href="/api/users" text="Users API" />
-      </li> */}
+
       <div className="flex-grow"></div>
+      <li>
+        <NavBarItem
+          href="https://www.unamacro.com/wp-content/uploads/2022/04/CV_Ivan_Velastegui_Senior_Full_Stack_Engineer.pdf"
+          text="Download CV"
+          target="_blank"
+        />
+      </li>
       {/* <Switch className="mr-6" /> */}
       <ActionButton text="Contact Me" href="https://linkedin.com/in/ivanfvj" />
     </ul>
