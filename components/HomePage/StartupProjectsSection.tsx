@@ -97,15 +97,18 @@ const TrimmProject = () => {
         <p>
           <strong>Video Platform</strong>
         </p>
-        <p>Trimm videos from the internet and share only relevant content.</p>
         <p>
-          I've created all this whole video platform from scratch. I was testing
-          this startup idea because I know it has potential. This project is
-          working but it's not my priority at the moment until i can get a team
-          working on this. The MVP is available but i have decided to put my
-          effort into Unamacro, also because i have some clients to take care
-          of.
+          Trimm videos from the internet and share only relevant content. Clips
+          and video highlights.
         </p>
+        <p>
+          I've created all this whole video platform from scratch. The MVP is
+          Actually working for Youtube videos.
+        </p>
+        <ul className="list-disc list-inside">
+          <li>Domain Driven Design (DDD) and Hexagonal Architecture.</li>
+          <li>Server Side Rendering (SSR).</li>
+        </ul>
       </div>
     </div>
   );
