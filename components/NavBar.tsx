@@ -56,7 +56,7 @@ const NavBar = ({}: Props) => (
       <div className="flex-grow"></div>
       <li>
         <NavBarItem
-          href="https://www.unamacro.com/wp-content/uploads/2022/04/CV_Ivan_Velastegui_Senior_Full_Stack_Engineer.pdf"
+          href="https://www.unamacro.com/wp-content/uploads/2022/05/CV_Ivan_Velastegui_Senior_Full_Stack_Engineer.pdf"
           text="Download CV"
           target="_blank"
         />
