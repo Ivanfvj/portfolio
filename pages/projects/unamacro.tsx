@@ -79,6 +79,7 @@ const UnamacroProjectPage = () => {
               height="315"
               src="https://www.youtube.com/embed/ZoxR3XA5Vhc"
               title="YouTube video player"
+              //@ts-ignore
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
@@ -88,6 +89,7 @@ const UnamacroProjectPage = () => {
               height="315"
               src="https://www.youtube.com/embed/2iGV4E6P6fg"
               title="YouTube video player"
+              //@ts-ignore
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
