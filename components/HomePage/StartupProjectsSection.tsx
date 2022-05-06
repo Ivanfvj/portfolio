@@ -40,11 +40,6 @@ const UnamacroProject = () => {
           <h1>Unamacro</h1>
           <p className="!mt-0 !mb-3">Founder - CEO</p>
           <div className="flex space-x-2">
-            <ActionButton
-              target="_blank"
-              text="Visit site"
-              href="https://www.unamacro.com"
-            />
             <ActionButton link text="Details" href="/projects/unamacro" />
           </div>
           <p>

@@ -3,32 +3,10 @@ import LogoCard from "../../components/LogoCard";
 import Chip from "../../components/shared/Chip";
 import ActionButton from "../shared/material/ActionButton";
 import { HomePageContext } from "../../contexts/HomePage";
+import { SkillCategories } from "../../interfaces/skill";
+import { hardSkillsArray } from "../../utils/skills-data";
 import Tabs from "../shared/material/tabs/Tabs";
 import Tab from "../shared/material/tabs/Tab";
-
-const SkillCategories = {
-  BACKEND: "backend",
-  FRONTEND: "frontend",
-  DATABASE: "database",
-  INFRASTRUCTURE: "infrastructure",
-  OTHER: "other",
-} as const;
-
-const ProficiencyTypes = {
-  NOOB: "noob",
-  INTERMEDIATE: "intermediate",
-  EXPERT: "expert",
-};
-
-type SkillCategory = typeof SkillCategories[keyof typeof SkillCategories];
-type ProficiencyType = typeof ProficiencyTypes[keyof typeof ProficiencyTypes];
-
-interface ISkill {
-  text: string;
-  image: string;
-  category: SkillCategory;
-  proficiency: ProficiencyType;
-}
 
 const skillsCategories = [
   { text: "Backend", value: SkillCategories.BACKEND },
@@ -37,182 +15,6 @@ const skillsCategories = [
   { text: "Infrastructure", value: SkillCategories.INFRASTRUCTURE },
   { text: "Others", value: SkillCategories.OTHER },
 ];
-
-const hardSkills: ISkill[] = [
-  {
-    text: "Vue.js",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
-    category: SkillCategories.FRONTEND,
-    proficiency: ProficiencyTypes.EXPERT,
-  },
-  {
-    text: "Nuxt.js",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg",
-    category: SkillCategories.FRONTEND,
-    proficiency: ProficiencyTypes.EXPERT,
-  },
-  {
-    text: "Nest.js",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg",
-    category: SkillCategories.BACKEND,
-    proficiency: ProficiencyTypes.EXPERT,
-  },
-  {
-    text: "Node.js",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-    category: SkillCategories.BACKEND,
-    proficiency: ProficiencyTypes.EXPERT,
-  },
-
-  {
-    text: "Express.js",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-    category: SkillCategories.BACKEND,
-    proficiency: ProficiencyTypes.EXPERT,
-  },
-  {
-    text: "Typescript",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-    category: SkillCategories.FRONTEND,
-    proficiency: ProficiencyTypes.EXPERT,
-  },
-  {
-    text: "Javascript",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-    category: SkillCategories.FRONTEND,
-    proficiency: ProficiencyTypes.EXPERT,
-  },
-  {
-    text: "AWS",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-    category: SkillCategories.INFRASTRUCTURE,
-    proficiency: ProficiencyTypes.INTERMEDIATE,
-  },
-  {
-    text: "Google Cloud",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
-    category: SkillCategories.INFRASTRUCTURE,
-    proficiency: ProficiencyTypes.INTERMEDIATE,
-  },
-  {
-    text: "Java",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg",
-    category: SkillCategories.BACKEND,
-    proficiency: ProficiencyTypes.INTERMEDIATE,
-  },
-  {
-    text: "MongoDB",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg",
-    category: SkillCategories.DATABASE,
-    proficiency: ProficiencyTypes.EXPERT,
-  },
-  {
-    text: "SQL",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg",
-    category: SkillCategories.DATABASE,
-    proficiency: ProficiencyTypes.EXPERT,
-  },
-  {
-    text: "Sass",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
-    category: SkillCategories.FRONTEND,
-    proficiency: ProficiencyTypes.EXPERT,
-  },
-  {
-    text: "Vuetify",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuetify/vuetify-original.svg",
-    category: SkillCategories.FRONTEND,
-    proficiency: ProficiencyTypes.EXPERT,
-  },
-  {
-    text: "Android",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg",
-    category: SkillCategories.FRONTEND,
-    proficiency: ProficiencyTypes.INTERMEDIATE,
-  },
-  {
-    text: "Flutter",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
-    category: SkillCategories.FRONTEND,
-    proficiency: ProficiencyTypes.NOOB,
-  },
-
-  {
-    text: "Redis",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg",
-    category: SkillCategories.DATABASE,
-    proficiency: ProficiencyTypes.INTERMEDIATE,
-  },
-  {
-    text: "Docker",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg",
-    category: SkillCategories.INFRASTRUCTURE,
-    proficiency: ProficiencyTypes.INTERMEDIATE,
-  },
-  {
-    text: "Linux",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
-    category: SkillCategories.INFRASTRUCTURE,
-    proficiency: ProficiencyTypes.INTERMEDIATE,
-  },
-  {
-    text: "Git",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-    category: SkillCategories.OTHER,
-    proficiency: ProficiencyTypes.EXPERT,
-  },
-  {
-    text: "Tailwindcss",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg",
-    category: SkillCategories.FRONTEND,
-    proficiency: ProficiencyTypes.INTERMEDIATE,
-  },
-
-  {
-    text: "React.js",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    category: SkillCategories.FRONTEND,
-    proficiency: ProficiencyTypes.NOOB,
-  },
-  {
-    text: "Next.js",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-    category: SkillCategories.FRONTEND,
-    proficiency: ProficiencyTypes.NOOB,
-  },
-  {
-    text: "Wordpress",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg",
-    category: SkillCategories.FRONTEND,
-    proficiency: ProficiencyTypes.INTERMEDIATE,
-  },
-].sort((a, z) => {
-  return a.proficiency.localeCompare(z.proficiency);
-});
 
 const defaultCategoriesSelected = skillsCategories.map((e) => {
   return {
@@ -232,7 +34,7 @@ const HardSkillsSection = () => {
   const isAllCategoriesSelected =
     categoriesSelected.length === skillsCategories.length;
 
-  const skillsFiltered = hardSkills.filter((e) => {
+  const skillsFiltered = hardSkillsArray.filter((e) => {
     return categoriesSelected.includes(e.category);
   });
 

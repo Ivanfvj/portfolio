@@ -8,13 +8,7 @@ type Props = {
   proficiency?: string;
 };
 
-const LogoCard = ({
-  children,
-  className,
-  imageUrl,
-  text,
-  proficiency,
-}: Props) => {
+const LogoCard = ({ className, imageUrl, text, proficiency }: Props) => {
   const proficiencyColorClass =
     proficiency === "expert"
       ? "bg-red-200"

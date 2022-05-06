@@ -67,38 +67,48 @@ const IndexPage = () => {
         </div>
 
         <section className="max-w-4xl mx-auto mt-6">
-          <div className="space-y-5 text-lg p-8 bg-white border">
-            <h1 className="text-4xl md:text-5xl">About me</h1>
-            <p>
-              <u>
-                These last 3 years I've been on the journey of creating a
-                startup.
-              </u>{" "}
-              As entrepreneur I'm happy to have developed and tested several
-              startup ideas, create MVP's from scratch, work with amazing
-              people, help our customers, lead teams, learn from all this
-              process and do marketing to make these ideas known. Valuable
-              lessons all along the way.
-            </p>
-            <p>
-              I have <u>+8 years of experience coding</u>. I started developing
-              Android Apps and then i moved to Web Development and Full-Stack
-              projects.
-            </p>
-            <p>
-              I'm an Engineer, passionate about Technology, but also a
-              self-taught person in different topics. I consider myself a
-              continuous learner.
-            </p>
-            <p>
-              <u>
-                I have been chasing the dream of creating a high-impact startup
-                since I was 17 years old, 8 years now.
-              </u>
-            </p>
-            <p>
-              <strong>I never give up.</strong>
-            </p>
+          <div className="bg-white border">
+            <div className="space-y-5 text-lg p-8 pb-8">
+              <h1 className="text-4xl md:text-5xl">About me</h1>
+              <p>
+                <u>
+                  These last 3 years I've been on the journey of creating a
+                  startup.
+                </u>{" "}
+                As entrepreneur I'm happy to have developed and tested several
+                startup ideas, create MVP's from scratch, work with amazing
+                people, help our customers, lead teams, learn from all this
+                process and do marketing to make these ideas known. Valuable
+                lessons all along the way.
+              </p>
+              <p>
+                I have <u>+8 years of experience coding</u>. I started
+                developing Android Apps and then i moved to Web Development and
+                Full-Stack projects.
+              </p>
+              <p>
+                I'm an Engineer, passionate about Technology, but also a
+                self-taught person in different topics. I consider myself a
+                continuous learner.
+              </p>
+              <p>
+                <u>
+                  I have been chasing the dream of creating a high-impact
+                  startup since I was 17 years old, 8 years now.
+                </u>
+              </p>
+              <p>
+                <strong>I never give up.</strong>
+              </p>
+            </div>
+            {/* <hr className="mt-2" />
+            <div className="px-8 py-4 flex justify-end">
+              <Link href="/about" passHref>
+                <a>
+                  <ActionButton text="More about me" />
+                </a>
+              </Link>
+            </div> */}
           </div>
         </section>
 
@@ -121,7 +131,7 @@ const IndexPage = () => {
             <div className="grow"></div>
             <Link href="/projects" passHref>
               <a>
-                <ActionButton text="Show me more" />
+                <ActionButton text="Show me more" outlined={false} />
               </a>
             </Link>
           </div>
@@ -131,8 +141,18 @@ const IndexPage = () => {
           <SoftSkillsSection />
         </section>
 
-        <section className="max-w-6xl mx-auto mb-16">
+        <section className="max-w-6xl mx-auto mb-8">
           <HardSkillsSection />
+        </section>
+
+        <section className="max-w-6xl mx-auto mb-16">
+          <div className="border bg-white p-5 space-y-5">
+            <h1>Software Architecture</h1>
+            <p>
+              I enjoy creating software using: DDD, Hexagonal Architecture,
+              Microservices, SOLID principles and multiple Design Patterns.
+            </p>
+          </div>
         </section>
 
         {/* <section className="max-w-6xl mx-auto">
