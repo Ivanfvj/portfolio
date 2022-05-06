@@ -1,8 +1,7 @@
 import { useEffect } from "react";
-// tslint:disable-next-line
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import Image from "next/image";
-import "photoswipe/style.css";
+import 'photoswipe/dist/photoswipe.css'
 
 interface Props {
   galleryId?: string;

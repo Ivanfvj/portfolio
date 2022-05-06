@@ -1,7 +1,7 @@
 import Layout from "../../components/Layout";
 import Image from "next/image";
 import { BaseReactProps } from "../../common";
-import { ImageGallery } from "../../components/shared/ImageGallery";
+import { ImageGallery } from "../../components/shared/ImageGallery/";
 // import ActionButton from "../../components/shared/material/ActionButton";
 
 interface ImageCardProps extends BaseReactProps {
