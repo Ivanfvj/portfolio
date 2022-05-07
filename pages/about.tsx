@@ -15,6 +15,14 @@ const AboutPage = () => (
     <div className="p-5 my-8 text-center">
       <h2 className="text-3xl mb-3">Working on this page</h2>
     </div>
+    <section>
+      <div>I'm a social person, and i really enjoy helping.</div>
+    </section>
+    <section>
+      <div>
+        <h1>My actual headquarters</h1>
+      </div>
+    </section>
   </Layout>
 );
 

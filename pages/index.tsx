@@ -145,13 +145,27 @@ const IndexPage = () => {
           <HardSkillsSection />
         </section>
 
-        <section className="max-w-6xl mx-auto mb-16">
+        <section className="max-w-6xl mx-auto mb-8">
           <div className="border bg-white p-5 space-y-5">
             <h1>Software Architecture</h1>
             <p>
               I enjoy creating software using: DDD, Hexagonal Architecture,
               Microservices, SOLID principles and multiple Design Patterns.
             </p>
+          </div>
+        </section>
+
+        <section className="max-w-6xl mx-auto mb-16">
+          <div className="border bg-white p-5 space-y-5">
+            <h1>Extras</h1>
+            <div className="flex items-center">
+              <img
+                className="inline-block mr-4"
+                src="/svg/archlinux-icon.svg"
+                alt=""
+              />
+              <span>I use Arch btw... you know the meme ;).</span>
+            </div>
           </div>
         </section>
 
