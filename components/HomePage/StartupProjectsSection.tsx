@@ -38,7 +38,7 @@ const UnamacroProject = () => {
         </div> */}
         <div className="space-y-3 p-5">
           <h1>Unamacro</h1>
-          <p className="!mt-0 !mb-3">Founder - CEO</p>
+          <p className="!mt-0 !mb-3">Founder - Principal</p>
           <div className="flex space-x-2">
             <ActionButton link text="Details" href="/projects/unamacro" />
           </div>
@@ -80,7 +80,7 @@ const TrimmProject = () => {
     <div className="">
       <div className="p-5 space-y-3">
         <h1>Trimm.tv</h1>
-        <p className="!mt-0 !mb-3">Founder - CEO</p>
+        <p className="!mt-0 !mb-3">Founder - Principal</p>
         <div className="flex space-x-2">
           <ActionButton
             target="_blank"
@@ -114,7 +114,7 @@ const MejorateProject = () => {
     <div className="">
       <div className="p-5 space-y-3">
         <h1>Mejorate.online</h1>
-        <p className="!mt-0 !mb-3">Founder - CEO</p>
+        <p className="!mt-0 !mb-3">Founder - Principal</p>
         <div className="flex space-x-2">
           <ActionButton
             target="_blank"

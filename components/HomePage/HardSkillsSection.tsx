@@ -66,7 +66,7 @@ const HardSkillsSection = () => {
 
   return (
     <div className="bg-white">
-      <div id="hard-skills" className="border border-gray-200">
+      <div id="hard-skills" className="border border-x-0 sm:border-x border-gray-200">
         <h1 className="text-4xl md:text-5xl mx-auto text-center my-5">
           Hard Skills
         </h1>

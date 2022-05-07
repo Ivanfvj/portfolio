@@ -12,7 +12,10 @@ const UnamacroProjectPage = () => {
   };
 
   return (
-    <Layout title="Project: Unamacro | Founder - Full Stack Engineer" className="bg-gray-50 bg-opacity-50">
+    <Layout
+      title="Project: Unamacro | Founder - Full Stack Engineer"
+      className="bg-gray-50 bg-opacity-50"
+    >
       <section className="py-10 bg-black">
         <h1 className="text-center text-4xl text-white lg:text-5xl mb-5">
           Unamacro Startup
@@ -23,7 +26,12 @@ const UnamacroProjectPage = () => {
       </section>
 
       <section className="max-w-6xl mx-auto my-10">
-        <p className="mb-5">Sep 2020 — Present</p>
+        <div className="mb-5 px-5 lg:px-0 space-y-4">
+          <Link href="/projects" passHref>
+            <a className="text-blue-500 hover:text-blue-600 hover:underline" href="">Back to projects</a>
+          </Link>
+          <p>Sep 2020 — Present</p>
+        </div>
         <div className="flex items-center flex-wrap border p-10 w-full bg-white">
           <div className="w-full md:w-1/2 order-2 md:order-1 space-y-3">
             <h1 className="leading-tight">
@@ -79,20 +87,18 @@ const UnamacroProjectPage = () => {
               height="315"
               src="https://www.youtube.com/embed/ZoxR3XA5Vhc"
               title="YouTube video player"
-              //@ts-ignore
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
             <iframe
               width="100%"
               height="315"
               src="https://www.youtube.com/embed/2iGV4E6P6fg"
               title="YouTube video player"
-              //@ts-ignore
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
         </div>
@@ -122,10 +128,6 @@ const UnamacroProjectPage = () => {
             <ul className="ml-5 list-disc list-inside">
               <li>
                 MVP with basic features is working, actually doing Marketing.
-              </li>
-              <li>
-                We have implemented Sales Funnels and Workflow Automations for
-                B2B Clients.
               </li>
             </ul>
 

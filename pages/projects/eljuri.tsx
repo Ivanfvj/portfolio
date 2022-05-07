@@ -1,4 +1,5 @@
 import Layout from "../../components/Layout";
+import Link from "next/link";
 import Image from "next/image";
 import { BaseReactProps } from "../../common";
 import { ImageGallery } from "../../components/shared/ImageGallery/";
@@ -36,7 +37,10 @@ const images = [
 ];
 
 const EljuriProjectPage = () => (
-  <Layout title="Project: Eljuri | Android Developer" className="bg-gray-50 bg-opacity-50">
+  <Layout
+    title="Project: Eljuri | Android Developer"
+    className="bg-gray-50 bg-opacity-50"
+  >
     <section className="py-10 bg-black">
       <h1 className="text-center text-4xl text-white lg:text-5xl mb-5">
         Almacenes Juan Eljuri
@@ -46,6 +50,14 @@ const EljuriProjectPage = () => (
       </h2>
     </section>
     <section className="my-10 px-5 lg:px-0 max-w-5xl mx-auto space-y-4">
+      <Link href="/projects" passHref>
+        <a
+          className="text-blue-500 hover:text-blue-600 hover:underline"
+          href=""
+        >
+          Back to projects
+        </a>
+      </Link>
       <p>Jun 2017 — Jan 2019</p>
       <h2 className="font-semibold">Enterprise Android Applications</h2>
       <p>

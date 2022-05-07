@@ -88,8 +88,8 @@ const IndexPage = () => {
               </p>
               <p>
                 I'm an Engineer, passionate about Technology, but also a
-                self-taught person in different topics. I consider myself a
-                continuous learner.
+                self-taught person in different topics. I'm a continuous
+                learner.
               </p>
               <p>
                 <u>
