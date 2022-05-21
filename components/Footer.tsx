@@ -53,22 +53,8 @@ const SocialMediaIcon = (props: SocialMediaIconProps) => {
 
 const Footer = ({ children }: Props) => (
   <footer className="w-100 bg-blue-200 py-8 px-2">
-    <div className="text-center">
-      <p>
-        This website was created using Next.js, Typescript, Tailwind CSS and is
-        deployed to Vercel
-      </p>
-      <p>
-        <a
-          className="text-blue-500 underline"
-          href="mail:to=ivan.orgv@gmail.com?subject=Hey%20Iván,%20Let's%20Get%20in%20touch!"
-        >
-          Email me
-        </a>
-      </p>
-      <ContactForm />
-    </div>
-    <div className="flex justify-center space-x-2 mt-3">
+    <ContactForm />
+    <div className="flex justify-center space-x-2 my-3">
       {socialNetworks.map((e) => {
         return (
           <SocialMediaIcon

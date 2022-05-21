@@ -33,7 +33,7 @@ const ActionButton = (props: any) => {
         className={`underline text-blue-500 hover:text-blue-600 ${
           props.className ? props.className : ""
         }`.trim()}
-        target="_blank"
+        target={props.target? props.target : '_blank'}
       >
         <button className="bg-blue-500 text-md md:text-lg hover:bg-blue-600 font-semibold text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
           {props.text}
@@ -60,12 +60,13 @@ const NavBar = ({}: Props) => (
       <li>
         <NavBarItem
           href="https://www.unamacro.com/wp-content/uploads/2022/05/CV_Ivan_Velastegui_Senior_Full_Stack_Engineer.pdf"
-          text="Download CV"
+          text="Resume"
           target="_blank"
         />
       </li>
       {/* <Switch className="mr-6" /> */}
-      <ActionButton text="Contact Me" href="https://linkedin.com/in/ivanfvj" />
+      {/* <ActionButton className="ml-1" text="Contact Me" href="https://linkedin.com/in/ivanfvj" /> */}
+      <ActionButton className="ml-1" text="Contact Me" href="#contact" target="_self"/>
     </ul>
   </nav>
 );

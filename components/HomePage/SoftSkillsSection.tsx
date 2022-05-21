@@ -1,9 +1,7 @@
-import Link from "next/link";
 import MaterialChip, {
   MaterialChipSize,
 } from "../shared/material/MaterialChip";
 import colors from "tailwindcss/colors";
-import ActionButton from "../shared/material/ActionButton";
 
 type SoftSkillChipType = {
   text: string;

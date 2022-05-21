@@ -72,29 +72,32 @@ const IndexPage = () => {
               <h1 className="text-4xl md:text-5xl">About me</h1>
               <p>
                 <u>
-                  These last 3 years I've been on the journey of creating a
+                  These past 3 years I've been on the journey of creating a
                   startup.
                 </u>{" "}
-                As entrepreneur I'm happy to have developed and tested several
-                startup ideas, create MVP's from scratch, work with amazing
-                people, help our customers, lead teams, learn from all this
-                process and do marketing to make these ideas known. Valuable
-                lessons all along the way.
+                As an entrepreneur, I'm happy to have developed and tested
+                several startup ideas, created MVP's from scratch, worked with
+                amazing people, helped our clients, led teams, learned from all
+                this process, and did marketing to make these ideas known.
+                Valuable lessons along the way.
               </p>
               <p>
-                I have <u>+8 years of experience coding</u>. I started
-                developing Android Apps and then i moved to Web Development and
-                Full-Stack projects.
+                I'm a Software Engineer with +8 years of experience, with
+                expertise in Backend and Frontend technologies. I'm a proactive
+                person, analytical thinking, goal-oriented with a startup growth
+                mindset, and some of my strengths are communication, project
+                management, and teamwork.
               </p>
               <p>
-                I'm an Engineer, passionate about Technology, but also a
-                self-taught person in different topics. I'm a continuous
-                learner.
+                I started my career developing Android Apps and then I moved to
+                Web Development and Full-Stack projects. Passionate about
+                Technology, and a self-taught person in different topics. I'm a
+                continuous learner.
               </p>
               <p>
                 <u>
                   I have been chasing the dream of creating a high-impact
-                  startup since I was 17 years old, 8 years now.
+                  startup since I was 17 years old.
                 </u>
               </p>
               <p>
