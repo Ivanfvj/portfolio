@@ -46,11 +46,11 @@ const variants = {
   exit: { opacity: 0, x: 0, y: -100 },
 };
 
-// Software Categories, software skills
-// Marketing categories, marketing skills
-// Project Management, PM skills
-
 const HardSkillsSection = () => {
+  // MULTIPLE CATEGORIES LOGIC HARDCODED FOR THE MOMENT
+  // Software Categories/ skills
+  // Marketing categories/ skills
+  // Project Management/ skills
   const [tabSelected, setTabSelected] = useState(0);
 
   const [softwareCategories, setSoftwareCategories] = useState(
@@ -174,6 +174,7 @@ const HardSkillsSection = () => {
 
   const onTabSelected = (tabIndex: number) => {
     setTabSelected(tabIndex);
+    document.getElementById("hard-skills").scrollIntoView();
   };
 
   return (

@@ -16,6 +16,7 @@ export const marketingSkillsCategories = [
 
 export const pmSkillsCategories = [
   { text: "Agile", value: SkillCategories.AGILE },
+  { text: "Communication", value: SkillCategories.COMMUNICATION },
   { text: "Others", value: SkillCategories.OTHER },
 ];
 
@@ -194,77 +195,83 @@ export const MarketingSkills = {
   FIGMA: {
     text: "Figma",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
     category: SkillCategories.DESIGN,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },
-  UI_UX: {
-    text: "UI/UX",
+  UX_UI: {
+    text: "UX/UI",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
+      "/svg/ui-ux.svg",
     category: SkillCategories.DESIGN,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },
   FACEBOOK_ADS: {
     text: "Facebook Ads",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg",
     category: SkillCategories.MARKETING,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },
   GOOGLE_ADS: {
     text: "Google Ads",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
+    image: "/svg/gds.svg",
     category: SkillCategories.MARKETING,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },
   EMAIL_MARKETING: {
     text: "Email Marketing",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
+      "/svg/email-marketing.svg",
     category: SkillCategories.MARKETING,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },
   SALES_FUNNELS: {
     text: "Sales Funnels",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
+      "/svg/sales-funnel.svg",
     category: SkillCategories.MARKETING,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },
   MARKETING_AUTOMATION: {
     text: "Marketing Automation",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
+      "/img/customer-journey.png",
     category: SkillCategories.MARKETING,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },
   COPYWRITING: {
     text: "Copywriting",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
+      "/img/copywriting.png",
     category: SkillCategories.MARKETING,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },
   STORYTELLING: {
     text: "Storytelling",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
+      "/img/fairytale.png",
     category: SkillCategories.MARKETING,
     proficiency: ProficiencyTypes.NOOB,
   },
   LANDING_PAGES: {
     text: "Landing Pages",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
+      "/img/landing-page.png",
     category: SkillCategories.DESIGN,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },
   TIK_TOK: {
     text: "TikTok Strategy",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
+      "/svg/tik-tok-icon.svg",
+    category: SkillCategories.MARKETING,
+    proficiency: ProficiencyTypes.INTERMEDIATE,
+  },
+  SEO: {
+    text: "SEO",
+    image:
+      "/img/seo.png",
     category: SkillCategories.MARKETING,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },
@@ -274,42 +281,42 @@ export const PMSkills = {
   NOTION: {
     text: "Notion",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
+      "/svg/notion.svg",
     category: SkillCategories.OTHER,
     proficiency: ProficiencyTypes.EXPERT,
   },
   SCRUM: {
     text: "Scrum",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
-    category: SkillCategories.AGILE,
-    proficiency: ProficiencyTypes.INTERMEDIATE,
-  },
-  KANBAN: {
-    text: "Kanban",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
+      "/svg/scrum.svg",
     category: SkillCategories.AGILE,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },
   JIRA: {
     text: "Jira",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
-    category: SkillCategories.OTHER,
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg",
+    category: SkillCategories.AGILE,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },
   TRELLO: {
-    text: "Trello",
+    text: "Trello & Kanban",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
-    category: SkillCategories.OTHER,
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg",
+    category: SkillCategories.AGILE,
+    proficiency: ProficiencyTypes.INTERMEDIATE,
+  },
+  SLACK: {
+    text: "Slack",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg",
+    category: SkillCategories.COMMUNICATION,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },
   EXCEL: {
     text: "Excel",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg",
+      "/svg/google-sheets.svg",
     category: SkillCategories.OTHER,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },

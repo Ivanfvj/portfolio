@@ -1,4 +1,5 @@
 import React, { ReactNode, useEffect, useState } from "react";
+import Image from "next/image";
 
 type Props = {
   children?: ReactNode;
@@ -24,7 +25,14 @@ const LogoCard = ({ className, imageUrl, text, proficiency }: Props) => {
     overflow-hidden shadow-lg hover:shadow-2xl duration-200 ease bg-white ${className}`}
     >
       <div className="rounded bg-gray-100 p-3">
-        <img className="mx-auto" width="80" height="80" alt="" src={imageUrl} />
+        <img
+          className="mx-auto"
+          style={{ maxHeight: 80 }}
+          width="80"
+          height="80"
+          alt=""
+          src={imageUrl}
+        />
       </div>
       <p className="my-2">
         <strong>{text}</strong>

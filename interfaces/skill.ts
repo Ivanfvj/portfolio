@@ -6,6 +6,8 @@ export const SkillCategories = {
   DESIGN: "design",
   MARKETING: "marketing",
   AGILE: "agile",
+  TOOLS: "tools",
+  COMMUNICATION: "communication",
   OTHER: "other",
 } as const;
 
