@@ -186,7 +186,7 @@ const HardSkillsSection = () => {
           Hard Skills
         </h1>
         <div className="sticky top-0">
-          <div className="flex">
+          <div className="flex overflow-hidden">
             <Tabs grow className="w-full" onChange={onTabSelected}>
               <Tab text="Software Development" />
               <Tab text="Design/Marketing" />

@@ -16,7 +16,8 @@ const Tab = (props: TabProps) => {
       active={props.active?.toString()}
       onClick={props.onClick}
       className={
-        "cursor-pointer select-none border-l-2 border-t-2 py-4 px-5 font-semibold text-center transition ease-in-out duration-200 " +
+        `cursor-pointer select-none border-l-2 border-t-2 py-4 px-5 font-semibold `
+        + `flex items-center justify-center text-center transition ease-in-out duration-200 ` +
         `${props.isLast ? "border-r-2 " : ""}` +
         `${
           props.active
@@ -28,7 +29,9 @@ const Tab = (props: TabProps) => {
         `${props.className ? props.className : ""}`
       }
     >
-      {props.text}
+      <span className="inline-block align-middle leading-tight">
+        {props.text}
+      </span>
     </div>
   );
 };

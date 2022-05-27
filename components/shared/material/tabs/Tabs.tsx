@@ -25,7 +25,7 @@ const Tabs = (props: Props) => {
   }, [activeTab]);
 
   return (
-    <div className={`flex ${props.className ? props.className : ""}`.trim()}>
+    <div className={`flex flex-wrap sm:flex-nowrap ${props.className ? props.className : ""}`.trim()}>
       {Children.map(tabs, (child, index) => {
         if (!isValidElement(child)) {
           return null;
