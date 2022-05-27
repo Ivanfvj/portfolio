@@ -174,7 +174,6 @@ const HardSkillsSection = () => {
 
   const onTabSelected = (tabIndex: number) => {
     setTabSelected(tabIndex);
-    document.getElementById("hard-skills").scrollIntoView();
   };
 
   return (
