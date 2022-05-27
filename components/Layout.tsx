@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import Head from "next/head";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import { motion } from "framer-motion";
 
 type Props = {
   children?: ReactNode;
@@ -9,6 +10,12 @@ type Props = {
   description?: string;
   className?: string;
   thumbnailImg?: string;
+};
+
+const variants = {
+  hidden: { opacity: 0, x: -200, y: 0 },
+  enter: { opacity: 1, x: 0, y: 0 },
+  exit: { opacity: 0, x: 0, y: -100 },
 };
 
 const Layout = ({
@@ -118,7 +125,16 @@ const Layout = ({
       <header>
         <NavBar />
       </header>
-      {children}
+      <motion.main
+        initial="hidden"
+        animate="enter"
+        exit="exit"
+        variants={variants}
+        transition={{ type: "linear" }}
+        className=""
+      >
+        {children}
+      </motion.main>
       <Footer />
     </div>
   );

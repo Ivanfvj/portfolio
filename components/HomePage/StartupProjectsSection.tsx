@@ -161,9 +161,9 @@ const selectedProject = (project: number) => {
     case 1:
       return <UnamacroProject />;
     case 2:
-      return <TrimmProject />;
-    case 3:
       return <MejorateProject />;
+    case 3:
+      return <TrimmProject />;
       break;
   }
 };
@@ -194,21 +194,21 @@ const StartupProjectsSection = (props: IProps) => {
           onClick={() => changeActiveCard(1)}
         />
         <StartupProjectCard
-          image="/trimm-logo.png"
-          imageAlt="Trimm.tv logo"
-          title="Trimm.tv"
-          webUrl="https://trimm.tv"
-          webUrlText="trimm.tv"
-          active={activeCard === 2}
-          onClick={() => changeActiveCard(2)}
-        />
-        <StartupProjectCard
           image="/mejorate.online-circular-logo.png"
           imageAlt="Mejorate.online Logo"
           title="Mejorate.online"
           description="Side project"
           webUrl="https://mejorate.online"
           webUrlText="mejorate.online"
+          active={activeCard === 2}
+          onClick={() => changeActiveCard(2)}
+        />
+        <StartupProjectCard
+          image="/trimm-logo.png"
+          imageAlt="Trimm.tv logo"
+          title="Trimm.tv"
+          webUrl="https://trimm.tv"
+          webUrlText="trimm.tv"
           active={activeCard === 3}
           onClick={() => changeActiveCard(3)}
         />

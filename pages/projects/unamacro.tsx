@@ -28,7 +28,12 @@ const UnamacroProjectPage = () => {
       <section className="max-w-6xl mx-auto my-10">
         <div className="mb-5 px-5 lg:px-0 space-y-4">
           <Link href="/projects" passHref>
-            <a className="text-blue-500 hover:text-blue-600 hover:underline" href="">Back to projects</a>
+            <a
+              className="text-blue-500 hover:text-blue-600 hover:underline"
+              href=""
+            >
+              Back to projects
+            </a>
           </Link>
           <p>Sep 2020 — Present</p>
         </div>
@@ -46,12 +51,12 @@ const UnamacroProjectPage = () => {
             </p>
             <ul className="ml-5 list-disc list-inside">
               <li>
-                I create an Automatic Email System that can deliver{" "}
+                Create an Automatic Email System that can deliver{" "}
                 <u>+1 Million emails per day</u>, using Node.js, Typescript,
                 Redis and MongoDB.
               </li>
               <li>
-                We have implemented Sales Funnels and Workflow Automations for
+                Implemented multiple Sales Funnels and Workflows Automation for
                 B2B Clients.
               </li>
             </ul>
@@ -127,16 +132,20 @@ const UnamacroProjectPage = () => {
             </p>
             <ul className="ml-5 list-disc list-inside">
               <li>
-                MVP with basic features is working, actually doing Marketing.
+                Created a public community platform to share Marketing knowledge
+                with entrepreneurs and small businesses.
               </li>
+              <li>
+                MVP with basic features is working, actually doing Marketing. It
+                has more than 100 users.
+              </li>
+              
             </ul>
-
             <p>
               <strong>Tech Stack:</strong> Nuxt.js, Vue.js, Typescript, Node.js,
               Nest.js, MongoDB, DDD, Vuetify, AWS S3, AWS SNS, AWS EC2, AWS
-              CodePipeline, AWS Route 53
+              CodePipeline, AWS Route 53, CSS and SASS.
             </p>
-
             <Link href="https://blog.unamacro.com" passHref>
               <a className="block" target="_blank">
                 <ActionButton text="Visit site" />
@@ -167,6 +176,73 @@ const UnamacroProjectPage = () => {
           </div> */}
         </div>
       </section>
+      {/* 
+      <section className="max-w-6xl mx-auto my-10">
+        <div className="flex items-center flex-wrap border p-10 w-full bg-white">
+          <div className="w-full lg:w-1/2 mb-5 ml:mb-0">
+            <div className="md:pr-8">
+              <figure className="relative border rounded-lg overflow-hidden ">
+                <img
+                  src="https://blog.unamacro.com/img/workflow-screenshot.jpg"
+                  alt="Unamacro Community"
+                />
+              </figure>
+            </div>
+          </div>
+          <div className="w-full lg:w-1/2 space-y-3">
+            <h1 className="leading-tight">Digital Marketing Agency</h1>
+            <p>
+              <strong>Main Features:</strong> Blog posts, Marketing Workflows,
+              Social Network
+            </p>
+            <p>
+              <strong>Highlights:</strong>
+            </p>
+            <ul className="ml-5 list-disc list-inside">
+              <li>
+                Reduced the digital gap for small businesses and enable them to
+                deploy Marketing Funnel easily.
+              </li>
+              <li>
+                Offered fully automated Marketing Solutions and sales funnels
+                for Small Businesses as packages called "Marketing Macros".
+              </li>
+            </ul>
+            <p>
+              <strong>Tech Stack:</strong> Nuxt.js, Vue.js, Typescript, Node.js,
+              WordPress, MongoDB, AWS, CSS and SASS.
+            </p>
+            <Link href="https://www.unamacro.com" passHref>
+              <a className="block" target="_blank">
+                <ActionButton text="Visit site" />
+              </a>
+            </Link>
+          </div>
+        </div>
+      </section>
+       */}
+      {/* <hr /> */}
+      {/* <div className="">
+            <h1>Marketing Community</h1>
+            <p>
+              Blog platform open to public. A Marketing Community where
+              professionals can help Entrepreneur and Small Businesses with
+              their knowledge.
+            </p>
+            <p>
+              I know the value of community, so we created a public community
+              platform to share Marketing knowledge with entrepreneurs and small
+              businesses. Unamacro is community first.
+            </p>
+
+            <a
+              className="block"
+              href="https://blog.unamacro.com"
+              target="_blank"
+            >
+              <ActionButton text="Visit Site" />
+            </a>
+          </div> */}
     </Layout>
   );
 };

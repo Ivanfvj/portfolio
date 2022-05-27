@@ -33,7 +33,7 @@ const ActionButton = (props: any) => {
         className={`underline text-blue-500 hover:text-blue-600 ${
           props.className ? props.className : ""
         }`.trim()}
-        target={props.target? props.target : '_blank'}
+        target={props.target ? props.target : "_blank"}
       >
         <button className="bg-blue-500 text-md md:text-lg hover:bg-blue-600 font-semibold text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
           {props.text}
@@ -52,6 +52,9 @@ const NavBar = ({}: Props) => (
       <li>
         <NavBarItem href="/projects" text="Portfolio" />
       </li>
+      {/* <li>
+        <NavBarItem href="/about" text="About me" />
+      </li> */}
 
       <div className="flex-grow"></div>
       {/* <li>
@@ -64,9 +67,15 @@ const NavBar = ({}: Props) => (
           target="_blank"
         />
       </li>
+
       {/* <Switch className="mr-6" /> */}
       {/* <ActionButton className="ml-1" text="Contact Me" href="https://linkedin.com/in/ivanfvj" /> */}
-      <ActionButton className="ml-1" text="Contact Me" href="#contact" target="_self"/>
+      <ActionButton
+        className="ml-1"
+        text="Contact Me"
+        href="#contact"
+        target="_self"
+      />
     </ul>
   </nav>
 );

@@ -103,6 +103,7 @@ const IndexPage = () => {
               <p>
                 <strong>I never give up.</strong>
               </p>
+              
             </div>
             {/* <hr className="mt-2" />
             <div className="px-8 py-4 flex justify-end">
