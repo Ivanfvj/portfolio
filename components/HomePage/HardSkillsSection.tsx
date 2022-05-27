@@ -3,56 +3,128 @@ import LogoCard from "../../components/LogoCard";
 import Chip from "../../components/shared/Chip";
 import ActionButton from "../shared/material/ActionButton";
 import { HomePageContext } from "../../contexts/HomePage";
-import { SkillCategories } from "../../interfaces/skill";
-import { hardSkillsArray } from "../../utils/skills-data";
 import Tabs from "../shared/material/tabs/Tabs";
 import Tab from "../shared/material/tabs/Tab";
+import { motion } from "framer-motion";
 
-const skillsCategories = [
-  { text: "Backend", value: SkillCategories.BACKEND },
-  { text: "Frontend", value: SkillCategories.FRONTEND },
-  { text: "Databases", value: SkillCategories.DATABASE },
-  { text: "Infrastructure", value: SkillCategories.INFRASTRUCTURE },
-  { text: "Others", value: SkillCategories.OTHER },
-];
+import {
+  softwareSkillsArray,
+  softwareSkillsCategories,
+  marketingSkillsArray,
+  marketingSkillsCategories,
+  pmSkillsArray,
+  pmSkillsCategories,
+} from "../../utils/skills-data";
 
-const defaultCategoriesSelected = skillsCategories.map((e) => {
-  return {
-    text: e.text,
-    value: e.value,
-    active: true,
-  };
-});
+interface CategoryFilter {
+  text: string;
+  value: string;
+  active: boolean;
+}
+
+const createDefaultFilters = (categories: any[]): CategoryFilter[] => {
+  return categories.map((e) => {
+    return {
+      text: e.text,
+      value: e.value,
+      active: true,
+    };
+  });
+};
+
+const defaultSoftwareCategoriesSelected = createDefaultFilters(
+  softwareSkillsCategories
+);
+const defaultMarketingCategoriesSelected = createDefaultFilters(
+  marketingSkillsCategories
+);
+const defaultPmCategoriesSelected = createDefaultFilters(pmSkillsCategories);
+
+const variants = {
+  hidden: { opacity: 0, x: -200, y: 0 },
+  enter: { opacity: 1, x: 0, y: 0 },
+  exit: { opacity: 0, x: 0, y: -100 },
+};
+
+// Software Categories, software skills
+// Marketing categories, marketing skills
+// Project Management, PM skills
 
 const HardSkillsSection = () => {
-  const [categories, setCategories] = useState(defaultCategoriesSelected);
+  const [tabSelected, setTabSelected] = useState(0);
 
-  const categoriesSelected = categories
+  const [softwareCategories, setSoftwareCategories] = useState(
+    defaultSoftwareCategoriesSelected
+  );
+  const [marketingCategories, setMarketingCategories] = useState(
+    defaultMarketingCategoriesSelected
+  );
+  const [pmCategories, setPmCategories] = useState(defaultPmCategoriesSelected);
+
+  const softwareCategoriesSelected = softwareCategories
+    .filter((e) => e.active)
+    .map((e) => e.value);
+  const marketingCategoriesSelected = marketingCategories
+    .filter((e) => e.active)
+    .map((e) => e.value);
+  const pmCategoriesSelected = pmCategories
     .filter((e) => e.active)
     .map((e) => e.value);
 
-  const isAllCategoriesSelected =
-    categoriesSelected.length === skillsCategories.length;
+  const isAllSoftwareCategoriesSelected =
+    softwareCategoriesSelected.length === softwareSkillsCategories.length;
+  const isAllMarketingCategoriesSelected =
+    marketingCategoriesSelected.length === marketingSkillsCategories.length;
+  const isAllPmCategoriesSelected =
+    pmCategoriesSelected.length === pmSkillsCategories.length;
 
-  const skillsFiltered = hardSkillsArray.filter((e) => {
-    return categoriesSelected.includes(e.category);
+  const softwareSkillsFiltered = softwareSkillsArray.filter((e) => {
+    return softwareCategoriesSelected.includes(e.category);
+  });
+  const marketingSkillsFiltered = marketingSkillsArray.filter((e) => {
+    return marketingCategoriesSelected.includes(e.category);
   });
 
-  const toggleAllCategories = (active: boolean) => {
-    setCategories(
-      defaultCategoriesSelected.map((e) => {
-        return { ...e, active: active };
-      })
-    );
+  const pmSkillsFiltered = pmSkillsArray.filter((e) => {
+    return pmCategoriesSelected.includes(e.category);
+  });
+
+  const toggleAllCategories = (active: boolean, key: string) => {
+    switch (key) {
+      case "marketing":
+        setMarketingCategories(
+          defaultMarketingCategoriesSelected.map((e) => {
+            return { ...e, active: active };
+          })
+        );
+        break;
+      case "pm":
+        setPmCategories(
+          defaultPmCategoriesSelected.map((e) => {
+            return { ...e, active: active };
+          })
+        );
+        break;
+      case "software":
+      default:
+        setSoftwareCategories(
+          defaultSoftwareCategoriesSelected.map((e) => {
+            return { ...e, active: active };
+          })
+        );
+        break;
+    }
     document.getElementById("hard-skills").scrollIntoView();
   };
 
-  const updateCategoryActive = (category: string, active: boolean) => {
-    const foundedCategory = categories.find((e) => e.value === category);
+  const updateCategoryActiveSoftware = (category: string, active: boolean) => {
+    const foundedCategory = softwareCategories.find(
+      (e) => e.value === category
+    );
     if (foundedCategory) {
-      const index = categories.indexOf(foundedCategory);
-      let copy = [...categories];
-      if (isAllCategoriesSelected) {
+      const index = softwareCategories.indexOf(foundedCategory);
+      let copy = [...softwareCategories];
+      if (isAllSoftwareCategoriesSelected) {
         // Then disable all chips
         copy = copy.map((e) => {
           return { ...e, active: false };
@@ -60,66 +132,190 @@ const HardSkillsSection = () => {
         active = true;
       }
       copy.splice(index, 1, { ...foundedCategory, active });
-      setCategories(copy);
+      setSoftwareCategories(copy);
     }
+  };
+
+  const updateCategoryActiveMarketing = (category: string, active: boolean) => {
+    const foundedCategory = marketingCategories.find(
+      (e) => e.value === category
+    );
+    if (foundedCategory) {
+      const index = marketingCategories.indexOf(foundedCategory);
+      let copy = [...marketingCategories];
+      if (isAllMarketingCategoriesSelected) {
+        // Then disable all chips
+        copy = copy.map((e) => {
+          return { ...e, active: false };
+        });
+        active = true;
+      }
+      copy.splice(index, 1, { ...foundedCategory, active });
+      setMarketingCategories(copy);
+    }
+  };
+
+  const updateCategoryActivePm = (category: string, active: boolean) => {
+    const foundedCategory = pmCategories.find((e) => e.value === category);
+    if (foundedCategory) {
+      const index = pmCategories.indexOf(foundedCategory);
+      let copy = [...pmCategories];
+      if (isAllPmCategoriesSelected) {
+        // Then disable all chips
+        copy = copy.map((e) => {
+          return { ...e, active: false };
+        });
+        active = true;
+      }
+      copy.splice(index, 1, { ...foundedCategory, active });
+      setPmCategories(copy);
+    }
+  };
+
+  const onTabSelected = (tabIndex: number) => {
+    setTabSelected(tabIndex);
   };
 
   return (
     <div className="bg-white">
-      <div id="hard-skills" className="border border-x-0 sm:border-x border-gray-200">
+      <div
+        id="hard-skills"
+        className="border border-x-0 sm:border-x border-gray-200"
+      >
         <h1 className="text-4xl md:text-5xl mx-auto text-center my-5">
           Hard Skills
         </h1>
-        {/* <div className="flex">
-          <Tabs grow className="w-full">
-            <Tab text="Software Development" />
-            <Tab text="Marketing/Design" />
-          </Tabs>
-        </div> */}
-        <div className="px-5 py-5 text-center bg-gray-800 sticky top-0">
-          <div
-            id="hard-skills-filter"
-            className="flex flex-wrap space-x-3 text-center justify-center"
-          >
-            <Chip
-              className="my-2"
-              text="All"
-              active={isAllCategoriesSelected}
-              onChange={toggleAllCategories}
-            />
-            {categories.map((e) => (
-              <Chip
-                key={e.text}
-                className="my-2"
-                text={e.text}
-                active={e.active}
-                onChange={(active: boolean) => {
-                  updateCategoryActive(e.value, active);
-                }}
-              />
-            ))}
+        <div className="sticky top-0">
+          <div className="flex">
+            <Tabs grow className="w-full" onChange={onTabSelected}>
+              <Tab text="Software Development" />
+              <Tab text="Design/Marketing" />
+              <Tab text="Project Management" />
+            </Tabs>
+          </div>
+
+          <div className="px-5 py-5 text-center bg-gray-800">
+            <motion.div
+              initial="hidden"
+              animate="enter"
+              exit="exit"
+              variants={variants}
+              transition={{ type: "linear" }}
+              id="hard-skills-filter"
+              className="flex flex-wrap space-x-3 text-center justify-center"
+            >
+              {(() => {
+                if (tabSelected === 0) {
+                  return (
+                    <CategoryFilters
+                      categories={softwareCategories}
+                      isAllSelected={isAllSoftwareCategoriesSelected}
+                      toggleAllCategories={(active: boolean) =>
+                        toggleAllCategories(active, "software")
+                      }
+                      onChange={(value: string, active: boolean) => {
+                        updateCategoryActiveSoftware(value, active);
+                      }}
+                    />
+                  );
+                } else if (tabSelected === 1) {
+                  return (
+                    <CategoryFilters
+                      categories={marketingCategories}
+                      isAllSelected={isAllMarketingCategoriesSelected}
+                      toggleAllCategories={(active: boolean) =>
+                        toggleAllCategories(active, "marketing")
+                      }
+                      onChange={(value: string, active: boolean) => {
+                        updateCategoryActiveMarketing(value, active);
+                      }}
+                    />
+                  );
+                } else {
+                  return (
+                    <CategoryFilters
+                      categories={pmCategories}
+                      isAllSelected={isAllPmCategoriesSelected}
+                      toggleAllCategories={(active: boolean) =>
+                        toggleAllCategories(active, "pm")
+                      }
+                      onChange={(value: string, active: boolean) => {
+                        updateCategoryActivePm(value, active);
+                      }}
+                    />
+                  );
+                }
+              })()}
+            </motion.div>
           </div>
         </div>
 
         <div className="p-5 bg-white">
-          <div className="flex flex-wrap">
-            {skillsFiltered.length === 0 ? (
-              <EasiestEasterEgg />
-            ) : (
-              skillsFiltered.map((e, index) => (
-                <div key={index} className="w-1/2 md:w-1/4 mb-4 px-2">
-                  <LogoCard
-                    className="mx-auto"
-                    text={e.text}
-                    imageUrl={e.image}
-                    proficiency={e.proficiency}
-                  />
-                </div>
-              ))
-            )}
-          </div>
+          {tabSelected == 0 ? (
+            <SkillsGrid skills={softwareSkillsFiltered} />
+          ) : tabSelected == 1 ? (
+            <SkillsGrid skills={marketingSkillsFiltered} />
+          ) : (
+            <SkillsGrid skills={pmSkillsFiltered} />
+          )}
         </div>
       </div>
+    </div>
+  );
+};
+
+type CategoriesFiltersProps = {
+  categories: CategoryFilter[];
+  isAllSelected?: boolean;
+  toggleAllCategories?: (active: boolean) => void;
+  onChange?: (value: string, active: boolean) => void;
+};
+
+const CategoryFilters = (props: CategoriesFiltersProps) => {
+  return (
+    <>
+      <Chip
+        className="my-2"
+        text="All"
+        active={props.isAllSelected}
+        onChange={props.toggleAllCategories}
+      />
+      {props.categories.map((e) => (
+        <Chip
+          key={e.text}
+          className="my-2"
+          text={e.text}
+          active={e.active}
+          onChange={(active: boolean) => {
+            props.onChange(e.value, active);
+          }}
+        />
+      ))}
+    </>
+  );
+};
+
+type SkillsGridProps = {
+  skills: any[];
+};
+
+const SkillsGrid = (props: SkillsGridProps) => {
+  return (
+    <div className="flex flex-wrap">
+      {props.skills.length === 0 ? (
+        <EasiestEasterEgg />
+      ) : (
+        props.skills.map((e, index) => (
+          <div key={index} className="w-1/2 md:w-1/4 mb-4 px-2">
+            <LogoCard
+              className="mx-auto"
+              text={e.text}
+              imageUrl={e.image}
+              proficiency={e.proficiency}
+            />
+          </div>
+        ))
+      )}
     </div>
   );
 };

@@ -1,15 +1,28 @@
-import { Children, cloneElement, useState, isValidElement } from "react";
+import {
+  Children,
+  cloneElement,
+  useState,
+  useEffect,
+  isValidElement,
+} from "react";
 import { BaseReactProps } from "../../../../common/";
 // import Tab from "./Tab";
 
 interface Props extends BaseReactProps {
   grow?: boolean;
+  onChange?: (tabIndex: number) => void;
 }
 
 const Tabs = (props: Props) => {
   const [activeTab, setActiveTab] = useState(0);
 
   const tabs = Children.toArray(props.children);
+
+  useEffect(() => {
+    if (props.onChange) {
+      props.onChange(activeTab);
+    }
+  }, [activeTab]);
 
   return (
     <div className={`flex ${props.className ? props.className : ""}`.trim()}>

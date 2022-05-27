@@ -5,7 +5,7 @@ import { ProjectInfo } from "../../interfaces";
 import { projects } from "../api/projects/data";
 import { ProjectCard } from "../../components/ProjectsPage/ProjectCard";
 import { SkillCard } from "../../components/SkillCard";
-import { Skills } from "../../utils/skills-data";
+import { SoftwareSkills } from "../../utils/skills-data";
 
 interface PageProps {
   projects: ProjectInfo[];

@@ -23,7 +23,7 @@ const Tab = (props: TabProps) => {
             ? `text-blue-600 bg-blue-50 hover:bg-blue-100 ${
                 props.activeClass ? props.activeClass : ""
               }`.trim()
-            : "hover:bg-gray-50 "
+            : "hover:bg-gray-50 bg-white "
         }` +
         `${props.className ? props.className : ""}`
       }

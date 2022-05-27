@@ -3,6 +3,9 @@ export const SkillCategories = {
   FRONTEND: "frontend",
   DATABASE: "database",
   INFRASTRUCTURE: "infrastructure",
+  DESIGN: "design",
+  MARKETING: "marketing",
+  AGILE: "agile",
   OTHER: "other",
 } as const;
 
