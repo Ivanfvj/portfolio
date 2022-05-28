@@ -161,6 +161,13 @@ export const SoftwareSkills = {
     category: SkillCategories.OTHER,
     proficiency: ProficiencyTypes.EXPERT,
   },
+  JEST: {
+    text: "Jest.js",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
+    category: SkillCategories.OTHER,
+    proficiency: ProficiencyTypes.INTERMEDIATE,
+  },
   TAILWINDCSS: {
     text: "Tailwindcss",
     image:

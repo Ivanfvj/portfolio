@@ -194,7 +194,7 @@ const HardSkillsSection = () => {
             </Tabs>
           </div>
 
-          <div className="px-5 py-5 text-center bg-gray-800">
+          <div className="px-5 py-3 md:py-5 text-center bg-gray-800">
             <motion.div
               initial="hidden"
               animate="enter"
@@ -275,7 +275,7 @@ const CategoryFilters = (props: CategoriesFiltersProps) => {
   return (
     <>
       <Chip
-        className="my-2"
+        className="my-2 md:my-1"
         text="All"
         active={props.isAllSelected}
         onChange={props.toggleAllCategories}
@@ -283,7 +283,7 @@ const CategoryFilters = (props: CategoriesFiltersProps) => {
       {props.categories.map((e) => (
         <Chip
           key={e.text}
-          className="my-2"
+          className="my-2 md:my-1"
           text={e.text}
           active={e.active}
           onChange={(active: boolean) => {

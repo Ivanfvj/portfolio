@@ -10,14 +10,16 @@ interface Props extends BaseReactProps, ProjectInfo {}
 export const ProjectCard = (props: Props) => {
   return (
     <div className="flex flex-col bg-white cursor-pointer rounded-lg hover:shadow-lg transition duration-200 ease overflow-hidden border">
-      <div className="relative w-full h-64 overflow-hidden border-1 border-b">
-        <Image
-          src={props.image}
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-        />
-      </div>
+      {props.image && (
+        <div className="relative w-full h-64 overflow-hidden border-1 border-b">
+          <Image
+            src={props.image}
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+          />
+        </div>
+      )}
       <div className="p-5 pb-2 flex flex-col flex-1 overflow-hidden">
         <h1 className="text-2xl mb-2">{props.title}</h1>
         {props.headline && (

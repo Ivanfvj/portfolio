@@ -4,7 +4,7 @@ export interface Technology {
 
 export type ProjectInfo = {
   title: string;
-  id: string;
+  id?: string;
   headline?: string;
   description?: string;
   image?: string;
