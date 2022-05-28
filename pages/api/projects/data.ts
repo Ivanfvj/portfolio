@@ -126,8 +126,7 @@ export const projects: ProjectInfo[] = [
       { text: "PWA" },
     ],
     tags: ["marketing"],
-    // link: "/projects/hormiga",
-    link: "https://hormiga.ec/inmuebles?transactionType=sale&property_type=all",
+    link: "https://realstate.unamacro.com/inmuebles?transactionType=sale&property_type=all",
   },
   {
     id: "eljuri",
