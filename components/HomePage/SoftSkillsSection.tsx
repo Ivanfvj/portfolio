@@ -78,21 +78,18 @@ const softSkills: SoftSkillChipType[] = [
     color: colors.green["200"],
   },
   {
+    text: "Growth mindset",
+    description: "Growth mindset",
+    size: "large",
+    color: colors.cyan["300"],
+  },
+  {
     text: "Innovation",
     description: "Innovation",
     size: "x-large",
     color: colors.rose["300"],
   },
 ];
-
-{
-  /* <h1>Leadership</h1>
-            <p>With a good communication with our team</p>
-            <h1>Creativity</h1>
-            <p>With the hand of innovation</p>
-            <h1>Mindset</h1>
-            <h1>Execution First</h1>*/
-}
 
 const SoftSkillsSection = () => {
   return (
@@ -122,16 +119,6 @@ const SoftSkillsSection = () => {
             </a>
           </Link>
         </div> */}
-        {/* <div className="">
-            <p>
-              Here a link{" "}
-              <a href="https://blog.unamacro.com/ivanfvj" className="underline">
-                to my blog
-              </a>{" "}
-              where i talk about things i learned all along the way
-            </p>
-            <p>Team communication is a must.</p>
-          </div> */}
       </div>
     </div>
   );

@@ -153,7 +153,7 @@ const IndexPage = () => {
           <div className="border bg-white p-5 space-y-5">
             <h1>Software Architecture</h1>
             <p>
-              I enjoy creating software using: DDD, Hexagonal Architecture,
+              I enjoy creating software using: Domain-Driven Design (DDD), Hexagonal Architecture,
               Microservices, SOLID principles and multiple Design Patterns.
             </p>
           </div>
