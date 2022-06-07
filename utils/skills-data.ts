@@ -180,7 +180,7 @@ export const SoftwareSkills = {
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     category: SkillCategories.FRONTEND,
-    proficiency: ProficiencyTypes.NOOB,
+    proficiency: ProficiencyTypes.INTERMEDIATE,
   },
   NEXT: {
     text: "Next.js",
