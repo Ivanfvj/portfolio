@@ -121,16 +121,7 @@ const MejorateProject = () => {
             text="Visit site"
             href="https://mejorate.online"
           />
-          <ActionButton
-            target="_blank"
-            text="Details"
-            href="https://mejorate.online"
-          />
-          {/* <Link href="/projects/mejorate" passHref>
-          <a>
-            <ActionButton text="Details" />
-          </a>
-        </Link> */}
+          <ActionButton link text="Details" href="/projects/mejorate" />
         </div>
         <p>
           <strong>E-commerce platform</strong>

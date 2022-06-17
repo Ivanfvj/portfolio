@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/Layout";
 import ActionButton from "../../components/shared/material/ActionButton";
+import { LayoutBox } from "../../components/layout/LayoutContainer";
 
 const UnamacroProjectPage = () => {
   const [showVideos, setShowVideos] = useState(true);
@@ -139,7 +140,8 @@ const UnamacroProjectPage = () => {
                 MVP with basic features is working, actually doing Marketing. It
                 has more than 100 users.
               </li>
-              
+              <li>Integrations with Slack to report platform usage events.</li>
+              <li>CI/CD automation with AWS CodePipeline</li>
             </ul>
             <p>
               <strong>Tech Stack:</strong> Nuxt.js, Vue.js, Typescript, Node.js,
@@ -243,6 +245,11 @@ const UnamacroProjectPage = () => {
               <ActionButton text="Visit Site" />
             </a>
           </div> */}
+      {/* <section className="max-w-6xl mx-auto">
+        <h1>Marketing</h1>
+        <h2>TikTok</h2>
+        <div></div>
+      </section> */}
     </Layout>
   );
 };

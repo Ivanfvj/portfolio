@@ -1,0 +1,75 @@
+$drawer-width: 300px;
+
+.drawer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-width: $drawer-width;
+    width: $drawer-width;
+    height: 100vh;
+    background: #fff;
+    z-index: 11;
+    transform: translateX(-$drawer-width);
+    transition: all 0.2s ease;
+
+    &.active {
+        transform: translateX(0);
+        transition: all 0.2s ease;
+        box-shadow: 4px 0px 6px 3px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.drawer__header {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.drawer__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    animation-name: drawer-overlay-hide;
+    animation-duration: 0.2s;
+
+    &.active {
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        animation-name: drawer-overlay-active;
+        animation-duration: 0.2s;
+    }
+}
+
+@keyframes drawer-overlay-active {
+    0% {
+        opacity: 0;
+        display: none
+    }
+
+    1% {
+        display: block
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes drawer-overlay-hide {
+    0% {
+        opacity: 1;
+        display: block
+    }
+
+    99% {
+        opacity: 0;
+    }
+
+    100% {
+        display: none
+    }
+}

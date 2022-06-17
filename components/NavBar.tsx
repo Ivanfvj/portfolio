@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Link from "next/link";
+import { BaseReactProps } from "../common";
+import { LayoutContext } from "../contexts/LayoutContext";
 // import Switch from "../components/shared/material/Switch";
 
-type Props = {
-  //   children?: ReactNode;
+interface Props extends BaseReactProps {
   //   title?: string;
-};
+}
 
 type NavBarItemProps = {
   text?: string;
@@ -43,41 +44,48 @@ const ActionButton = (props: any) => {
   );
 };
 
-const NavBar = ({}: Props) => (
-  <nav className="px-4 py-3 bg-blue-100">
-    <ul className="flex items-center max-w-6xl mx-auto">
-      <li>
-        <NavBarItem href="/" text="Home" />
-      </li>
-      <li>
-        <NavBarItem href="/projects" text="Portfolio" />
-      </li>
-      {/* <li>
-        <NavBarItem href="/about" text="About me" />
-      </li> */}
+const NavBar = ({}: Props) => {
+  const { toggleDrawer } = useContext(LayoutContext);
 
-      <div className="flex-grow"></div>
-      {/* <li>
-        <NavBarItem href="/about" text="About me" />
-      </li> */}
-      <li>
-        <NavBarItem
-          href="https://www.unamacro.com/wp-content/uploads/2022/05/CV_Ivan_Velastegui_Senior_Full_Stack_Engineer.pdf"
-          text="Resume"
-          target="_blank"
+  return (
+    <nav className="px-4 py-3 bg-blue-100">
+      <ul className="flex items-center max-w-6xl mx-auto">
+        <button onClick={toggleDrawer} className="bg-red-200 w-12">
+          O
+        </button>
+        <li>
+          <NavBarItem href="/" text="Home" />
+        </li>
+        <li>
+          <NavBarItem href="/projects" text="Portfolio" />
+        </li>
+        {/* <li>
+          <NavBarItem href="/about" text="About me" />
+        </li> */}
+
+        <div className="flex-grow"></div>
+        {/* <li>
+          <NavBarItem href="/about" text="About me" />
+        </li> */}
+        <li>
+          <NavBarItem
+            href="https://www.unamacro.com/wp-content/uploads/2022/05/CV_Ivan_Velastegui_Senior_Full_Stack_Engineer.pdf"
+            text="Resume"
+            target="_blank"
+          />
+        </li>
+
+        {/* <Switch className="mr-6" /> */}
+        {/* <ActionButton className="ml-1" text="Contact Me" href="https://linkedin.com/in/ivanfvj" /> */}
+        <ActionButton
+          className="ml-1"
+          text="Contact Me"
+          href="#contact"
+          target="_self"
         />
-      </li>
-
-      {/* <Switch className="mr-6" /> */}
-      {/* <ActionButton className="ml-1" text="Contact Me" href="https://linkedin.com/in/ivanfvj" /> */}
-      <ActionButton
-        className="ml-1"
-        text="Contact Me"
-        href="#contact"
-        target="_self"
-      />
-    </ul>
-  </nav>
-);
+      </ul>
+    </nav>
+  );
+};
 
 export default NavBar;

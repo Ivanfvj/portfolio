@@ -2,7 +2,7 @@ import Link from "next/link";
 import Layout from "../../components/Layout";
 import ActionButton from "../../components/shared/material/ActionButton";
 
-const TrimmProjectPage = () => (
+const MejorateProjectPage = () => (
   <Layout title="Mejorate.online Project" className="bg-gray-50 bg-opacity-50">
     <section className="py-5 bg-black">
       <h1 className="text-center text-4xl text-white lg:text-5xl my-10">
@@ -29,4 +29,4 @@ const TrimmProjectPage = () => (
   </Layout>
 );
 
-export default TrimmProjectPage;
+export default MejorateProjectPage;
