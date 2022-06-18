@@ -67,7 +67,12 @@ const DrawerSubgroup = (props: DrawerSubgroupProps) => {
         onClick={toggleMenu}
       >
         <span>{props.text}</span>
-        {hasItems && <FontAwesomeIcon icon={faChevronDown} />}
+        {hasItems && (
+          <FontAwesomeIcon
+            icon={faChevronDown}
+            className={`transition-all ease ${open ? "rotate-180" : ""}`}
+          />
+        )}
       </div>
       {hasItems &&
         open &&

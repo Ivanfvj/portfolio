@@ -1,9 +1,36 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/Layout";
 import ActionButton from "../../components/shared/material/ActionButton";
-import { LayoutBox } from "../../components/layout/LayoutContainer";
+
+const Video = ({ src }: { src: string }) => {
+  const videoEl = useRef(null);
+
+  const attemptPlay = () => {
+    videoEl &&
+      videoEl.current &&
+      videoEl.current.play().catch((error) => {
+        console.error("Error attempting to play", error);
+      });
+  };
+
+  useEffect(() => {
+    attemptPlay();
+  }, []);
+
+  return (
+    <video
+      style={{ maxWidth: "100%", margin: "0 auto" }}
+      playsInline
+      loop
+      muted
+      controls
+      src={src}
+      ref={videoEl}
+    ></video>
+  );
+};
 
 const UnamacroProjectPage = () => {
   const [showVideos, setShowVideos] = useState(true);
@@ -154,8 +181,14 @@ const UnamacroProjectPage = () => {
               </a>
             </Link>
           </div>
-          {/* <hr /> */}
-          {/* <div className="">
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto my-10">
+        <Video src="https://img.unamacro.com/tiktok-portfolio-hd.mp4" />
+      </section>
+      {/* <hr /> */}
+      {/* <div className="">
             <h1>Marketing Community</h1>
             <p>
               Blog platform open to public. A Marketing Community where
@@ -176,8 +209,6 @@ const UnamacroProjectPage = () => {
               <ActionButton text="Visit Site" />
             </a>
           </div> */}
-        </div>
-      </section>
       {/* 
       <section className="max-w-6xl mx-auto my-10">
         <div className="flex items-center flex-wrap border p-10 w-full bg-white">
