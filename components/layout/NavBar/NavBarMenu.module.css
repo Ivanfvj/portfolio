@@ -1,0 +1,22 @@
+.navbar-menu {
+    position: relative;
+}
+
+.navbar-menu__content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar-menu:hover .navbar-menu__content {
+    display: block;
+}
+
+.navbar-menu .navbar-menu__button:focus~.navbar-menu__content {
+    display: block;
+}
+
+.navbar-menu__button {}

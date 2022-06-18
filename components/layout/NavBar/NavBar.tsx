@@ -1,31 +1,14 @@
 import React, { useContext } from "react";
 import Link from "next/link";
 
-import { BaseReactProps, RESUME_URL } from "../common";
-import { LayoutContext } from "../contexts/LayoutContext";
+import { BaseReactProps, RESUME_URL } from "../../../common";
+import { LayoutContext } from "../../../contexts/LayoutContext";
+import { NavBarMenu } from "./NavBarMenu";
+import { NavBarItem } from "./NavBarItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 interface Props extends BaseReactProps {}
-
-type NavBarItemProps = {
-  text?: string;
-  href?: string;
-  target?: string;
-};
-
-const NavBarItem = ({ text, href, target }: NavBarItemProps) => {
-  return (
-    <Link href={href} passHref>
-      <a
-        target={target}
-        className="text-md md:text-xl px-3 py-3 hover:text-blue-500 hover:underline cursor-pointer font-semibold"
-      >
-        {text}
-      </a>
-    </Link>
-  );
-};
 
 const ActionButton = (props: any) => {
   return (
@@ -67,6 +50,13 @@ const NavBar = ({}: Props) => {
         </li>
         <li className={`${breakpoints?.isMdAndDown ? "hidden" : ""}`}>
           <NavBarItem href="/projects" text="Portfolio" />
+        </li>
+        <li className={`${breakpoints?.isMdAndDown ? "hidden" : ""}`}>
+          <NavBarMenu text="Startup Projects">
+            <NavBarItem href="/projects/unamacro" text="Unamacro" />
+            <NavBarItem href="/projects/mejorate" text="Mejorate.online" />
+            <NavBarItem href="/projects/trimm" text="Trimm.tv" />
+          </NavBarMenu>
         </li>
         {/* <li className={`${breakpoints?.isMdAndDown ? "hidden" : ""}`}>
           <NavBarItem href="/about" text="About me" />

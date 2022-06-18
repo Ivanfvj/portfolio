@@ -4,7 +4,7 @@ import Image from "next/image";
 import Layout from "../../components/Layout";
 import ActionButton from "../../components/shared/material/ActionButton";
 
-const Video = ({ src }: { src: string }) => {
+const Video = ({ src, className }: { src: string; className: string }) => {
   const videoEl = useRef(null);
 
   const attemptPlay = () => {
@@ -20,15 +20,17 @@ const Video = ({ src }: { src: string }) => {
   }, []);
 
   return (
-    <video
-      style={{ maxWidth: "100%", margin: "0 auto" }}
-      playsInline
-      loop
-      muted
-      controls
-      src={src}
-      ref={videoEl}
-    ></video>
+    <div className={`${className || ""}`}>
+      <video
+        ref={videoEl}
+        src={src}
+        style={{ maxWidth: "100%", margin: "0 auto" }}
+        playsInline
+        loop
+        muted
+        controls
+      />
+    </div>
   );
 };
 
@@ -150,7 +152,7 @@ const UnamacroProjectPage = () => {
             </div>
           </div>
           <div className="w-full lg:w-1/2 space-y-3">
-            <h1 className="leading-tight">Marketing Community</h1>
+            <h1 className="leading-tight">Marketing Community - Blog</h1>
             <p>
               <strong>Main Features:</strong> Blog posts, Marketing Workflows,
               Social Network
@@ -185,8 +187,37 @@ const UnamacroProjectPage = () => {
       </section>
 
       <section className="max-w-6xl mx-auto my-10">
-        <Video src="https://img.unamacro.com/tiktok-portfolio-hd.mp4" />
+        <div className="flex items-center flex-wrap border p-10 w-full bg-white">
+          <h1 className="leading-tight mb-5 text-center w-full">
+            Creating Community and Marketing our products
+          </h1>
+          <Video
+            className="mb-5"
+            src="https://img.unamacro.com/tiktok-portfolio-hd.mp4"
+          />
+          <div className="space-y-4">
+            <p>
+              Use of multiple social media strategies. We share content about
+              marketing to help entrepreneurs and small businesses increase
+              their leads and revenue.
+            </p>
+            <p>
+              Production of vertical videos for Content Marketing: TikTok and
+              Instagram Reels. Connecting with our audience and open to
+              feedback.
+            </p>
+            <p>
+              <strong>Highlights:</strong>
+            </p>
+            <ul className="ml-5 list-disc list-inside">
+              <li>+17K followers in one month.</li>
+              <li>Viral videos with +500k views.</li>
+              <li>+120 users registered in our Marketing blog platform.</li>
+            </ul>
+          </div>
+        </div>
       </section>
+
       {/* <hr /> */}
       {/* <div className="">
             <h1>Marketing Community</h1>

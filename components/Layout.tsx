@@ -2,7 +2,7 @@ import React, { ReactNode, useContext } from "react";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
-import NavBar from "./NavBar";
+import NavBar from "./layout/NavBar/NavBar";
 import Footer from "./Footer";
 import { LayoutContext } from "../contexts/LayoutContext";
 import { Drawer } from "./layout/Drawer";
