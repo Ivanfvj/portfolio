@@ -1,12 +1,12 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
+
 import { BaseReactProps } from "../common";
 import { LayoutContext } from "../contexts/LayoutContext";
-// import Switch from "../components/shared/material/Switch";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-interface Props extends BaseReactProps {
-  //   title?: string;
-}
+interface Props extends BaseReactProps {}
 
 type NavBarItemProps = {
   text?: string;
@@ -45,28 +45,33 @@ const ActionButton = (props: any) => {
 };
 
 const NavBar = ({}: Props) => {
-  const { toggleDrawer } = useContext(LayoutContext);
+  const { toggleDrawer, drawerActive, breakpoints } = useContext(LayoutContext);
 
   return (
     <nav className="px-4 py-3 bg-blue-100">
       <ul className="flex items-center max-w-6xl mx-auto">
-        <button onClick={toggleDrawer} className="bg-red-200 w-12">
-          O
-        </button>
+        {breakpoints?.isMdAndDown && (
+          <button
+            onClick={toggleDrawer}
+            style={{ width: 40, height: 40 }}
+            className={`p-2 flex justify-center items-center rounded-full transition-all ${
+              drawerActive ? "bg-gray-200" : "hover:bg-gray-100"
+            }`}
+          >
+            <FontAwesomeIcon icon={faBars} style={{ fontSize: 20 }} />
+          </button>
+        )}
         <li>
           <NavBarItem href="/" text="Home" />
         </li>
         <li>
           <NavBarItem href="/projects" text="Portfolio" />
         </li>
-        {/* <li>
+        <li>
           <NavBarItem href="/about" text="About me" />
-        </li> */}
+        </li>
 
         <div className="flex-grow"></div>
-        {/* <li>
-          <NavBarItem href="/about" text="About me" />
-        </li> */}
         <li>
           <NavBarItem
             href="https://www.unamacro.com/wp-content/uploads/2022/05/CV_Ivan_Velastegui_Senior_Full_Stack_Engineer.pdf"

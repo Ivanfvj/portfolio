@@ -29,12 +29,13 @@ const IndexPage = () => {
       <Layout title="Iván Velasteguí" className="bg-gray-50 relative">
         {showBanner && <OpenToWorkBanner close={() => setShowBanner(false)} />}
         {showEasterEgg && <DynamicComponent />}
-        <div className="flex flex-col items-center mt-8 mb-4">
+        <div className="flex flex-col items-center mt-8 mb-4 select-none">
           <Image
             width={200}
             height={200}
             src={profileImage}
             alt="Picture of me"
+            quality={100}
           ></Image>
           <a href="https://linkedin.com/in/ivanfvj" target="blank">
             <p className="text-blue-500 hover:text-blue-600 mt-2 underline text-lg">
@@ -62,8 +63,6 @@ const IndexPage = () => {
           <p className="mx-auto text-xl">
             Software Engineer <span>•</span> Full-Stack Developer
           </p>
-
-          {/* <p className="mx-auto text-2xl">Electronic Engineer</p> */}
         </div>
 
         <section className="max-w-4xl mx-auto mt-6">
@@ -103,7 +102,6 @@ const IndexPage = () => {
               <p>
                 <strong>I never give up.</strong>
               </p>
-              
             </div>
             {/* <hr className="mt-2" />
             <div className="px-8 py-4 flex justify-end">
@@ -153,8 +151,9 @@ const IndexPage = () => {
           <div className="border bg-white p-5 space-y-5">
             <h1>Software Architecture</h1>
             <p>
-              I enjoy creating software using: Domain-Driven Design (DDD), Hexagonal Architecture,
-              Microservices, SOLID principles and multiple Design Patterns.
+              I enjoy creating software using: Domain-Driven Design (DDD),
+              Hexagonal Architecture, Microservices, SOLID principles and
+              multiple Design Patterns.
             </p>
           </div>
         </section>
