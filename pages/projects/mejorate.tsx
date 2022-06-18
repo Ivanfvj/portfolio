@@ -22,10 +22,10 @@ const MejorateProjectPage = () => (
         </a>
       </Link>
     </div>
-    <section className="max-w-6xl mx-auto bg-white">
+    {/* <section className="max-w-6xl mx-auto bg-white">
       E-commerce platform to sell online courses. Only validated/curated courses
       on the list.
-    </section>
+    </section> */}
   </Layout>
 );
 

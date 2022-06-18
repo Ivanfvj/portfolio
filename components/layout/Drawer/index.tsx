@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import styles from "./drawer.module.scss";
-import { BaseReactProps } from "../../../common";
+import { BaseReactProps, RESUME_URL } from "../../../common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -72,22 +72,20 @@ const DrawerSubgroup = (props: DrawerSubgroupProps) => {
       {hasItems &&
         open &&
         props.items.map((e) => (
-          <Link key={e.text} href={e.href}>
-            <li
-              className={`py-3 px-6 pl-9 cursor-pointer transition-all ease ${
-                e === childRouteActive
-                  ? "bg-blue-300 text-white font-semibold"
-                  : "bg-blue-50 hover:bg-blue-100"
-              }`}
-            >
+          <li key={e.text}>
+            <Link href={e.href} target={e.target || "_self"} passHref>
               <a
                 target={e.target || "_self"}
-                className="text-md w-full h-full md:text-lg select-none"
+                className={`block text-md w-full h-full md:text-lg select-none py-3 px-6 pl-9 cursor-pointer transition-all ease ${
+                  e === childRouteActive
+                    ? "bg-blue-300 text-white font-semibold"
+                    : "bg-blue-50 hover:bg-blue-100"
+                }`}
               >
                 {e.text}
               </a>
-            </li>
-          </Link>
+            </Link>
+          </li>
         ))}
     </>
   );
@@ -96,23 +94,21 @@ const DrawerSubgroup = (props: DrawerSubgroupProps) => {
 const DrawerItem = (props: DrawerItemProps) => {
   const target = props.target || "_self";
   return (
-    <Link href={props.href}>
-      <li
-        className={`py-3 px-6 cursor-pointer transition-all ease ${
-          props.active
-            ? "bg-blue-300 text-white font-semibold"
-            : "hover:bg-gray-100"
-        }`}
-      >
+    <li>
+      <Link href={props.href} target={target}>
         <a
           href={props.href}
           target={target}
-          className="text-md w-full h-full md:text-lg"
+          className={`block w-full h-full py-3 px-6 cursor-pointer transition-all ease text-md md:text-lg ${
+            props.active
+              ? "bg-blue-300 text-white font-semibold"
+              : "hover:bg-gray-100"
+          }`}
         >
           {props.text}
         </a>
-      </li>
-    </Link>
+      </Link>
+    </li>
   );
 };
 
@@ -139,8 +135,8 @@ export const Drawer = (props: DrawerProps) => {
         { text: "Mejorate.online", href: "/projects/mejorate" },
       ],
     },
-    { text: "About me", href: "/about" },
-    { text: "Resume", href: "/resume" },
+    // { text: "About me", href: "/about" },
+    { text: "Resume", href: RESUME_URL, target: "_blank" },
   ];
   const onHide = () => {
     props.onHide && props.onHide();

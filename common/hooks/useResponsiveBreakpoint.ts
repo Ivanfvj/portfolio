@@ -30,10 +30,6 @@ export const useResponsiveBreakpoint = (props?: Props) => {
     ...(props?.breakpoints || {}),
   };
 
-  if (!process.browser || !window) {
-    return { breakpoints: null };
-  }
-
   // TODO: This can be optimized using only one eventListener instead of 4
   // Calculation is true if window width is less than breakpointConfig limit
   const lessThanSm = useMediaQuery(breakpointsConfig.sm);

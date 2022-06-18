@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Link from "next/link";
 
-import { BaseReactProps } from "../common";
+import { BaseReactProps, RESUME_URL } from "../common";
 import { LayoutContext } from "../contexts/LayoutContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -61,27 +61,21 @@ const NavBar = ({}: Props) => {
             <FontAwesomeIcon icon={faBars} style={{ fontSize: 20 }} />
           </button>
         )}
-        <li>
+
+        <li className={`${breakpoints?.isMdAndDown ? "hidden" : ""}`}>
           <NavBarItem href="/" text="Home" />
         </li>
-        <li>
+        <li className={`${breakpoints?.isMdAndDown ? "hidden" : ""}`}>
           <NavBarItem href="/projects" text="Portfolio" />
         </li>
-        <li>
+        {/* <li className={`${breakpoints?.isMdAndDown ? "hidden" : ""}`}>
           <NavBarItem href="/about" text="About me" />
-        </li>
-
+        </li> */}
         <div className="flex-grow"></div>
-        <li>
-          <NavBarItem
-            href="https://www.unamacro.com/wp-content/uploads/2022/05/CV_Ivan_Velastegui_Senior_Full_Stack_Engineer.pdf"
-            text="Resume"
-            target="_blank"
-          />
+        <li className={`${breakpoints?.isMdAndDown ? "hidden" : ""}`}>
+          <NavBarItem href={RESUME_URL} text="Resume" target="_blank" />
         </li>
 
-        {/* <Switch className="mr-6" /> */}
-        {/* <ActionButton className="ml-1" text="Contact Me" href="https://linkedin.com/in/ivanfvj" /> */}
         <ActionButton
           className="ml-1"
           text="Contact Me"

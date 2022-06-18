@@ -2,9 +2,13 @@ import { useEffect, useState } from "react";
 
 export const useMediaQuery = (minWidth: number) => {
   const [state, setState] = useState({
-    windowWidth: window.innerWidth,
+    windowWidth: 0,
     isDesiredWidth: false,
   });
+
+  if (!process.browser || !window) {
+    return false;
+  }
 
   useEffect(() => {
     const resizeHandler = () => {
@@ -13,8 +17,10 @@ export const useMediaQuery = (minWidth: number) => {
       setState({ windowWidth: currentWindowWidth, isDesiredWidth });
     };
     window.addEventListener("resize", resizeHandler);
+    // Force first call
+    resizeHandler();
     return () => window.removeEventListener("resize", resizeHandler);
-  }, [state.windowWidth]);
+  }, []);
 
   return state.isDesiredWidth;
 };
