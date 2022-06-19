@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/Layout";
 import ActionButton from "../../components/shared/material/ActionButton";
+import { BaseReactProps } from "../../common";
 
 const Video = ({ src, className }: { src: string; className: string }) => {
   const videoEl = useRef(null);
@@ -20,7 +21,7 @@ const Video = ({ src, className }: { src: string; className: string }) => {
   }, []);
 
   return (
-    <div className={`${className || ""}`}>
+    <div className={`w-full ${className || ""}`}>
       <video
         ref={videoEl}
         src={src}
@@ -30,6 +31,48 @@ const Video = ({ src, className }: { src: string; className: string }) => {
         muted
         controls
       />
+    </div>
+  );
+};
+
+interface LandingPageCardProps extends BaseReactProps {
+  text: string;
+  subtitle?: string;
+  imgSrc: string;
+  href?: string;
+}
+
+const LandingPageCard = (props: LandingPageCardProps) => {
+  return (
+    <div className="relative hover:shadow-2xl transition all ease duration-200 border">
+      <div
+        className={`absolute z-10 w-full h-full flex flex-col justify-center items-center opacity-0 hover:opacity-100 
+      focus:opacity-100 active:opacity-100 transition-all ease text-white
+      hover:bg-black/60`}
+      >
+        <p className="text-xl font-semibold leading-tight">{props.text}</p>
+        {props.subtitle && <p>{props.subtitle}</p>}
+
+        {props.href && (
+          <Link href={props.href} passHref target="_blank">
+            <a target="_blank">
+              <ActionButton
+                className="mt-2"
+                text="Visit site"
+                outlined={false}
+              />
+            </a>
+          </Link>
+        )}
+      </div>
+      <figure className="relative w-full h-64">
+        <Image
+          src={props.imgSrc}
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
+      </figure>
     </div>
   );
 };
@@ -90,21 +133,29 @@ const UnamacroProjectPage = () => {
             </p>
             <ul className="ml-5 list-disc list-inside">
               <li>
-                Create an Automatic Email System that can deliver{" "}
-                <u>+1 Million emails per day</u>, using Node.js, Typescript,
-                Redis and MongoDB.
+                Released a Marketing SaaS multitenant solution for small
+                businesses, including CRM, Email Marketing, and third-party
+                integrations with tools like Facebook Lead Ads.
+              </li>
+              <li>
+                Built an Automatic Email System that can deliver{" "}
+                <u>+1 Million emails per day</u>, using Node.js, Javascript,
+                Typescript, Redis, MongoDB, Docker, and AWS.
               </li>
               <li>
                 Implemented multiple Sales Funnels and Workflows Automation for
                 B2B Clients.
               </li>
             </ul>
-
+            {/* TODO: ADD THIS HIGHLIGHT */}
+            {/* Digital Marketing Agency with +20
+            clients and +50 products from different niches. Implemented fully
+            automated Marketing Solutions “Marketing macros” and Workflow
+            Automations for B2B clients. */}
             <p>
               <strong>Tech Stack:</strong> Nuxt.js, Vue.js, Typescript, Node.js,
               MongoDB, Redis, DDD, Vuetify, AWS, GCP
             </p>
-
             <ActionButton
               text={showVideos ? "Hide demo" : "Show demo"}
               onClick={toggleVideos}
@@ -171,15 +222,16 @@ const UnamacroProjectPage = () => {
             </p>
             <ul className="ml-5 list-disc list-inside">
               <li>
-                Created a public community platform to share Marketing knowledge
-                with entrepreneurs and small businesses.
+                Founded a marketing community, blog and social network platform
+                to share Marketing knowledge with entrepreneurs and small
+                businesses.
               </li>
               <li>
-                MVP with basic features is working, actually doing Marketing. It
-                has more than 100 users.
+                Functional MVP with basic features, actually doing Marketing.
+                +17K visitors and +100 users registered in 1 month.
               </li>
               <li>Integrations with Slack to report platform usage events.</li>
-              <li>CI/CD automation with AWS CodePipeline</li>
+              <li>CI/CD automation with AWS CodePipeline.</li>
             </ul>
             <p>
               <strong>Tech Stack:</strong> Nuxt.js, Vue.js, Typescript, Node.js,
@@ -227,100 +279,29 @@ const UnamacroProjectPage = () => {
         </div>
       </section>
 
-      {/* <hr /> */}
-      {/* <div className="">
-            <h1>Marketing Community</h1>
-            <p>
-              Blog platform open to public. A Marketing Community where
-              professionals can help Entrepreneur and Small Businesses with
-              their knowledge.
-            </p>
-            <p>
-              I know the value of community, so we created a public community
-              platform to share Marketing knowledge with entrepreneurs and small
-              businesses. Unamacro is community first.
-            </p>
-
-            <a
-              className="block"
-              href="https://blog.unamacro.com"
-              target="_blank"
-            >
-              <ActionButton text="Visit Site" />
-            </a>
-          </div> */}
-      {/* 
       <section className="max-w-6xl mx-auto my-10">
-        <div className="flex items-center flex-wrap border p-10 w-full bg-white">
-          <div className="w-full lg:w-1/2 mb-5 ml:mb-0">
-            <div className="md:pr-8">
-              <figure className="relative border rounded-lg overflow-hidden ">
-                <img
-                  src="https://blog.unamacro.com/img/workflow-screenshot.jpg"
-                  alt="Unamacro Community"
-                />
-              </figure>
-            </div>
+        <div className="flex items-center justify-center flex-wrap border p-5 w-full bg-white">
+          <div className="mb-5 text-center space-y-2">
+            <h1 className="leading-tight">Landing pages</h1>
+            <p>
+              <u>Web design and Marketing Funnels</u>
+            </p>
           </div>
-          <div className="w-full lg:w-1/2 space-y-3">
-            <h1 className="leading-tight">Digital Marketing Agency</h1>
-            <p>
-              <strong>Main Features:</strong> Blog posts, Marketing Workflows,
-              Social Network
-            </p>
-            <p>
-              <strong>Highlights:</strong>
-            </p>
-            <ul className="ml-5 list-disc list-inside">
-              <li>
-                Reduced the digital gap for small businesses and enable them to
-                deploy Marketing Funnel easily.
-              </li>
-              <li>
-                Offered fully automated Marketing Solutions and sales funnels
-                for Small Businesses as packages called "Marketing Macros".
-              </li>
-            </ul>
-            <p>
-              <strong>Tech Stack:</strong> Nuxt.js, Vue.js, Typescript, Node.js,
-              WordPress, MongoDB, AWS, CSS and SASS.
-            </p>
-            <Link href="https://www.unamacro.com" passHref>
-              <a className="block" target="_blank">
-                <ActionButton text="Visit site" />
-              </a>
-            </Link>
+
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-3">
+            <LandingPageCard
+              text="Marketing sin confusión"
+              imgSrc="/projects/landings/landing-1.jpg"
+              href="https://www.unamacro.com/marketing-sin-confusion/"
+            />
+            <LandingPageCard
+              text="Kit Email Marketing"
+              imgSrc="/projects/landings/landing-2.jpg"
+              href="https://www.unamacro.com/kit-email-marketing/"
+            />
           </div>
         </div>
       </section>
-       */}
-      {/* <hr /> */}
-      {/* <div className="">
-            <h1>Marketing Community</h1>
-            <p>
-              Blog platform open to public. A Marketing Community where
-              professionals can help Entrepreneur and Small Businesses with
-              their knowledge.
-            </p>
-            <p>
-              I know the value of community, so we created a public community
-              platform to share Marketing knowledge with entrepreneurs and small
-              businesses. Unamacro is community first.
-            </p>
-
-            <a
-              className="block"
-              href="https://blog.unamacro.com"
-              target="_blank"
-            >
-              <ActionButton text="Visit Site" />
-            </a>
-          </div> */}
-      {/* <section className="max-w-6xl mx-auto">
-        <h1>Marketing</h1>
-        <h2>TikTok</h2>
-        <div></div>
-      </section> */}
     </Layout>
   );
 };

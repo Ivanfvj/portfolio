@@ -1,8 +1,8 @@
-import Layout from "../../components/Layout";
-import Image from "next/image";
 import { GetStaticProps } from "next";
+
 import { ProjectInfo } from "../../interfaces";
 import { projects } from "../api/projects/data";
+import Layout from "../../components/Layout";
 import { ProjectCard } from "../../components/ProjectsPage/ProjectCard";
 
 interface PageProps {
@@ -76,7 +76,9 @@ export default function ProjectsPage(props: PageProps) {
         </h1>
       </section>
       <div className="p-5 my-8 max-w-6xl mx-auto">
-        <h2 className="mb-8 font-semibold text-2xl">Startup Projects and Software Development</h2>
+        <h2 className="mb-8 font-semibold text-2xl">
+          Startup Projects and Software Development
+        </h2>
         <ProjectGrid projects={props.projects} />
       </div>
       <section className="py-5 bg-black">

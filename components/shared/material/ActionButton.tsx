@@ -16,7 +16,7 @@ const ActionButton = (props: ButtonProps) => {
        } ${
         isOutlined
           ? "bg-transparent hover:bg-blue-500 text-blue-700 border-blue-500 hover:text-white"
-          : "bg-blue-500 text-white  hover:bg-blue-600"
+          : "bg-blue-500 text-white border-none  hover:bg-blue-600"
       }`.trim()}
       onClick={props.onClick}
     >
