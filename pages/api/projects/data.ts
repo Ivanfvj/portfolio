@@ -75,7 +75,7 @@ export const projects: ProjectInfo[] = [
       { text: "MongoDB" },
     ],
     tags: ["marketing"],
-    link: "https://trimm.tv",
+    to: "/projects/trimm",
   },
   {
     id: "mejorate.online",

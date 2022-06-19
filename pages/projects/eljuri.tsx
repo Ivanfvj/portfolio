@@ -1,21 +1,7 @@
-import Layout from "../../components/Layout";
 import Link from "next/link";
-import Image from "next/image";
-import { BaseReactProps } from "../../common";
+
+import Layout from "../../components/Layout";
 import { ImageGallery } from "../../components/shared/ImageGallery/";
-// import ActionButton from "../../components/shared/material/ActionButton";
-
-interface ImageCardProps extends BaseReactProps {
-  src: string;
-}
-
-const ImageCard = (props: ImageCardProps) => {
-  return (
-    <div className="relative h-80 w-80">
-      <Image src={props.src} layout="fill" objectFit="contain"></Image>
-    </div>
-  );
-};
 
 const images = [
   { url: "/projects/eljuri/eljuri-1.png", width: 932, height: 734 },

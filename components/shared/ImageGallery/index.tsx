@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
-import Image from "next/image";
-import 'photoswipe/dist/photoswipe.css'
+import "photoswipe/dist/photoswipe.css";
 
 interface Props {
   galleryId?: string;
   images: ImageGalleryItem[];
+  imageClassName?: string;
 }
 
 export interface ImageGalleryItem {
@@ -46,10 +46,11 @@ export const ImageGallery = (props: Props) => {
           target="_blank"
           rel="noreferrer"
         >
-          {/* <figure className="h-64 border">
-            <Image src={image.imageUrl} layout="fill" objectFit="contain" />
-          </figure> */}
-          <img src={image.thumbnailUrl} alt="" />
+          <img
+            className={`${props.imageClassName ? props.imageClassName : ""}`}
+            src={image.thumbnailUrl}
+            alt=""
+          />
         </a>
       ))}
     </div>

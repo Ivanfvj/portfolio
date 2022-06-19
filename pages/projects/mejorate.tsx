@@ -40,8 +40,8 @@ const MejorateProjectPage = () => (
         <div className="w-full md:w-1/2 order-2 md:order-1 space-y-3">
           <h1 className="leading-tight">Ecommerce Platform</h1>
           <p>
-            <strong>Main Features:</strong> CRM, Email Marketing, Forms and
-            Integrations.
+            <strong>Main Features:</strong> Validated Digital Courses Catalog,
+            Affiliate Marketing.
           </p>
           <p>
             <strong>Highlights:</strong>
