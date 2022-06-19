@@ -47,6 +47,15 @@ const UnamacroProjectPage = () => {
       className="bg-gray-50 bg-opacity-50"
     >
       <section className="py-10 bg-black">
+        <div>
+          <img
+            className="mx-auto"
+            src="/img/logo/unamacro-logo.png"
+            width={90}
+            height={90}
+            alt="Unamacro logo"
+          />
+        </div>
         <h1 className="text-center text-4xl text-white lg:text-5xl mb-5">
           Unamacro Startup
         </h1>
@@ -203,7 +212,7 @@ const UnamacroProjectPage = () => {
             </p>
             <p>
               Production of vertical videos for Content Marketing: TikTok and
-              Instagram Reels. Connecting with our audience and open to
+              Instagram Reels. Connecting with our audience and openness to
               feedback.
             </p>
             <p>

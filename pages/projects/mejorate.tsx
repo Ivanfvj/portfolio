@@ -4,11 +4,24 @@ import ActionButton from "../../components/shared/material/ActionButton";
 
 const MejorateProjectPage = () => (
   <Layout title="Mejorate.online Project" className="bg-gray-50 bg-opacity-50">
-    <section className="py-5 bg-black">
-      <h1 className="text-center text-4xl text-white lg:text-5xl my-10">
+    <section className="py-10 bg-black">
+      <div className="mb-2">
+        <img
+          className="mx-auto"
+          src="/img/logo/mejorate.online-logo.png"
+          width={90}
+          height={90}
+          alt="Mejorate.online logo"
+        />
+      </div>
+      <h1 className="text-center text-4xl text-white lg:text-5xl mb-5">
         Mejorate.online
       </h1>
+      <h2 className="text-white text-center font-semibold">
+        Founder - Marketing Strategist
+      </h2>
     </section>
+
     <div className="p-5 my-8 text-center">
       <h2 className="text-3xl mb-3">Working on this page</h2>
       <Link href="/#startup-projects" passHref>
