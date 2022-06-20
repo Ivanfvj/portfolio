@@ -3,6 +3,15 @@ import Image from "next/image";
 
 import Layout from "../../components/Layout";
 import ActionButton from "../../components/shared/material/ActionButton";
+import { ImageGallery } from "../../components/shared/ImageGallery/";
+
+const tiktokImages = [
+  { url: "/projects/mejorate/tiktok-growth-1.jpg", width: 809, height: 526 },
+  { url: "/projects/mejorate/tiktok-growth-2.jpg", width: 809, height: 526 },
+  { url: "/projects/mejorate/tiktok-growth-3.jpg", width: 809, height: 526 },
+  { url: "/projects/mejorate/tiktok-growth-4.jpg", width: 1280, height: 751 },
+  { url: "/projects/mejorate/tiktok-growth-5.jpg", width: 1280, height: 645 },
+];
 
 const MejorateProjectPage = () => (
   <Layout title="Mejorate.online Project" className="bg-gray-50 bg-opacity-50">
@@ -81,13 +90,38 @@ const MejorateProjectPage = () => (
           </div>
           <p className="mt-5 font-semibold">Ecommerce created in WordPress</p>
         </div>
-        {/* <li>
-              Drove 1400 organic sign-ups to automated sales funnels in one week
-              by creating multiple viral Tiktok Videos with +28.1 Million views,
-              representing an increase of +20K website unique visitors per
-              month, +100K followers on Tiktok, and a 300% increase in monthly
-              sales.
-            </li> */}
+      </div>
+    </section>
+
+    <section className="max-w-6xl mx-auto my-10">
+      <div className="flex items-center flex-wrap border p-10 w-full bg-white">
+        <div className="space-y-3 mb-5">
+          <h1 className="leading-tight">Marketing Strategies</h1>
+          <p>
+            <strong>Highlights:</strong>
+          </p>
+          <ul className="ml-5 list-disc list-inside">
+            <li>
+              Drove 1400 organic sign-ups to automated sales funnels{" "}
+              <u><b>in one week</b></u> by creating multiple viral Tiktok Videos with{" "}
+              <u>+28.1 Million views</u>, representing an increase of{" "}
+              <u>+20K website unique visitors per month</u>,{" "}
+              <u>+100K followers on Tiktok</u>, and a{" "}
+              <u>300% increase in monthly sales</u>.
+            </li>
+          </ul>
+        </div>
+        <ImageGallery
+          imageClassName="border border-gray-400"
+          images={tiktokImages.map((e) => {
+            return {
+              height: e.height,
+              width: e.width,
+              imageUrl: e.url,
+              thumbnailUrl: e.url,
+            };
+          })}
+        />
       </div>
     </section>
   </Layout>
