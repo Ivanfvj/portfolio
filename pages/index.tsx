@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import Image from "next/image";
 import profileImage from "../public/profile-image.png";
 import StartupProjectsSection from "../components/HomePage/StartupProjectsSection";
-import HardSkillsSection from "../components/HomePage/HardSkillsSection";
+import HardSkillsSection from "../components/HomePage/HardSkills/HardSkillsSection";
 import SoftSkillsSection from "../components/HomePage/SoftSkillsSection";
 import ActionButton from "../components/shared/material/ActionButton";
 import { HomePageContext } from "../contexts/HomePage";
@@ -43,9 +43,7 @@ const IndexPage = () => {
             </p>
           </a>
         </div>
-
         {/* Maybe a little game with a rocket to carry your startup to the moon*/}
-
         <div className="mx-4 text-center">
           <h1>
             Hi there, I'm <span className="text-blue-600">Iván Velasteguí</span>
@@ -55,7 +53,6 @@ const IndexPage = () => {
             <h2>I would love to connect with founders and startup companies</h2>
           </div>
         </div>
-
         <div className="mx-auto bg-white flex flex-col border  max-w-xl my-5 container space-y-3 p-5">
           <p className="mx-auto text-2xl">
             Entrepreneur <span>•</span> Startuper
@@ -64,7 +61,6 @@ const IndexPage = () => {
             Software Engineer <span>•</span> Full-Stack Developer
           </p>
         </div>
-
         <section className="max-w-4xl mx-auto mt-6">
           <div className="bg-white border">
             <div className="space-y-5 text-lg p-8 pb-8">
@@ -113,7 +109,6 @@ const IndexPage = () => {
             </div> */}
           </div>
         </section>
-
         <section className="max-w-6xl mx-auto border my-5 p-8 bg-white">
           <h1 className="text-4xl md:text-5xl mx-auto text-left mb-2">
             Startup Projects ⭐
@@ -126,7 +121,6 @@ const IndexPage = () => {
           <strong>Click on the cards 😁👇</strong>
           <StartupProjectsSection className="mt-4" />
         </section>
-
         <section className="max-w-6xl mx-auto my-8">
           <div className="p-8 border flex bg-white">
             <h1 className="text-4xl">More Projects</h1>
@@ -138,15 +132,12 @@ const IndexPage = () => {
             </Link>
           </div>
         </section>
-
         <section className="max-w-6xl mx-auto my-8">
           <SoftSkillsSection />
         </section>
-
         <section className="max-w-6xl mx-auto mb-8">
           <HardSkillsSection />
         </section>
-
         <section className="max-w-6xl mx-auto mb-8">
           <div className="border bg-white p-5 space-y-5">
             <h1>Software Architecture</h1>
@@ -157,7 +148,6 @@ const IndexPage = () => {
             </p>
           </div>
         </section>
-
         <section className="max-w-6xl mx-auto mb-16">
           <div className="border bg-white p-5 space-y-5">
             <h1>Extras</h1>
@@ -171,19 +161,6 @@ const IndexPage = () => {
             </div>
           </div>
         </section>
-
-        {/* <section className="max-w-6xl mx-auto">
-        <h1 className="text-5xl mx-auto text-center my-5">Valuable Skills</h1>
-        <p>
-          Actually improving my Marketing Skills. Storytelling and Copywriting
-          skills
-        </p>
-        <div className="container mx-auto ">
-          <h1>Perks</h1>
-          <p>I use Arch BTW 😉</p>
-          <h1 className="text-center bg-yellow-100">Timeline</h1>
-        </div>
-      </section> */}
       </Layout>
     </HomePageContext.Provider>
   );

@@ -1,31 +1,33 @@
-import {
-  Children,
-  cloneElement,
-  useState,
-  useEffect,
-  isValidElement,
-} from "react";
+import { Children, cloneElement, useState, isValidElement } from "react";
 import { BaseReactProps } from "../../../../common/";
 // import Tab from "./Tab";
 
 interface Props extends BaseReactProps {
+  value?: number;
   grow?: boolean;
   onChange?: (tabIndex: number) => void;
 }
 
 const Tabs = (props: Props) => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(() => {
+    return typeof props.value === "undefined" ? 0 : props.value;
+  });
 
   const tabs = Children.toArray(props.children);
 
-  useEffect(() => {
+  const onTabClicked = (index: number) => {
+    setActiveTab(index);
     if (props.onChange) {
-      props.onChange(activeTab);
+      props.onChange(index);
     }
-  }, [activeTab]);
+  };
 
   return (
-    <div className={`flex flex-wrap sm:flex-nowrap ${props.className ? props.className : ""}`.trim()}>
+    <div
+      className={`flex flex-wrap sm:flex-nowrap ${
+        props.className ? props.className : ""
+      }`.trim()}
+    >
       {Children.map(tabs, (child, index) => {
         if (!isValidElement(child)) {
           return null;
@@ -41,7 +43,7 @@ const Tabs = (props: Props) => {
             active: activeTab === index,
             isFirst,
             isLast,
-            onClick: () => setActiveTab(index),
+            onClick: () => onTabClicked(index),
           },
           null
         );

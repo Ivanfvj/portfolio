@@ -1,11 +1,10 @@
-import { useState, useContext } from "react";
-import LogoCard from "../../components/LogoCard";
-import Chip from "../../components/shared/Chip";
-import ActionButton from "../shared/material/ActionButton";
-import { HomePageContext } from "../../contexts/HomePage";
-import Tabs from "../shared/material/tabs/Tabs";
-import Tab from "../shared/material/tabs/Tab";
+import { useState } from "react";
 import { motion } from "framer-motion";
+
+import Tabs from "../../shared/material/tabs/Tabs";
+import Tab from "../../shared/material/tabs/Tab";
+import { CategoryFilters, ICategoryFilter } from "./CategoryFilter";
+import { SkillsGrid } from "./SkillsGrid";
 
 import {
   softwareSkillsArray,
@@ -14,15 +13,9 @@ import {
   marketingSkillsCategories,
   pmSkillsArray,
   pmSkillsCategories,
-} from "../../utils/skills-data";
+} from "../../../utils/skills-data";
 
-interface CategoryFilter {
-  text: string;
-  value: string;
-  active: boolean;
-}
-
-const createDefaultFilters = (categories: any[]): CategoryFilter[] => {
+const createDefaultFilters = (categories: any[]): ICategoryFilter[] => {
   return categories.map((e) => {
     return {
       text: e.text,
@@ -40,17 +33,13 @@ const defaultMarketingCategoriesSelected = createDefaultFilters(
 );
 const defaultPmCategoriesSelected = createDefaultFilters(pmSkillsCategories);
 
-const variants = {
+const motionVariants = {
   hidden: { opacity: 0, x: -200, y: 0 },
   enter: { opacity: 1, x: 0, y: 0 },
   exit: { opacity: 0, x: 0, y: -100 },
 };
 
 const HardSkillsSection = () => {
-  // MULTIPLE CATEGORIES LOGIC HARDCODED FOR THE MOMENT
-  // Software Categories/ skills
-  // Marketing categories/ skills
-  // Project Management/ skills
   const [tabSelected, setTabSelected] = useState(0);
 
   const [softwareCategories, setSoftwareCategories] = useState(
@@ -187,19 +176,25 @@ const HardSkillsSection = () => {
         </h1>
         <div className="sticky top-0">
           <div className="flex overflow-hidden">
-            <Tabs grow className="w-full" onChange={onTabSelected}>
+            <Tabs
+              grow
+              className="w-full"
+              value={tabSelected}
+              onChange={onTabSelected}
+            >
               <Tab text="Software Development" />
               <Tab text="Design/Marketing" />
               <Tab text="Project Management" />
             </Tabs>
           </div>
 
+          {/* TODO: Here use composition */}
           <div className="px-5 py-3 md:py-5 text-center bg-gray-800">
             <motion.div
               initial="hidden"
               animate="enter"
               exit="exit"
-              variants={variants}
+              variants={motionVariants}
               transition={{ type: "linear" }}
               id="hard-skills-filter"
               className="flex flex-wrap space-x-3 text-center justify-center"
@@ -260,83 +255,6 @@ const HardSkillsSection = () => {
           )}
         </div>
       </div>
-    </div>
-  );
-};
-
-type CategoriesFiltersProps = {
-  categories: CategoryFilter[];
-  isAllSelected?: boolean;
-  toggleAllCategories?: (active: boolean) => void;
-  onChange?: (value: string, active: boolean) => void;
-};
-
-const CategoryFilters = (props: CategoriesFiltersProps) => {
-  return (
-    <>
-      <Chip
-        className="my-2 md:my-1"
-        text="All"
-        active={props.isAllSelected}
-        onChange={props.toggleAllCategories}
-      />
-      {props.categories.map((e) => (
-        <Chip
-          key={e.text}
-          className="my-2 md:my-1"
-          text={e.text}
-          active={e.active}
-          onChange={(active: boolean) => {
-            props.onChange(e.value, active);
-          }}
-        />
-      ))}
-    </>
-  );
-};
-
-type SkillsGridProps = {
-  skills: any[];
-};
-
-const SkillsGrid = (props: SkillsGridProps) => {
-  return (
-    <div className="flex flex-wrap">
-      {props.skills.length === 0 ? (
-        <EasiestEasterEgg />
-      ) : (
-        props.skills.map((e, index) => (
-          <div key={index} className="w-1/2 md:w-1/4 mb-4 px-2">
-            <LogoCard
-              className="mx-auto"
-              text={e.text}
-              imageUrl={e.image}
-              proficiency={e.proficiency}
-            />
-          </div>
-        ))
-      )}
-    </div>
-  );
-};
-
-const EasiestEasterEgg = () => {
-  const { setShowEasterEgg } = useContext(HomePageContext);
-
-  return (
-    <div className="flex flex-col mx-auto items-center justify-center p-5 bg-gray-100 border">
-      <small>No filters selected - nothing here</small>
-      <h1 className="text-yellow-400 text-3xl md:text-5xl mb-5">
-        🎉 Congratulations 🎉
-      </h1>
-      <p>
-        <u>You found the easiest Easter Egg</u>
-      </p>
-      <ActionButton
-        className="mt-5"
-        text="Claim my reward"
-        onClick={() => setShowEasterEgg(true)}
-      />
     </div>
   );
 };

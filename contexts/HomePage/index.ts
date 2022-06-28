@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 export interface IHomePageContext {
   showEasterEgg?: boolean;
@@ -6,3 +6,5 @@ export interface IHomePageContext {
 }
 
 export const HomePageContext = createContext<IHomePageContext>({});
+
+export const useHomeContext = () => useContext(HomePageContext);
