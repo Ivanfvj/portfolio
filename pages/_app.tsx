@@ -5,12 +5,14 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
+import { GoogleAnalytics } from "../components/shared/GA/GoogleAnalytics";
 import { LayoutContextProvider } from "../contexts/LayoutContextProvider";
 import "../styles/index.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <LayoutContextProvider>
+      <GoogleAnalytics />
       <AnimatePresence
         exitBeforeEnter
         initial={false}

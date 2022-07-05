@@ -35,14 +35,24 @@ const MejorateProjectPage = () => (
 
     <section className="max-w-6xl mx-auto my-10">
       <div className="mb-5 px-5 lg:px-0 space-y-4">
-        <Link href="/projects" passHref>
-          <a
-            className="text-blue-500 hover:text-blue-600 hover:underline"
-            href=""
-          >
-            Back to projects
-          </a>
-        </Link>
+        <div className="flex justify-between">
+          <Link href="/projects" passHref>
+            <a
+              className="text-blue-500 hover:text-blue-600 hover:underline"
+              href=""
+            >
+              Back to projects
+            </a>
+          </Link>
+          <Link href="/projects/trimm" passHref>
+            <a
+              className="text-blue-500 hover:text-blue-600 hover:underline"
+              href=""
+            >
+              Next project
+            </a>
+          </Link>
+        </div>
         <p>Sep 2021 — Apr 2022</p>
       </div>
       <div className="flex items-center flex-wrap border p-10 w-full bg-white">
@@ -103,7 +113,10 @@ const MejorateProjectPage = () => (
           <ul className="ml-5 list-disc list-inside">
             <li>
               Drove 1400 organic sign-ups to automated sales funnels{" "}
-              <u><b>in one week</b></u> by creating multiple viral Tiktok Videos with{" "}
+              <u>
+                <b>in one week</b>
+              </u>{" "}
+              by creating multiple viral Tiktok Videos with{" "}
               <u>+28.1 Million views</u>, representing an increase of{" "}
               <u>+20K website unique visitors per month</u>,{" "}
               <u>+100K followers on Tiktok</u>, and a{" "}

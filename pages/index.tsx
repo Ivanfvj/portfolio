@@ -111,7 +111,7 @@ const IndexPage = () => {
         </section>
         <section className="max-w-6xl mx-auto border my-5 p-8 bg-white">
           <h1 className="text-4xl md:text-5xl mx-auto text-left mb-2">
-            Startup Projects ⭐
+            Startup Projects 🚀
           </h1>
 
           <p>

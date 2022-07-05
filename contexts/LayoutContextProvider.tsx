@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { BaseReactProps } from "../common";
 import { LayoutContext } from "./LayoutContext";
