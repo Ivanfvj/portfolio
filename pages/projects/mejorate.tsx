@@ -3,7 +3,13 @@ import Image from "next/image";
 
 import Layout from "../../components/Layout";
 import ActionButton from "../../components/shared/material/ActionButton";
+import { landingPagesProjects } from "../api/projects/data";
 import { ImageGallery } from "../../components/shared/ImageGallery/";
+import { LandingPageCard } from "../../components/ProjectsPage/LandingPageCard";
+
+const landingPages = landingPagesProjects.filter(
+  (e) => e.project === "mejorate.online"
+);
 
 const tiktokImages = [
   { url: "/projects/mejorate/tiktok-growth-1.jpg", width: 809, height: 526 },
@@ -135,6 +141,23 @@ const MejorateProjectPage = () => (
             };
           })}
         />
+      </div>
+    </section>
+
+    <section className="max-w-6xl mx-auto my-10">
+      <div className="flex items-center justify-center flex-wrap border p-5 w-full bg-white">
+        <div className="mb-5 text-center space-y-2">
+          <h1 className="leading-tight">Landing pages</h1>
+          <p>
+            <u>Web design and Marketing Funnels</u>
+          </p>
+        </div>
+
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-3">
+          {landingPages.map((e) => (
+            <LandingPageCard text={e.text} imgSrc={e.image} href={e.url} />
+          ))}
+        </div>
       </div>
     </section>
   </Layout>

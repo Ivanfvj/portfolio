@@ -1,61 +1,13 @@
 import { GetStaticProps } from "next";
 
-import { ProjectInfo } from "../../interfaces";
-import { projects } from "../api/projects/data";
 import Layout from "../../components/Layout";
+import { ProjectInfo } from "../../interfaces";
+import { projects, landingPagesProjects } from "../api/projects/data";
 import { ProjectCard } from "../../components/ProjectsPage/ProjectCard";
 
 interface PageProps {
   projects: ProjectInfo[];
 }
-
-const landingPagesCreated = [
-  {
-    text: "Unamacro - Marketing sin Confusión",
-    image: "/projects/landings/landing-1.jpg",
-    url: "https://www.unamacro.com/marketing-sin-confusion/",
-  },
-  {
-    text: "Unamacro - Kit Email Marketing",
-    image: "/projects/landings/landing-2.jpg",
-    url: "https://www.unamacro.com/kit-email-marketing/",
-  },
-  {
-    text: "Drones y SIG para la gestión del territorio",
-    image: "/projects/landings/landing-3.jpg",
-    url: "https://mejorate.online/drones-y-sig-para-gestion-del-territorio/",
-  },
-  {
-    text: "Pisos con Resina epóxica",
-    image: "/projects/landings/landing-4.jpg",
-    url: "https://mejorate.online/pisos-con-resina/",
-  },
-  {
-    text: "Terapia con Imanes",
-    image: "/projects/landings/landing-5.jpg",
-    url: "https://mejorate.online/terapia-con-imanes/",
-  },
-  {
-    text: "Yoga Facial con Aromaterapia",
-    image: "/projects/landings/landing-6.jpg",
-    url: "https://mejorate.online/yoga-facial-con-aromaterapia/",
-  },
-  {
-    text: "Pastelería Canina y Felina",
-    image: "/projects/landings/landing-7.jpg",
-    url: "https://mejorate.online/pasteleria-canina-y-felina/",
-  },
-  {
-    text: "Costura Premium",
-    image: "/projects/landings/landing-8.jpg",
-    url: "https://mejorate.online/costura-premium/",
-  },
-  {
-    text: "Curso de Drones",
-    image: "/projects/landings/landing-9.jpg",
-    url: "https://mejorate.online/curso-manejo-de-drones/",
-  },
-];
 
 const ProjectGrid = (props: PageProps) => {
   return (
@@ -115,7 +67,7 @@ export default function ProjectsPage(props: PageProps) {
           the creation process.
         </p>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-3">
-          {landingPagesCreated.map((e) => {
+          {landingPagesProjects.map((e) => {
             return (
               <ProjectCard
                 key={e.text}
@@ -126,9 +78,6 @@ export default function ProjectsPage(props: PageProps) {
             );
           })}
         </div>
-        {/* <h2 className="mt-10 font-semibold text-2xl mb-3">
-          Growth/Viral Strategies
-        </h2> */}
       </div>
     </Layout>
   );
