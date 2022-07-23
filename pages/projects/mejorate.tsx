@@ -156,7 +156,7 @@ const MejorateProjectPage = () => (
 
         <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-3">
           {landingPages.map((e) => (
-            <LandingPageCard text={e.text} imgSrc={e.image} href={e.url} />
+            <LandingPageCard key={e.text} text={e.text} imgSrc={e.image} href={e.url} />
           ))}
         </div>
       </div>

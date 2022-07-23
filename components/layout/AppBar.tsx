@@ -214,7 +214,7 @@ export function AppBar() {
           </div>
           {/* Hamburguer Menu Button */}
           <div className="-mr-2 -my-2 md:hidden">
-            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-600 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Abrir menú</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
@@ -315,8 +315,8 @@ export function AppBar() {
           focus
           className="absolute top-0 inset-x-0 p-2 z-10 transition transform origin-top-right md:hidden"
         >
-          <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-            <div className="pt-5 pb-6 px-5">
+          <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y divide-gray-300">
+            <div className="py-5 px-5">
               <div className="flex items-center justify-between">
                 <div>
                   <Link href="/" passHref>
@@ -347,6 +347,35 @@ export function AppBar() {
                   icon={InformationCircleIcon}
                 />
               </nav>
+            </div>
+            <div className="p-5">
+              <p className="text-gray-600 mb-5 px-3">Startup Projects</p>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-3">
+                <Link href="/projects/unamacro" passHref>
+                  <a className="relative flex flex-col text-center justify-center rounded-md hover:bg-slate-50 py-4 border border-transparent hover:border-gray-200">
+                    <figure className="relative">
+                      <UnamacroIcon />
+                    </figure>
+                    <span>Unamacro</span>
+                  </a>
+                </Link>
+                <Link href="/projects/mejorate" passHref>
+                  <a className="relative flex flex-col text-center justify-center rounded-md hover:bg-slate-50 py-4 border border-transparent hover:border-gray-200">
+                    <figure className="relative">
+                      <MejorateOnlineIcon />
+                    </figure>
+                    <span>Mejorate.online</span>
+                  </a>
+                </Link>
+                <Link href="/projects/trimm" passHref>
+                  <a className="relative flex flex-col text-center justify-center rounded-md hover:bg-slate-50 py-4 border border-transparent hover:border-gray-200">
+                    <figure className="relative">
+                      <TrimmIcon />
+                    </figure>
+                    <span>Trimm.tv</span>
+                  </a>
+                </Link>
+              </div>
             </div>
             <div className="py-6 px-5 space-y-6">
               <div className="grid grid-cols-2 gap-y-2 gap-x-8">
