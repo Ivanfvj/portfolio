@@ -1,4 +1,4 @@
-import Layout from "../../components/Layout";
+import { Layout } from "@src/layouts/DefaultLayout";
 
 const PortfolioPage = () => {
   return (
@@ -9,8 +9,8 @@ const PortfolioPage = () => {
       <div className="mx-auto max-w-6xl text-center py-16">
         <h1>My Personal Website / Portfolio</h1>
         <p>
-          This website was created with React, Next.js, Tailwind CSS and deployed
-          to Vercel
+          This website was created with React, Next.js, Tailwind CSS and
+          deployed to Vercel
         </p>
       </div>
     </Layout>

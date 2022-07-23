@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import Layout from "../../components/Layout";
+import { Layout } from "@src/layouts/DefaultLayout";
 import { ImageGallery } from "../../components/shared/ImageGallery/";
 
 const images = [

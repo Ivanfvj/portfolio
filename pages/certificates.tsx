@@ -36,9 +36,10 @@ const CertificatesPage: NextPage<PageProps> = (props: PageProps) => {
         </h1>
       </section>
       <section className="my-10 px-5 lg:px-0 max-w-5xl mx-auto">
-        <h2 id="platzi-certificates" className="text-2xl">
-          Platzi certificates
-        </h2>
+        <h2 className="text-3xl mb-5">Online Education</h2>
+        <h3 id="platzi-certificates" className="text-2xl">
+          Platzi Certificates
+        </h3>
         <a
           className="text-blue-500 underline hover:text-blue-700"
           href="https://platzi.com/p/ivanfvj/"
@@ -46,16 +47,33 @@ const CertificatesPage: NextPage<PageProps> = (props: PageProps) => {
         >
           Go to Platzi profile
         </a>
-        <ul className="list-disc list-inside font-semibold">
-          <li>
-            +35 certificates in Software Development, Startups, Digital
-            Marketing, and personal growth.
-          </li>
-        </ul>
+        <div className="ml-5">
+          <ul className="list-disc list-inside font-semibold mt-2">
+            <li>
+              +35 certificates in Software Development, Startups, Digital
+              Marketing, and personal growth.
+            </li>
+          </ul>
 
-        <div className="mx-auto mt-8">
-          {images && <ImageGallery images={images} imageClassName="border"/>}
+          <details className="mt-2">
+            <summary className="cursor-pointer hover:underline">
+              Show me more details
+            </summary>
+            <div className="mx-auto mt-8">
+              {images && (
+                <ImageGallery
+                  images={images}
+                  imageClassName="border hover:shadow-md transition"
+                />
+              )}
+            </div>
+          </details>
         </div>
+      </section>
+      <section className="my-10 px-5 lg:px-0 max-w-5xl mx-auto">
+        <h3 id="codelytv-certificates" className="text-2xl">
+          CodelyTv Certificates
+        </h3>
       </section>
     </Layout>
   );

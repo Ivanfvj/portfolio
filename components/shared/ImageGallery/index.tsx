@@ -8,6 +8,7 @@ import { classNames } from "@src/utils";
 interface ImageGalleryProps extends BaseReactProps {
   galleryId?: string;
   images: ImageGalleryItem[];
+  imageWrapperClassName?: string;
   imageClassName?: string;
 }
 
@@ -46,7 +47,7 @@ export const ImageGallery = (props: ImageGalleryProps) => {
         <a
           className={classNames(
             "w-full sm:w-1/3 md:w-1/4",
-            props.imageClassName
+            props.imageWrapperClassName
           )}
           href={image.imageUrl}
           data-pswp-width={image.width}
@@ -56,7 +57,7 @@ export const ImageGallery = (props: ImageGalleryProps) => {
           rel="noreferrer"
         >
           <img
-            className={`${props.imageClassName ? props.imageClassName : ""}`}
+            className={classNames(props.imageClassName)}
             src={image.thumbnailUrl}
             alt=""
           />

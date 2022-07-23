@@ -2,9 +2,9 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import Layout from "../../components/Layout";
-import ActionButton from "../../components/shared/material/ActionButton";
-import { LandingPageCard } from "../../components/ProjectsPage/LandingPageCard";
+import { Layout } from "@src/layouts/DefaultLayout";
+import ActionButton from "@components/shared/material/ActionButton";
+import { LandingPageCard } from "@components/ProjectsPage/LandingPageCard";
 
 const Video = ({ src, className }: { src: string; className: string }) => {
   const videoEl = useRef(null);
@@ -212,6 +212,35 @@ const UnamacroProjectPage = () => {
                 <ActionButton text="Visit site" />
               </a>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto my-10">
+        <div className="flex items-center flex-wrap border p-10 w-full bg-white">
+          <div className="w-full md:w-1/2 order-2 md:order-1 space-y-3">
+            <h1 className="leading-tight">Visit our website</h1>
+            <p>
+              <strong>Marketing Macros:</strong> Fully automated Marketing
+              Solutions as a package. Deploy your marketing and sales funnels
+              easily.
+            </p>
+            <p>We take care of all the configuration, so you don't have to.</p>
+            <Link href="https://www.unamacro.com" passHref>
+              <a className="block" target="_blank">
+                <ActionButton text="Visit site" />
+              </a>
+            </Link>
+          </div>
+          <div className="w-full md:w-1/2 mb-5 md:mb-0 order-1 md:order-2 text-center">
+            <div className="md:pr-8">
+              <figure className="relative border rounded-lg overflow-hidden ">
+                <img
+                  src="https://www.unamacro.com/wp-content/uploads/2022/07/unamacro-website.jpg"
+                  alt="Unamacro Website"
+                />
+              </figure>
+            </div>
           </div>
         </div>
       </section>

@@ -7,6 +7,7 @@ import { NavBarMenu } from "./NavBarMenu";
 import { NavBarItem } from "./NavBarItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { classNames } from "@src/utils";
 
 interface Props extends BaseReactProps {}
 
@@ -14,12 +15,13 @@ const ActionButton = (props: any) => {
   return (
     <Link href={props.href} passHref>
       <a
-        className={`underline text-blue-500 hover:text-blue-600 ${
-          props.className ? props.className : ""
-        }`.trim()}
+        className={classNames(
+          "underline text-blue-500 hover:text-blue-600",
+          props.className
+        )}
         target={props.target ? props.target : "_blank"}
       >
-        <button className="bg-blue-500 text-md md:text-lg hover:bg-blue-600 font-semibold text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        <button className="bg-blue-500 text-md md:text-lg hover:bg-blue-600 font-semibold text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded leading-none md:leading-tight">
           {props.text}
         </button>
       </a>
@@ -58,10 +60,10 @@ const NavBar = ({}: Props) => {
             <NavBarItem href="/projects/trimm" text="Trimm.tv" />
           </NavBarMenu>
         </li>
-        {/* <li className={`${breakpoints?.isMdAndDown ? "hidden" : ""}`}>
-          <NavBarItem href="/about" text="About me" />
-        </li> */}
         <div className="flex-grow"></div>
+        <li className={`${breakpoints?.isMdAndDown ? "hidden" : ""}`}>
+          <NavBarItem href="/about" text="About me" />
+        </li>
         <li className={`${breakpoints?.isMdAndDown ? "hidden" : ""}`}>
           <NavBarItem href={RESUME_URL} text="Resume" target="_blank" />
         </li>

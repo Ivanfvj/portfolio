@@ -1,15 +1,16 @@
+import { useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import Layout from "../components/Layout";
 import Image from "next/image";
-import profileImage from "../public/profile-image.png";
-import StartupProjectsSection from "../components/HomePage/StartupProjectsSection";
-import HardSkillsSection from "../components/HomePage/HardSkills/HardSkillsSection";
-import SoftSkillsSection from "../components/HomePage/SoftSkillsSection";
-import ActionButton from "../components/shared/material/ActionButton";
-import { HomePageContext } from "../contexts/HomePage";
-import { useState } from "react";
-import OpenToWorkBanner from "../components/HomePage/OpenToWorkBanner";
+
+import { Layout } from "@src/layouts/DefaultLayout";
+import profileImage from "@src/public/profile-image.png";
+import { HomePageContext } from "@src/contexts/HomePage";
+import StartupProjectsSection from "@components/HomePage/StartupProjectsSection";
+import HardSkillsSection from "@components/HomePage/HardSkills/HardSkillsSection";
+import SoftSkillsSection from "@components/HomePage/SoftSkillsSection";
+import ActionButton from "@components/shared/material/ActionButton";
+import OpenToWorkBanner from "@components/HomePage/OpenToWorkBanner";
 
 const DynamicComponent = dynamic(
   () => import("../components/HomePage/EasterEggDialog")
@@ -73,7 +74,7 @@ const IndexPage = () => {
                 As an entrepreneur, I'm happy to have developed and tested
                 several startup ideas, created MVP's from scratch, worked with
                 amazing people, helped our clients, led teams, learned from all
-                this process, and did marketing to make these ideas known.
+                this process, and do marketing to make these ideas known.
                 Valuable lessons along the way.
               </p>
               <p>
@@ -86,8 +87,8 @@ const IndexPage = () => {
               <p>
                 I started my career developing Android Apps and then I moved to
                 Web Development and Full-Stack projects. Passionate about
-                Technology, and a self-taught person in different topics. I'm a
-                continuous learner.
+                Technology, and a self-taught person in different subjects. I'm
+                a continuous learner.
               </p>
               <p>
                 <u>
@@ -99,14 +100,14 @@ const IndexPage = () => {
                 <strong>I never give up.</strong>
               </p>
             </div>
-            {/* <hr className="mt-2" />
+            <hr className="mt-2" />
             <div className="px-8 py-4 flex justify-end">
               <Link href="/about" passHref>
                 <a>
                   <ActionButton text="More about me" />
                 </a>
               </Link>
-            </div> */}
+            </div>
           </div>
         </section>
         <section className="max-w-6xl mx-auto border my-5 p-8 bg-white">

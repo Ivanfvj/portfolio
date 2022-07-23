@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import Layout from "../../components/Layout";
-import ActionButton from "../../components/shared/material/ActionButton";
-import { ImageGallery } from "../../components/shared/ImageGallery/";
+import { Layout } from "@src/layouts/DefaultLayout";
+import ActionButton from "@components/shared/material/ActionButton";
+import { ImageGallery } from "@components/shared/ImageGallery/";
 
 const images = [
   { url: "/projects/trimm/trimm.tv-1.jpg", width: 1260, height: 911 },

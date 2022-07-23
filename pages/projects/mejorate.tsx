@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import Layout from "../../components/Layout";
-import ActionButton from "../../components/shared/material/ActionButton";
+import { Layout } from "@src/layouts/DefaultLayout";
+// TODO: Change this behaviour
 import { landingPagesProjects } from "../api/projects/data";
-import { ImageGallery } from "../../components/shared/ImageGallery/";
-import { LandingPageCard } from "../../components/ProjectsPage/LandingPageCard";
+import ActionButton from "@components/shared/material/ActionButton";
+import { ImageGallery } from "@components/shared/ImageGallery/";
+import { LandingPageCard } from "@components/ProjectsPage/LandingPageCard";
 
 const landingPages = landingPagesProjects.filter(
   (e) => e.project === "mejorate.online"

@@ -11,7 +11,7 @@ export const NavBarItem = ({ text, href, target }: NavBarItemProps) => {
     <Link href={href} passHref>
       <a
         target={target}
-        className="text-md md:text-xl px-3 py-3 hover:text-blue-500 hover:underline cursor-pointer font-semibold"
+        className="text-md md:text-lg px-2 lg:px-3 py-3 hover:text-blue-500 leading-none md:leading-none hover:underline cursor-pointer font-semibold"
       >
         {text}
       </a>

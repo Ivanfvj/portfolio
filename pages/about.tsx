@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Layout from "../components/Layout";
-import ActionButton from "../components/shared/material/ActionButton";
 import Image from "next/image";
+
+import { Layout } from "@src/layouts/DefaultLayout";
+import { Section } from "@components/layout/LayoutSection";
 
 const AboutPage = () => (
   <Layout
@@ -32,9 +32,11 @@ const AboutPage = () => (
         </div>
       </div>
     </div>
-    {/* <section>
-      <div>I'm a social person, and i really enjoy helping.</div>
-    </section> */}
+    <Section>
+      <div className="my-5">
+        <h1 className="text-center">🚧 Under construction 🚧</h1>
+      </div>
+    </Section>
 
     {/* <section className="py-2 bg-black">
       <h1 className="text-center text-4xl text-white lg:text-5xl my-8">

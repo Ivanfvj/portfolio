@@ -1,9 +1,10 @@
 import { GetStaticProps } from "next";
 
-import Layout from "../../components/Layout";
-import { ProjectInfo } from "../../interfaces";
-import { projects, landingPagesProjects } from "../api/projects/data";
-import { ProjectCard } from "../../components/ProjectsPage/ProjectCard";
+import { Layout } from "@src/layouts/DefaultLayout";
+import { ProjectInfo } from "@src/interfaces";
+// TODO: Change this behaviour with server side props fetch
+import { projects, landingPagesProjects } from "@src/pages/api/projects/data";
+import { ProjectCard } from "@src/components/ProjectsPage/ProjectCard";
 
 interface PageProps {
   projects: ProjectInfo[];

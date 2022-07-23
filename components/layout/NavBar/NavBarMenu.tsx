@@ -3,7 +3,8 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-import { BaseReactProps } from "../../../common";
+import { BaseReactProps } from "@src/common";
+import { classNames } from "@src/utils";
 import { NavBarItemProps } from "./NavBarItem";
 import styles from "./NavBarMenu.module.css";
 
@@ -18,16 +19,16 @@ export const NavBarMenu = (props: NavBarMenuProps) => {
   return (
     <div className={styles["navbar-menu"]}>
       <button
-        className={
-          `${styles["navbar-menu__button"]}` +
-          " flex items-center text-md md:text-xl px-3 py-3 hover:text-blue-500 hover:underline cursor-pointer font-semibold"
-        }
+        className={classNames(
+          styles["navbar-menu__button"],
+          "flex items-center text-md md:text-lg px-3 py-3 hover:text-blue-500 hover:underline cursor-pointer font-semibold"
+        )}
       >
         {props.text}
         <FontAwesomeIcon
           className="ml-5"
           icon={faChevronDown}
-          style={{ fontSize: 15 }}
+          style={{ fontSize: 14 }}
         />
       </button>
       <div className={`${styles["navbar-menu__content"]} shadow-lg`}>

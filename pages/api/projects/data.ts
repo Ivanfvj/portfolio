@@ -92,7 +92,7 @@ export const projects: ProjectInfo[] = [
       { text: "Affiliate Marketing" },
     ],
     tags: ["marketing"],
-    link: "https://mejorate.online",
+    to: "/projects/mejorate",
   },
   {
     id: "portfolio",

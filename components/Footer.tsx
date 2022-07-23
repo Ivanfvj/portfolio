@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+
 import { BaseReactProps } from "../common";
 import ContactForm from "../components/ContactForm";
 
@@ -52,19 +53,21 @@ const SocialMediaIcon = (props: SocialMediaIconProps) => {
 };
 
 const Footer = ({ children }: Props) => (
-  <footer className="w-100 bg-blue-200 py-8 px-2">
-    <ContactForm />
-    <div className="flex justify-center space-x-2 my-3">
-      {socialNetworks.map((e) => {
-        return (
-          <SocialMediaIcon
-            key={e.title}
-            title={e.title}
-            image={e.image}
-            url={e.url}
-          />
-        );
-      })}
+  <footer className="w-full bg-blue-200 py-8 px-2">
+    <div className="max-w-6xl mx-auto">
+      <ContactForm />
+      <div className="flex justify-center space-x-2 my-3">
+        {socialNetworks.map((e) => {
+          return (
+            <SocialMediaIcon
+              key={e.title}
+              title={e.title}
+              image={e.image}
+              url={e.url}
+            />
+          );
+        })}
+      </div>
     </div>
   </footer>
 );
