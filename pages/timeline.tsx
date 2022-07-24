@@ -115,6 +115,37 @@ const TimelinePage = () => {
             </details>
           </TimelineItem>
           <TimelineItem
+            title="Software Engineer and Founder"
+            subtitle="Trimm.tv"
+            time="March 2021 - July 2021"
+          >
+            <details open={openDetails}>
+              <summary className="cursor-pointer">Highlights</summary>
+              <ul className="list-disc list-inside ml-5 space-y-3 mt-2">
+                <li>
+                  Launched “Trimm Internet Videos” to share clips and video
+                  highlights. Created the whole platform from scratch in 1
+                  month. MVP available and working for Youtube videos.
+                </li>
+                <li>
+                  Built a video platform for web and mobile devices designed to
+                  handle +100K concurrent users. Applied Nuxt.js for Server-Side
+                  Rendering (SSR), Vue.js, Vuex, Javascript, Typescript,
+                  Node.js, Express.js, MongoDB, and AWS. Responsive website as a
+                  Progressive Web Application (PWA) that can be installed on
+                  mobiles.
+                </li>
+                <li>
+                  Applied Clean Code, Domain-Driven Design (DDD), Hexagonal
+                  Architecture, Microservices Architecture, and Event-Driven
+                  software architecture. Scalable and extendable code,
+                  switchable for different implementations with repositories,
+                  external services, and databases.
+                </li>
+              </ul>
+            </details>
+          </TimelineItem>
+          <TimelineItem
             title="Android Developer"
             subtitle="Almacenes Juan Eljuri"
             time="June 2017 - January 2019"
