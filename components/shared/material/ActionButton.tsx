@@ -13,7 +13,7 @@ const ActionButton = (props: ButtonProps) => {
   return (
     <button
       className={classNames(
-        "py-2 px-4 rounded font-semibold border hover:border-transparent leading-none",
+        "py-2 px-4 rounded font-semibold border hover:border-transparent leading-none sm:leading-snug",
         props.className,
         isOutlined
           ? "bg-transparent hover:bg-blue-500 text-blue-700 border-blue-500 hover:text-white"

@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import { classNames } from "@src/utils";
+
 type Props = {
   children?: ReactNode;
   text: string;
@@ -24,12 +26,13 @@ const Chip = (props: Props) => {
 
   return (
     <span
-      className={`px-4 py-2 rounded-full  bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer 
-         hover:text-white active:bg-blue-500 transition duration-200 ease ${
-           props.active
-             ? "bg-blue-600 text-white hover:bg-blue-700"
-             : "text-gray-800 hover:bg-blue-300"
-         } ${props.className ? props.className : ""}`.trim()}
+      className={classNames(
+        "px-3 py-1 sm:px-4 sm:py-2 rounded-full bg-gray-200 font-semibold text-xs sm:text-sm flex align-center cursor-pointerhover:text-white active:bg-blue-500 transition duration-200 ease",
+        props.active
+          ? "bg-blue-600 text-white hover:bg-blue-700"
+          : "text-gray-800 hover:bg-blue-300",
+        props.className
+      )}
       onClick={(e) => {
         e.preventDefault();
         e.stopPropagation();

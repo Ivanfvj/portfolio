@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import Tabs from "../../shared/material/tabs/Tabs";
-import Tab from "../../shared/material/tabs/Tab";
+import Tabs from "@components/shared/material/tabs/Tabs";
+import Tab from "@components/shared/material/tabs/Tab";
 import { CategoryFilters, ICategoryFilter } from "./CategoryFilter";
 import { SkillsGrid } from "./SkillsGrid";
 
@@ -13,7 +13,7 @@ import {
   marketingSkillsCategories,
   pmSkillsArray,
   pmSkillsCategories,
-} from "../../../utils/skills-data";
+} from "@src/utils/skills-data";
 
 const createDefaultFilters = (categories: any[]): ICategoryFilter[] => {
   return categories.map((e) => {

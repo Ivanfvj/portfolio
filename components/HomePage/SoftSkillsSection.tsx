@@ -1,7 +1,8 @@
+import colors from "tailwindcss/colors";
+
 import MaterialChip, {
   MaterialChipSize,
-} from "../shared/material/MaterialChip";
-import colors from "tailwindcss/colors";
+} from "@components/shared/material/MaterialChip";
 
 type SoftSkillChipType = {
   text: string;
@@ -104,7 +105,7 @@ const SoftSkillsSection = () => {
             return (
               <MaterialChip
                 key={e.text}
-                className="mt-2 hover:scale-110 select-none"
+                className="mt-2 hover:scale-110 select-none noselect"
                 text={e.text}
                 size={e.size}
                 color={e.color}
@@ -112,13 +113,6 @@ const SoftSkillsSection = () => {
             );
           })}
         </div>
-        {/* <div className="text-center">
-          <Link href="#" passHref>
-            <a>
-              <ActionButton text="Tell me more" />
-            </a>
-          </Link>
-        </div> */}
       </div>
     </div>
   );

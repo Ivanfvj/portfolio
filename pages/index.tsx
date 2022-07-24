@@ -123,7 +123,7 @@ const IndexPage = () => {
           <StartupProjectsSection className="mt-4" />
         </section>
         <section className="max-w-6xl mx-auto my-8">
-          <div className="p-8 border flex bg-white">
+          <div className="p-8 border flex bg-white items-center">
             <h1 className="text-4xl">More Projects</h1>
             <div className="grow"></div>
             <Link href="/projects" passHref>
