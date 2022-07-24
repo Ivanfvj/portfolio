@@ -1,19 +1,155 @@
-import { Layout } from "@src/layouts/DefaultLayout";
-import { Timeline } from "@components/shared/Timeline";
+import { useState } from "react";
+import Link from "next/link";
 
-const CertificatesPage = () => {
+import { RESUME_URL } from "@src/common";
+import { Layout } from "@src/layouts/DefaultLayout";
+import { Timeline, TimelineItem } from "@components/shared/Timeline";
+import ActionButton from "@components/shared/material/ActionButton";
+
+const TimelinePage = () => {
+  const [openDetails, setOpenDetails] = useState(true);
+
   return (
     <Layout>
       <section className="py-5 bg-black">
         <h1 className="text-center text-4xl text-white lg:text-5xl max-w-6xl mx-auto my-6">
-          Lifetime Timeline
+          Timeline
         </h1>
       </section>
       <section className="my-10 px-5 lg:px-0 max-w-5xl mx-auto">
-        <Timeline />
+        <div className="flex justify-between items-center mb-10">
+          <h2 id="work-experience" className="text-3xl font-bold">
+            Work Experience
+          </h2>
+          <Link href={RESUME_URL} passHref>
+            <a target="_blank">
+              <ActionButton text="Download CV" />
+            </a>
+          </Link>
+        </div>
+        <Timeline>
+          <TimelineItem
+            title="Software Engineer and Founder"
+            subtitle="Unamacro"
+            time="November 2020 - Present"
+          >
+            <details open={openDetails}>
+              <summary className="cursor-pointer">Highlights</summary>
+              <ul className="list-disc list-inside ml-5 space-y-3 mt-2">
+                <li>
+                  Released a Marketing SaaS multitenant solution for small
+                  businesses, including CRM, Email Marketing, and third-party
+                  integrations with tools like Facebook Lead Ads. Founded a
+                  marketing community, blog and social network platform with
+                  +17K visitors, and +100 users registered in 1 month.
+                </li>
+                <li>
+                  Built an Automatic Email System that can deliver 1 Million
+                  emails per day, using Node.js, Javascript, Typescript, Redis,
+                  MongoDB, Docker, and AWS.
+                </li>
+                <li>
+                  Managed a 4-member cross-functional (product, engineering,
+                  designers) team, and worked as a Digital Marketing Agency with
+                  +20 clients and +50 products from different niches.
+                  Implemented fully automated Marketing Solutions “Marketing
+                  macros” and Workflow Automations for B2B clients.
+                </li>
+              </ul>
+            </details>
+          </TimelineItem>
+          <TimelineItem
+            title="Co-Founder"
+            subtitle="Mejorate.online"
+            time="September 2021 - April 2022"
+          >
+            <details open={openDetails}>
+              <summary className="cursor-pointer">Highlights</summary>
+              <ul className="list-disc list-inside ml-5 space-y-3 mt-2">
+                <li>
+                  Launched an E-commerce platform with WordPress in 1 week and
+                  deployed on an AWS EC2 instance for performance. Conceived
+                  Business Model to sell +500 online courses available using
+                  affiliate marketing.
+                </li>
+                <li>
+                  Configured +20 Sales Funnels, and multiple Marketing
+                  Automation tools. Used different digital marketing strategies
+                  to promote these courses including SEO, Facebook Ads,
+                  Instagram Ads, Email Marketing, Google Ads, and Content
+                  Marketing.
+                </li>
+                <li>
+                  Drove 1400 organic sign-ups to automated sales funnels in one
+                  week by creating multiple viral Tiktok Videos with +28.1
+                  Million views, representing an increase of +20K website unique
+                  visitors per month, +100K followers on Tiktok, and a 300%
+                  increase in monthly sales
+                </li>
+              </ul>
+            </details>
+          </TimelineItem>
+          <TimelineItem
+            title="Web Developer"
+            subtitle="Multiple Contracts"
+            time="February 2019 - November 2021"
+          >
+            <details open={openDetails}>
+              <summary className="cursor-pointer">Highlights</summary>
+              <ul className="list-disc list-inside ml-5 space-y-3 mt-2">
+                <li>
+                  Developed +10 projects including websites, mobile apps, and
+                  landing pages for companies and personal brands using
+                  WordPress, Typescript, Vue.js, Express.js, MongoDB, SQL, PHP,
+                  and AWS. Applied UI/UX design and marketing skills. Customer
+                  service and commitment to customer satisfaction.
+                </li>
+                <li>
+                  Assembled multiple WordPress websites in record time (3-7
+                  days) with client approval and satisfaction. Created a Web
+                  platform for a Real State company, deployed in 2 weeks, set up
+                  with Javascript, Nuxt.js, Strapi.js, MongoDB, and AWS. Public
+                  platform and Administration Panel for staff members.
+                </li>
+              </ul>
+            </details>
+          </TimelineItem>
+          <TimelineItem
+            title="Android Developer"
+            subtitle="Almacenes Juan Eljuri"
+            time="June 2017 - January 2019"
+          >
+            <details open={openDetails}>
+              <summary className="cursor-pointer">Highlights</summary>
+              <ul className="list-disc list-inside ml-5 space-y-3 mt-2">
+                <li>
+                  Developed three Internal Android Applications for operations
+                  connected and integrated with the main SAP system. Applied
+                  Java, ASP.NET/C#, and MS SQL Server to software development.
+                </li>
+                <li>
+                  Worked in the IT department collaborating with an excellent
+                  team of +15 professionals such as managers, software
+                  engineers, and SAP experts.
+                </li>
+                <li>
+                  Trained more than 100 staff members. Configured and delivered
+                  more than 80 Android Tablets to the sales team. Apps working
+                  for more than 7 business units, including +30 brands and +70k
+                  products.
+                </li>
+                <li>
+                  Reduced information fetch time from 3 hours to 5 minutes with
+                  advanced filters and query optimization. Configured multiple
+                  real-time endpoints with SAP Integration.
+                </li>
+              </ul>
+            </details>
+          </TimelineItem>
+        </Timeline>
       </section>
     </Layout>
   );
 };
 
-export default CertificatesPage;
+export default TimelinePage;

@@ -70,11 +70,11 @@ const CertificatesPage: NextPage<PageProps> = (props: PageProps) => {
           </details>
         </div>
       </section>
-      <section className="my-10 px-5 lg:px-0 max-w-5xl mx-auto">
+      {/* <section className="my-10 px-5 lg:px-0 max-w-5xl mx-auto">
         <h3 id="codelytv-certificates" className="text-2xl">
           CodelyTv Certificates
         </h3>
-      </section>
+      </section> */}
     </Layout>
   );
 };

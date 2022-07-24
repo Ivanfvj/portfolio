@@ -300,6 +300,30 @@ const UnamacroProjectPage = () => {
           </div>
         </div>
       </section>
+
+
+    <section className="max-w-6xl mx-auto my-10">
+      <div className="mb-5 px-5 lg:px-0 space-y-4">
+        <div className="flex justify-between">
+          <Link href="/projects" passHref>
+            <a
+              className="text-blue-500 hover:text-blue-600 hover:underline"
+              href=""
+            >
+              Back to projects
+            </a>
+          </Link>
+          <Link href="/projects/mejorate" passHref>
+            <a
+              className="text-blue-500 hover:text-blue-600 hover:underline"
+              href=""
+            >
+              Next project
+            </a>
+          </Link>
+        </div>
+      </div>
+    </section>
     </Layout>
   );
 };

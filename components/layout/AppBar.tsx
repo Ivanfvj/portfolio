@@ -10,8 +10,9 @@ import {
   AcademicCapIcon,
   BriefcaseIcon,
   InformationCircleIcon,
+  HomeIcon,
 } from "@heroicons/react/outline";
-import { ChevronDownIcon, HomeIcon } from "@heroicons/react/solid";
+import { ChevronDownIcon } from "@heroicons/react/solid";
 
 import { BaseReactProps, RESUME_URL } from "@src/common";
 import { classNames } from "@src/utils";
@@ -68,12 +69,12 @@ const startupProjects: MenuItem[] = [
 
 // const callsToAction = [{ name: "Watch Demo", href: "#", icon: PlayIcon }];
 const resources = [
-  // {
-  //   name: "Life Timeline",
-  //   description: "Life timeline and profesional experience timeline",
-  //   href: "/timeline",
-  //   icon: FingerPrintIcon,
-  // },
+  {
+    name: "Timeline",
+    description: "Life and professional experience timeline",
+    href: "/timeline",
+    icon: FingerPrintIcon,
+  },
   {
     name: "Certificates",
     description: "Certificates and Awards",
@@ -97,8 +98,8 @@ interface AppBarLinkProps extends BaseReactProps {
 const AppBarLink = withLink((props: AppBarLinkProps) => (
   <span
     className={classNames(
-      "text-base font-medium text-gray-700 hover:text-black",
-      props.active ? "text-purple-700" : ""
+      "text-base font-medium text-gray-700 hover:text-indigo-600",
+      props.active ? "text-indigo-800" : ""
     )}
   >
     {props.children}
@@ -131,14 +132,14 @@ const PopoverMenu = (props: PopoverMenuProps) => {
           <Popover.Button
             className={classNames(
               open ? "text-black" : "text-gray-700",
-              "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             )}
           >
             <span>{props.title}</span>
             <ChevronDownIcon
               className={classNames(
                 open ? "text-gray-600" : "text-gray-400",
-                "ml-2 h-5 w-5 group-hover:text-gray-500"
+                "ml-2 h-5 w-5 group-hover:text-gray-500 hover:text-indigo-600"
               )}
               aria-hidden="true"
             />
@@ -208,7 +209,7 @@ export function AppBar() {
             <Link href="/" passHref>
               <a>
                 <span className="sr-only">Home</span>
-                <HomeIcon className="h-6 w-auto sm:h-6" />
+                <HomeIcon className="h-6 w-auto sm:h-6 hover:text-indigo-600" />
               </a>
             </Link>
           </div>
@@ -238,58 +239,33 @@ export function AppBar() {
             <AppBarLink href="/about">About</AppBarLink>
 
             {/* More popover */}
-            <Popover className="relative">
-              {({ open }) => (
-                <>
-                  <Popover.Button
-                    className={classNames(
-                      open ? "text-black" : "text-gray-700",
-                      "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    )}
-                  >
-                    <span>More</span>
-                    <ChevronDownIcon
-                      className={classNames(
-                        open ? "text-gray-600" : "text-gray-400",
-                        "ml-2 h-5 w-5 group-hover:text-gray-500"
-                      )}
-                      aria-hidden="true"
-                    />
-                  </Popover.Button>
 
-                  <MenuTransition>
-                    <Popover.Panel className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-md sm:px-0">
-                      <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                        <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                          {resources.map((item) => (
-                            <Link key={item.name} href={item.href} passHref>
-                              <a
-                                key={item.name}
-                                target={item.target}
-                                className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
-                              >
-                                <item.icon
-                                  className="flex-shrink-0 h-6 w-6 text-indigo-600"
-                                  aria-hidden="true"
-                                />
-                                <div className="ml-4">
-                                  <p className="text-base font-medium text-gray-900">
-                                    {item.name}
-                                  </p>
-                                  <p className="mt-1 text-sm text-gray-500">
-                                    {item.description}
-                                  </p>
-                                </div>
-                              </a>
-                            </Link>
-                          ))}
-                        </div>
+            <PopoverMenu title="More">
+              <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                {resources.map((item) => (
+                  <Link key={item.name} href={item.href} passHref>
+                    <a
+                      key={item.name}
+                      target={item.target}
+                      className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
+                    >
+                      <item.icon
+                        className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                        aria-hidden="true"
+                      />
+                      <div className="ml-4">
+                        <p className="text-base font-medium text-gray-900">
+                          {item.name}
+                        </p>
+                        <p className="mt-1 text-sm text-gray-500">
+                          {item.description}
+                        </p>
                       </div>
-                    </Popover.Panel>
-                  </MenuTransition>
-                </>
-              )}
-            </Popover>
+                    </a>
+                  </Link>
+                ))}
+              </div>
+            </PopoverMenu>
           </Popover.Group>
           <div className="md:flex items-center justify-end">
             <a
@@ -318,14 +294,12 @@ export function AppBar() {
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y divide-gray-300">
             <div className="py-5 px-5">
               <div className="flex items-center justify-between">
-                <div>
-                  <Link href="/" passHref>
-                    <a className="flex space-x-2 hover:bg-gray-100 rounded-md p-2">
-                      <HomeIcon className="h-6 w-auto sm:h-6" />
-                      <span className="font-bold">Home</span>
-                    </a>
-                  </Link>
-                </div>
+                <Link href="/" passHref>
+                  <a className="flex space-x-3 hover:bg-gray-100 rounded-md py-2 px-3 text-indigo-600">
+                    <HomeIcon className="h-6 w-auto sm:h-6" />
+                    <span className="font-bold">Home</span>
+                  </a>
+                </Link>
                 <div className="-mr-2">
                   <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                     <span className="sr-only">Cerrar menú</span>

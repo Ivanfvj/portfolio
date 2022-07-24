@@ -156,8 +156,36 @@ const MejorateProjectPage = () => (
 
         <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-3">
           {landingPages.map((e) => (
-            <LandingPageCard key={e.text} text={e.text} imgSrc={e.image} href={e.url} />
+            <LandingPageCard
+              key={e.text}
+              text={e.text}
+              imgSrc={e.image}
+              href={e.url}
+            />
           ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="max-w-6xl mx-auto my-10">
+      <div className="mb-5 px-5 lg:px-0 space-y-4">
+        <div className="flex justify-between">
+          <Link href="/projects" passHref>
+            <a
+              className="text-blue-500 hover:text-blue-600 hover:underline"
+              href=""
+            >
+              Back to projects
+            </a>
+          </Link>
+          <Link href="/projects/trimm" passHref>
+            <a
+              className="text-blue-500 hover:text-blue-600 hover:underline"
+              href=""
+            >
+              Next project
+            </a>
+          </Link>
         </div>
       </div>
     </section>
