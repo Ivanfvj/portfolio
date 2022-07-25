@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import { classNames } from "@src/utils";
+
 type Props = {
   children?: ReactNode;
   text: string;
@@ -58,12 +60,15 @@ const Chip = (props: Props) => {
 
   return (
     <span
-      className={`${paddingClasses()} rounded-full  bg-gray-200 font-semibold flex align-center w-max cursor-pointer
-        transition duration-200 ease ${textSizeClasses()} ${
+      className={classNames(
+        "rounded-full bg-gray-200 font-semibold flex align-center w-max cursor-pointer transition duration-200 ease",
         props.active
           ? "bg-blue-600 text-white hover:bg-blue-700"
-          : "text-gray-800 hover:bg-blue-300"
-      } ${props.className ? props.className : ""}`.trim()}
+          : "text-gray-800 hover:bg-blue-300",
+        paddingClasses(),
+        textSizeClasses(),
+        props.className
+      )}
       style={{
         background: props.active ? props.activeColor : props.color,
       }}

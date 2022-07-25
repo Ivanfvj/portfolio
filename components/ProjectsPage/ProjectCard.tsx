@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BaseReactProps } from "../../common";
-import { ProjectInfo } from "../../interfaces";
-import ActionButton from "../../components/shared/material/ActionButton";
-import Chip from "../../components/shared/material/MaterialChip";
+
+import { BaseReactProps } from "@src/common";
+import { ProjectInfo } from "@src/interfaces";
+import ActionButton from "@components/shared/material/ActionButton";
+import Chip from "@components/shared/material/MaterialChip";
 
 interface Props extends BaseReactProps, ProjectInfo {}
 
@@ -22,17 +23,17 @@ export const ProjectCard = (props: Props) => {
       )}
       <div className="p-5 pb-2 flex flex-col flex-1 overflow-hidden">
         <h1 className="text-2xl mb-2">{props.title}</h1>
-        {props.headline && (
-          <p className="mb-2">
-            <strong>{props.headline}</strong>
-          </p>
-        )}
+        {props.headline && <p className="mb-2 font-semibold">{props.headline}</p>}
         {props.stack && props.stack.length > 0 && (
           <ul className="flex flex-wrap">
             {props.stack.map((e) => {
               return (
                 <li key={e.text} className="my-1 mr-1">
-                  <Chip text={e.text} size="x-small" />
+                  <Chip
+                    text={e.text}
+                    size="x-small"
+                    className="border border-slate-400 bg-blue-50 hover:text-white hover:bg-black hover:border-black"
+                  />
                 </li>
               );
             })}
