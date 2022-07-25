@@ -64,7 +64,7 @@ const Chip = (props: Props) => {
         "rounded-full bg-gray-200 font-semibold flex align-center w-max cursor-pointer transition duration-200 ease",
         props.active
           ? "bg-blue-600 text-white hover:bg-blue-700"
-          : "text-gray-800 hover:bg-blue-300",
+          : "text-gray-800",
         paddingClasses(),
         textSizeClasses(),
         props.className
