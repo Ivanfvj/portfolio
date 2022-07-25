@@ -32,6 +32,9 @@ const TimelinePage = () => {
             title="Software Engineer and Founder"
             subtitle="Unamacro"
             time="November 2020 - Present"
+            button={{
+              url: "/projects/unamacro",
+            }}
           >
             <details open={openDetails}>
               <summary className="cursor-pointer">Highlights</summary>
@@ -62,6 +65,9 @@ const TimelinePage = () => {
             title="Co-Founder"
             subtitle="Mejorate.online"
             time="September 2021 - April 2022"
+            button={{
+              url: "/projects/mejorate",
+            }}
           >
             <details open={openDetails}>
               <summary className="cursor-pointer">Highlights</summary>
@@ -93,6 +99,9 @@ const TimelinePage = () => {
             title="Web Developer"
             subtitle="Multiple Contracts"
             time="February 2019 - November 2021"
+            button={{
+              url: "/projects",
+            }}
           >
             <details open={openDetails}>
               <summary className="cursor-pointer">Highlights</summary>
@@ -118,6 +127,9 @@ const TimelinePage = () => {
             title="Software Engineer and Founder"
             subtitle="Trimm.tv"
             time="March 2021 - July 2021"
+            button={{
+              url: "/projects/trimm",
+            }}
           >
             <details open={openDetails}>
               <summary className="cursor-pointer">Highlights</summary>
@@ -149,6 +161,9 @@ const TimelinePage = () => {
             title="Android Developer"
             subtitle="Almacenes Juan Eljuri"
             time="June 2017 - January 2019"
+            button={{
+              url: "/projects/eljuri",
+            }}
           >
             <details open={openDetails}>
               <summary className="cursor-pointer">Highlights</summary>

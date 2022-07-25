@@ -6,12 +6,24 @@ import { classNames } from "@src/utils";
 
 interface ITimelineProps extends BaseReactProps {}
 
-const DetailsButton = (props: any) => {
+interface DetailsButtonProps extends BaseReactProps {
+  href: string;
+  text?: string;
+}
+
+const DetailsButton = (props: DetailsButtonProps) => {
   return (
-    <Link href="/">
-      <button className="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">
-        {props.children}
-      </button>
+    <Link href={props.href} passHref>
+      <a>
+        <button
+          className={classNames(
+            "inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-lg border border-blue-400 hover:bg-gray-50 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700",
+            props.className
+          )}
+        >
+          {props.children}
+        </button>
+      </a>
     </Link>
   );
 };
@@ -44,7 +56,10 @@ export interface ITimelineItem {
   title: string;
   subtitle?: string;
   time?: string;
-  detailsUrl?: string;
+  button?: {
+    url: string;
+    text?: string;
+  };
 }
 
 interface ITimelineItemProps extends BaseReactProps, ITimelineItem {
@@ -66,8 +81,14 @@ export function TimelineItem(props: ITimelineItemProps) {
         )}
       </div>
       {props.subtitle && <p>{props.subtitle}</p>}
-      {props.children && <div className="mt-2 text-sm text-gray-600">{props.children}</div>}
-      {props.detailsUrl && <DetailsButton />}
+      {props.children && (
+        <div className="mt-2 text-sm text-gray-600">{props.children}</div>
+      )}
+      {props.button && (
+        <DetailsButton className="mt-4" href={props.button.url}>
+          {props.button.text || "More details"}
+        </DetailsButton>
+      )}
     </li>
   );
 }
