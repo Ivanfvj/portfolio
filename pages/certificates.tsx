@@ -1,11 +1,17 @@
 import type { GetServerSideProps, NextPage } from "next";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
 import { API_URL } from "@src/config";
 import { Layout } from "@src/layouts/DefaultLayout";
-import { ImageGallery } from "@components/shared/ImageGallery/";
 import { ICertificate } from "@src/interfaces/certificate";
 
 type PageProps = { certificates: ICertificate[] };
+
+const ImageGallery = dynamic(() => import("../components/shared/ImageGallery/"), {
+  suspense: true,
+  ssr: false,
+});
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const response = await fetch(`${API_URL}/api/certificates`);
@@ -56,16 +62,18 @@ const CertificatesPage: NextPage<PageProps> = (props: PageProps) => {
             </li>
           </ul>
 
-          <details className="mt-2">
+          <details className="mt-2" open>
             <summary className="cursor-pointer hover:underline">
               Show me more details
             </summary>
             <div className="mx-auto mt-8">
               {images && (
-                <ImageGallery
-                  images={images}
-                  imageClassName="border hover:shadow-md transition"
-                />
+                <Suspense fallback={<p>Loading...</p>}>
+                  <ImageGallery
+                    images={images}
+                    imageClassName="border hover:shadow-md transition"
+                  />
+                </Suspense>
               )}
             </div>
           </details>
