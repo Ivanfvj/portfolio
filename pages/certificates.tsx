@@ -52,9 +52,9 @@ const CertificatesPage: NextPage<PageProps> = (props: PageProps) => {
           <p>
             I'm not a "certificates guy"; I read, watch or take the information
             I need and apply it to real projects. Googling, Stackoverflowing.
-            Skills such as fast learning, searching, and solving problems are my strength.
-            However, here are some of the courses and certifications I took and
-            sat for a test.
+            Skills such as fast learning, searching, and solving problems are my
+            strength. However, here are some of the courses and certifications I
+            took and sat for a test.
           </p>
         </div>
       </section>
@@ -74,8 +74,8 @@ const CertificatesPage: NextPage<PageProps> = (props: PageProps) => {
           >
             Go to Platzi profile
           </a>
-          <div className="ml-5">
-            <ul className="list-disc list-inside font-semibold mt-2">
+          <div className="ml-5 mt-2">
+            <ul className="list-disc list-inside font-semibold">
               <li>
                 +35 certificates in Software Development, Startups, Digital
                 Marketing, and personal growth.
@@ -117,6 +117,10 @@ const CertificatesPage: NextPage<PageProps> = (props: PageProps) => {
           >
             Show credential
           </a>
+          <div className="ml-5 mt-2">
+            <li><strong>Expert:</strong> Javascript</li>
+            <li><strong>Advanced:</strong> Front-end, General Coding Logic </li>
+          </div>
         </div>
       </section>
       {/* <section className="my-10 px-5 lg:px-0 max-w-5xl mx-auto">
