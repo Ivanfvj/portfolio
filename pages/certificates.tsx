@@ -45,6 +45,20 @@ const CertificatesPage: NextPage<PageProps> = (props: PageProps) => {
         </h1>
       </section>
       <section className="my-10 px-5 lg:px-0 max-w-5xl mx-auto">
+        <div className="space-y-2 bg-yellow-50 p-5 border-l-4 border-l-yellow-500">
+          <p className="text-xl">
+            <strong>💡 Disclosure:</strong>
+          </p>
+          <p>
+            I'm not a "certificates guy"; I read, watch or take the information
+            I need and apply it to real projects. Googling, Stackoverflowing.
+            Skills such as fast learning, searching, and solving problems are my strength.
+            However, here are some of the courses and certifications I took and
+            sat for a test.
+          </p>
+        </div>
+      </section>
+      <section className="my-10 px-5 lg:px-0 max-w-5xl mx-auto">
         <h2 id="online-education" className="text-3xl">
           Online Education
         </h2>
