@@ -160,8 +160,16 @@ const HardSkillsSection = () => {
       setPmCategories(copy);
     }
   };
+  const scrollToTop = () => {
+    setTimeout(() => {
+      document.getElementById("hard-skills").scrollIntoView();
+    }, 0);
+  };
 
   const onTabSelected = (tabIndex: number) => {
+    if (tabSelected !== tabIndex) {
+      scrollToTop();
+    }
     setTabSelected(tabIndex);
   };
 

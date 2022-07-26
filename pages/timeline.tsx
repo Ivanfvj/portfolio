@@ -194,6 +194,55 @@ const TimelinePage = () => {
           </TimelineItem>
         </Timeline>
       </section>
+      <section className="my-10 mt-20 px-5 lg:px-0 max-w-5xl mx-auto">
+        <div className="flex justify-between items-center mb-10">
+          <h2 id="education" className="text-3xl font-bold">
+            Education
+          </h2>
+        </div>
+        <Timeline>
+          <TimelineItem
+            title="Self-Taught Student - Online"
+            subtitle="Platzi"
+            time="Feb 2018 — Present"
+            button={{
+              url: "/certificates",
+            }}
+          >
+            <details open={openDetails}>
+              <summary className="cursor-pointer">Highlights</summary>
+              <ul className="list-disc list-inside ml-5 space-y-3 mt-2">
+                <li>
+                  +35 certificates in Software Development, Startups, Digital
+                  Marketing, and personal growth.
+                </li>
+              </ul>
+            </details>
+          </TimelineItem>
+          <TimelineItem
+            title="BE. Electronics Engineer"
+            subtitle="Universidad del Azuay"
+            time="September 2014 — July 2019"
+            button={{
+              url: "https://www.unamacro.com/wp-content/uploads/2022/05/Ivan-Velastegui-Thesis-work.pdf",
+              target: "_blank",
+            }}
+          >
+            <details open={openDetails}>
+              <summary className="cursor-pointer">Highlights</summary>
+              <ul className="list-disc list-inside ml-5 space-y-3 mt-2">
+                <li>
+                  Thesis work about the Internet of Things (IoT) for Industry
+                  4.0 applications using multiple Hardware and Software
+                  technologies including PLCs, HTTP and MQTT protocols.
+                  Delivered a didactic bench to the university with practical
+                  guides for the students and following generations.
+                </li>
+              </ul>
+            </details>
+          </TimelineItem>
+        </Timeline>
+      </section>
     </Layout>
   );
 };

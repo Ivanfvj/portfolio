@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { Layout } from "@src/layouts/DefaultLayout";
 import { Section } from "@components/layout/LayoutSection";
+import ActionButton from "@components/shared/material/ActionButton";
 
 const AboutPage = () => (
   <Layout
@@ -20,8 +22,20 @@ const AboutPage = () => (
       />
     </div>
     <Section>
-      <div className="my-5">
-        <h1 className="text-center">🚧 Under construction 🚧</h1>
+      <div className="my-10 text-center space-y-5">
+        <h1>🚧 Under construction 🚧</h1>
+        <Link href="/projects/unamacro" passHref>
+          <a className="text-xl underline text-blue-500 hover:text-blue-700">
+            Checkout my startup projects meanwhile
+          </a>
+        </Link>
+        <div>
+          <Link href="/projects/unamacro" passHref>
+            <a>
+              <ActionButton href="/projects/unamacro" text="Show me more" />
+            </a>
+          </Link>
+        </div>
       </div>
     </Section>
 

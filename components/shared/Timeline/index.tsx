@@ -9,12 +9,13 @@ interface ITimelineProps extends BaseReactProps {}
 interface DetailsButtonProps extends BaseReactProps {
   href: string;
   text?: string;
+  target?: string;
 }
 
 const DetailsButton = (props: DetailsButtonProps) => {
   return (
-    <Link href={props.href} passHref>
-      <a>
+    <Link href={props.href} passHref target={props.target}>
+      <a target={props.target}>
         <button
           className={classNames(
             "inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-lg border border-blue-400 hover:bg-gray-50 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700",
@@ -59,6 +60,7 @@ export interface ITimelineItem {
   button?: {
     url: string;
     text?: string;
+    target?: string;
   };
 }
 
@@ -85,7 +87,11 @@ export function TimelineItem(props: ITimelineItemProps) {
         <div className="mt-2 text-sm text-gray-600">{props.children}</div>
       )}
       {props.button && (
-        <DetailsButton className="mt-4" href={props.button.url}>
+        <DetailsButton
+          className="mt-4"
+          href={props.button.url}
+          target={props.button.target}
+        >
           {props.button.text || "More details"}
         </DetailsButton>
       )}

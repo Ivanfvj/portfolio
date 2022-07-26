@@ -72,20 +72,21 @@ const IndexPage = () => {
                   startup.
                 </u>{" "}
                 As an entrepreneur, I'm happy to have developed and tested
-                several startup ideas, created MVP's from scratch, worked with
+                several startup ideas, created MVPs from scratch, worked with
                 amazing people, helped our clients, led teams, learned from all
                 this process, and do marketing to make these ideas known.
                 Valuable lessons along the way.
               </p>
               <p>
-                I'm a Software Engineer with +8 years of experience, with
-                expertise in Backend and Frontend technologies. I'm a proactive
-                person, analytical thinking, goal-oriented with a startup growth
-                mindset, and some of my strengths are communication, project
-                management, and teamwork.
+                I'm a Software Engineer with +6 years of professional experience
+                (8 years of programming), with expertise in Backend and Frontend
+                technologies. I'm a high-energy, proactive person, analytical
+                thinking, goal-oriented with a startup growth mindset, and some
+                of my strengths are communication, project management, and
+                teamwork.
               </p>
               <p>
-                I started my career developing Android Apps and then I moved to
+                I started my career developing Android Apps, and then moved to
                 Web Development and Full-Stack projects. Passionate about
                 Technology, and a self-taught person in different subjects. I'm
                 a continuous learner.
@@ -93,7 +94,7 @@ const IndexPage = () => {
               <p>
                 <u>
                   I have been chasing the dream of creating a high-impact
-                  startup since I was 17 years old.
+                  startup since I was 17.
                 </u>
               </p>
               <p>

@@ -1,4 +1,5 @@
-import { BaseReactProps } from "../../../../common/";
+import { BaseReactProps } from "@src/common/";
+import { classNames } from "@src/utils";
 
 interface TabProps extends BaseReactProps {
   text?: string;
@@ -15,19 +16,17 @@ const Tab = (props: TabProps) => {
       //@ts-ignore
       active={props.active?.toString()}
       onClick={props.onClick}
-      className={
-        `cursor-pointer select-none border-l-2 border-t-2 py-3 md:py-4 px-5 font-semibold `
-        + `flex items-center justify-center text-center transition ease-in-out duration-200 ` +
-        `${props.isLast ? "border-r-2 " : ""}` +
-        `${
-          props.active
-            ? `text-blue-600 bg-blue-50 hover:bg-blue-100 ${
-                props.activeClass ? props.activeClass : ""
-              }`.trim()
-            : "hover:bg-gray-50 bg-white "
-        }` +
-        `${props.className ? props.className : ""}`
-      }
+      className={classNames(
+        "cursor-pointer select-none border-l-2 border-t-2 py-3 md:py-4 px-5 font-semibold",
+        "flex items-center justify-center text-center transition ease-in-out duration-200",
+        props.isLast ? "border-r-2" : "",
+        props.active
+          ? `text-blue-600 bg-blue-50 hover:bg-blue-100 ${
+              props.activeClass ? props.activeClass : ""
+            }`.trim()
+          : "hover:bg-gray-50 bg-white",
+        props.className
+      )}
     >
       <span className="inline-block align-middle leading-tight">
         {props.text}
