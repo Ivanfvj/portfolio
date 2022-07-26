@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { Layout } from "@src/layouts/DefaultLayout";
-import { ImageGallery } from "../../components/shared/ImageGallery/";
+import { ImageGallery } from "@components/shared/ImageGallery/";
 
 const images = [
   { url: "/projects/eljuri/eljuri-1.png", width: 932, height: 734 },

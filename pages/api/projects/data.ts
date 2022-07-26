@@ -177,61 +177,78 @@ export const projects: ProjectInfo[] = [
     tags: ["marketing"],
     link: "https://www.unamacro.com/wp-content/uploads/2022/05/Ivan-Velastegui-Thesis-work.pdf",
   },
+  // {
+  //   id: "android-apps",
+  //   title: "Android Apps",
+  //   headline: "Android Applications and Games",
+  //   image:
+  //     "https://www.unamacro.com/wp-content/uploads/2022/04/thesis-iot-diagram-2.jpg",
+  //   categories: [{ text: "mobile" }],
+  //   stack: [
+  //     { text: "Android" },
+  //     { text: "Java" },
+  //     { text: "Unity" },
+  //     { text: "C#" },
+  //     { text: "Vuforia (AR)" },
+  //   ],
+  //   tags: ["android"],
+  //   to: "/projects/android",
+  // },
 ];
 
 export const landingPagesProjects = [
   {
     text: "Unamacro - Marketing sin Confusión",
     image: "/projects/landings/landing-1.jpg",
-    project: 'unamacro',
+    project: "unamacro",
     url: "https://www.unamacro.com/marketing-sin-confusion/",
   },
   {
     text: "Unamacro - Kit Email Marketing",
     image: "/projects/landings/landing-2.jpg",
-    project: 'unamacro',
+    project: "unamacro",
     url: "https://www.unamacro.com/kit-email-marketing/",
   },
   {
     text: "Drones y SIG para la gestión del territorio",
     image: "/projects/landings/landing-3.jpg",
-    project: 'mejorate.online',
+    project: "mejorate.online",
     url: "https://mejorate.online/drones-y-sig-para-gestion-del-territorio/",
   },
   {
     text: "Pisos con Resina epóxica",
     image: "/projects/landings/landing-4.jpg",
-    project: 'mejorate.online',
+    project: "mejorate.online",
     url: "https://mejorate.online/pisos-con-resina/",
   },
   {
     text: "Terapia con Imanes",
     image: "/projects/landings/landing-5.jpg",
-    project: 'mejorate.online',
+    project: "mejorate.online",
     url: "https://mejorate.online/terapia-con-imanes/",
   },
   {
     text: "Yoga Facial con Aromaterapia",
     image: "/projects/landings/landing-6.jpg",
-    project: 'mejorate.online',
+    project: "mejorate.online",
     url: "https://mejorate.online/yoga-facial-con-aromaterapia/",
   },
   {
     text: "Pastelería Canina y Felina",
     image: "/projects/landings/landing-7.jpg",
-    project: 'mejorate.online',
+    project: "mejorate.online",
     url: "https://mejorate.online/pasteleria-canina-y-felina/",
   },
   {
     text: "Costura Premium",
     image: "/projects/landings/landing-8.jpg",
-    project: 'mejorate.online',
+    project: "mejorate.online",
     url: "https://mejorate.online/costura-premium/",
   },
   {
     text: "Curso de Drones",
     image: "/projects/landings/landing-9.jpg",
-    project: 'mejorate.online',
+    project: "mejorate.online",
     url: "https://mejorate.online/curso-manejo-de-drones/",
   },
 ];

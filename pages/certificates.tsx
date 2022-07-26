@@ -36,7 +36,8 @@ const CertificatesPage: NextPage<PageProps> = (props: PageProps) => {
         </h1>
       </section>
       <section className="my-10 px-5 lg:px-0 max-w-5xl mx-auto">
-        <h2 className="text-3xl mb-5">Online Education</h2>
+        <h2 className="text-3xl">Online Education</h2>
+        <hr className="my-5" />
         <h3 id="platzi-certificates" className="text-2xl">
           Platzi Certificates
         </h3>

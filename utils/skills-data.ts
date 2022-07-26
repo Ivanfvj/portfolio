@@ -91,6 +91,13 @@ export const SoftwareSkills = {
     category: SkillCategories.FRONTEND,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },
+  REDUX: {
+    text: "Redux",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+    category: SkillCategories.FRONTEND,
+    proficiency: ProficiencyTypes.INTERMEDIATE,
+  },
   JAVA: {
     text: "Java",
     image:
@@ -110,6 +117,13 @@ export const SoftwareSkills = {
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg",
     category: SkillCategories.DATABASE,
+    proficiency: ProficiencyTypes.EXPERT,
+  },
+  HTML_CSS: {
+    text: "HTML/CSS",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg",
+    category: SkillCategories.FRONTEND,
     proficiency: ProficiencyTypes.EXPERT,
   },
   SASS: {
