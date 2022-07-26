@@ -1,10 +1,8 @@
-import React, { ReactNode, useContext } from "react";
+import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
 
 import { Head } from "@components/layout/Head";
 import { AppBar } from "@components/layout/AppBar";
-import { LayoutContext } from "../contexts/LayoutContext";
-import { Drawer } from "@components/layout/Drawer";
 import Footer from "@components/Footer";
 
 type Props = {
@@ -29,7 +27,6 @@ export const Layout = ({
   thumbnailImg,
 }: Props) => {
   const imgUrl = thumbnailImg || "https://ivan.unamacro.com/portrait.jpg";
-  const { drawerActive, setDrawerActive } = useContext(LayoutContext);
   // Recommended max length for these meta tags
   description = description.substring(0, 160);
 
@@ -39,7 +36,6 @@ export const Layout = ({
       <header>
         <AppBar />
       </header>
-      <Drawer active={drawerActive} onHide={() => setDrawerActive(false)} />
       <motion.main
         initial="hidden"
         animate="enter"

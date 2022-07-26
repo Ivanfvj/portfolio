@@ -6,7 +6,7 @@ interface ILayoutContext {
   drawerActive: boolean;
   toggleDrawer: () => void;
   setDrawerActive: (active: boolean) => void;
-  breakpoints?: ResponsiveBreakpoints
+  breakpoints?: ResponsiveBreakpoints;
 }
 
 export const LayoutContext = createContext<ILayoutContext>(null);
