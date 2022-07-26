@@ -1,4 +1,4 @@
-import type { GetServerSideProps, NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 
@@ -8,12 +8,15 @@ import { ICertificate } from "@src/interfaces/certificate";
 
 type PageProps = { certificates: ICertificate[] };
 
-const ImageGallery = dynamic(() => import("../components/shared/ImageGallery/"), {
-  suspense: true,
-  ssr: false,
-});
+const ImageGallery = dynamic(
+  () => import("../components/shared/ImageGallery/"),
+  {
+    suspense: true,
+    ssr: false,
+  }
+);
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   const response = await fetch(`${API_URL}/api/certificates`);
 
   const _props: PageProps = {
@@ -42,41 +45,64 @@ const CertificatesPage: NextPage<PageProps> = (props: PageProps) => {
         </h1>
       </section>
       <section className="my-10 px-5 lg:px-0 max-w-5xl mx-auto">
-        <h2 className="text-3xl">Online Education</h2>
+        <h2 id="online-education" className="text-3xl">
+          Online Education
+        </h2>
         <hr className="my-5" />
-        <h3 id="platzi-certificates" className="text-2xl">
-          Platzi Certificates
-        </h3>
-        <a
-          className="text-blue-500 underline hover:text-blue-700"
-          href="https://platzi.com/p/ivanfvj/"
-          target="_blank"
-        >
-          Go to Platzi profile
-        </a>
-        <div className="ml-5">
-          <ul className="list-disc list-inside font-semibold mt-2">
-            <li>
-              +35 certificates in Software Development, Startups, Digital
-              Marketing, and personal growth.
-            </li>
-          </ul>
+        <div className="md:ml-10">
+          <h3 id="platzi-certificates" className="text-2xl">
+            Platzi Certificates
+          </h3>
+          <a
+            className="text-blue-500 underline hover:text-blue-700"
+            href="https://platzi.com/p/ivanfvj/"
+            target="_blank"
+          >
+            Go to Platzi profile
+          </a>
+          <div className="ml-5">
+            <ul className="list-disc list-inside font-semibold mt-2">
+              <li>
+                +35 certificates in Software Development, Startups, Digital
+                Marketing, and personal growth.
+              </li>
+            </ul>
 
-          <details className="mt-2" open>
-            <summary className="cursor-pointer hover:underline">
-              Show me more details
-            </summary>
-            <div className="mx-auto mt-8">
-              {images && (
-                <Suspense fallback={<p>Loading...</p>}>
-                  <ImageGallery
-                    images={images}
-                    imageClassName="border hover:shadow-md transition"
-                  />
-                </Suspense>
-              )}
-            </div>
-          </details>
+            <details className="mt-2" open>
+              <summary className="cursor-pointer hover:underline">
+                Show me more details
+              </summary>
+              <div className="mx-auto mt-8">
+                {images && (
+                  <Suspense fallback={<p>Loading...</p>}>
+                    <ImageGallery
+                      images={images}
+                      imageClassName="border hover:shadow-md transition"
+                    />
+                  </Suspense>
+                )}
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section className="my-10 px-5 lg:px-0 max-w-5xl mx-auto">
+        <h2 id="online-assesments" className="text-3xl">
+          Online Assesments
+        </h2>
+        <hr className="my-5" />
+        <div className="md:ml-10">
+          <h3 id="triplebyte" className="text-2xl">
+            Triplebyte Certificate
+          </h3>
+          <a
+            className="text-blue-500 underline hover:text-blue-700"
+            href="https://triplebyte.com/tb/ivan-velastegui-joym6a4/certificate"
+            target="_blank"
+          >
+            Show credential
+          </a>
         </div>
       </section>
       {/* <section className="my-10 px-5 lg:px-0 max-w-5xl mx-auto">
