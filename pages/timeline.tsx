@@ -192,6 +192,33 @@ const TimelinePage = () => {
               </ul>
             </details>
           </TimelineItem>
+          <TimelineItem
+            title="Android and Java Developer"
+            subtitle="Freelancing"
+            time="January 2016 - June 2017"
+            // button={{
+            //   url: "/projects/eljuri",
+            // }}
+          >
+            <details open={openDetails}>
+              <summary className="cursor-pointer">Highlights</summary>
+              <ul className="list-disc list-inside ml-5 space-y-3 mt-2">
+                <li>
+                  Developed Android Applications using Java, Unity, C#, and
+                  SQLite, freelancer jobs and side projects.
+                </li>
+                <li>
+                  Created Augmented Reality Applications with Vuforia SDK and
+                  Android Games with LibGDX.
+                </li>
+                <li>
+                  Mentored and educated university students in Java and Android
+                  while coursing my degree and got exonerated in Java
+                  programming subjects.
+                </li>
+              </ul>
+            </details>
+          </TimelineItem>
         </Timeline>
       </section>
       <section className="my-10 mt-20 px-5 lg:px-0 max-w-5xl mx-auto">
