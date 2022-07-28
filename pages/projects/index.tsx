@@ -2,7 +2,7 @@ import { GetStaticProps } from "next";
 
 import { Layout } from "@src/layouts/DefaultLayout";
 import { ProjectInfo } from "@src/interfaces";
-// TODO: Change this behaviour with server side props fetch
+// TODO: Change this behaviour with static props fetch instead of importing
 import { projects, landingPagesProjects } from "@src/pages/api/projects/data";
 import { ProjectCard } from "@src/components/ProjectsPage/ProjectCard";
 
@@ -39,23 +39,6 @@ export default function ProjectsPage(props: PageProps) {
           Marketing Projects
         </h1>
       </section>
-      {/* <div className="relative w-full" style={{ height: "60rem" }}>
-        <div className="opacity-100">
-          <Image
-            layout="fill"
-            height={200}
-            quality={100}
-            objectFit="cover"
-            src="/projects/landings/landing-groups.jpg"
-          />
-        </div>
-        <div className="absolute w-full h-full">
-          <div className="max-w-6xl mx-auto h-full flex items-center justify-start">
-            <div className="rounded-lg p-3 space-y-5 text-white">
-            </div>
-          </div>
-        </div>
-      </div> */}
       <div className="p-5 my-8 max-w-6xl mx-auto">
         <h2 className="mt-5 font-semibold text-2xl mb-3">Landing pages</h2>
         <p>

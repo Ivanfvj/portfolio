@@ -106,8 +106,8 @@ export const projects: ProjectInfo[] = [
       { text: "React" },
       { text: "Tailwind CSS" },
     ],
-    tags: ["marketing"],
-    link: "/projects/portfolio",
+    tags: [],
+    to: "/projects/portfolio",
   },
   {
     id: "hormiga",
@@ -177,23 +177,22 @@ export const projects: ProjectInfo[] = [
     tags: ["marketing"],
     link: "https://www.unamacro.com/wp-content/uploads/2022/05/Ivan-Velastegui-Thesis-work.pdf",
   },
-  // {
-  //   id: "android-apps",
-  //   title: "Android Apps",
-  //   headline: "Android Applications and Games",
-  //   image:
-  //     "https://www.unamacro.com/wp-content/uploads/2022/04/thesis-iot-diagram-2.jpg",
-  //   categories: [{ text: "mobile" }],
-  //   stack: [
-  //     { text: "Android" },
-  //     { text: "Java" },
-  //     { text: "Unity" },
-  //     { text: "C#" },
-  //     { text: "Vuforia (AR)" },
-  //   ],
-  //   tags: ["android"],
-  //   to: "/projects/android",
-  // },
+  {
+    id: "android-apps",
+    title: "Android Apps",
+    headline: "Android Applications and Games",
+    image: "/img/android-banner.jpg",
+    categories: [{ text: "mobile" }],
+    stack: [
+      { text: "Android" },
+      { text: "Java" },
+      { text: "Unity" },
+      { text: "C#" },
+      { text: "Vuforia (AR)" },
+    ],
+    tags: ["android"],
+    to: "/projects/android",
+  },
 ];
 
 export const landingPagesProjects = [

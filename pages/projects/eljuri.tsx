@@ -51,20 +51,28 @@ const EljuriProjectPage = () => (
         <strong>
           I developed 3 Internal Android Applications for operations.
         </strong>{" "}
-        Connected and integrated with the main SAP system. "Almacenes Juan
-        Eljuri" is one of the biggest group organizations in Ecuador. They are
-        main distributors of multiple supplies chains here.
+        Connected and integrated with the core SAP system. "Almacenes Juan
+        Eljuri" is one of the largest group organizations in Ecuador. They are
+        the principal distributors of multiple supply chains here.
       </p>
       <p>
-        I worked in IT department with an excellent team of professionals:
-        Software Engineers and SAP experts.
+        I worked in the IT department collaborating with an excellent team of
+        +15 professionals such as Managers, Software Engineers, and SAP experts.
       </p>
+      <p>Applied Java, Android, ASP.NET/C#, MS SQL Server, and SAP.</p>
+
       <ul className="list-disc list-inside font-semibold">
         <li>+100 staff members trained.</li>
-        <li>+80 Android Tablets configured and delivered to sales team.</li>
-        <li>+30 brands and +70k materials/products.</li>
-        <li>Advanced filters and fast queries.</li>
-        <li>SAP Integration</li>
+        <li>+80 Android Tablets configured and delivered to the sales team.</li>
+        <li>
+          Apps working for multiple business units, +30 brands, and +70k
+          materials/products.
+        </li>
+        <li>
+          Advanced filters and fast queries. Reduced fetch time from 3 hours to
+          5 minutes.
+        </li>
+        <li>SAP Integration and real-time endpoints.</li>
       </ul>
       <div className="px-5 sm:px-0 !my-10">
         <ImageGallery
@@ -78,23 +86,27 @@ const EljuriProjectPage = () => (
           })}
         />
       </div>
-      <p>These are the 3 principal apps mentioned before:</p>
+
+      <p>These are the 3 apps mentioned before:</p>
       <p>
         <strong>1. Orders App:</strong> Used by salesman and managers to create
         orders in SAP. This document is generated before invoices in the sales
-        process. The user can fetch and retrieve real time data of
-        products/materials to generate an order and printable PDF.
+        process. The user can fetch and retrieve real-time data of
+        products/materials and create an order and printable PDF.
       </p>
       <p>
-        <strong>2. Materials Catalog:</strong> Real time visualization for more
+        <strong>2. Materials Catalog:</strong> Real-time visualization for more
         than 70k products available in all the different brands/departments in
         the organization. Advanced filtering and direct integration with Orders
         App.
       </p>
       <p>
         <strong>3. Retail POS App:</strong> Generate Invoices, Credit notes,
-        Cash registers, etc... Used by personal in retail and distribution. As
-        my responsibilities: Develop, System and Apps Optimization and
+        Cash registers, etc... Used by personnel in retail and distribution.
+      </p>
+
+      <p>
+        My responsibilities: Develop, Testing, System and Apps Optimization and
         Monitoring, Staff Training.
       </p>
     </section>

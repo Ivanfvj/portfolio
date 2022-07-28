@@ -5,36 +5,7 @@ import Image from "next/image";
 import { Layout } from "@src/layouts/DefaultLayout";
 import ActionButton from "@components/shared/material/ActionButton";
 import { LandingPageCard } from "@components/ProjectsPage/LandingPageCard";
-
-const Video = ({ src, className }: { src: string; className: string }) => {
-  const videoEl = useRef(null);
-
-  const attemptPlay = () => {
-    videoEl &&
-      videoEl.current &&
-      videoEl.current.play().catch((error) => {
-        console.error("Error attempting to play", error);
-      });
-  };
-
-  useEffect(() => {
-    attemptPlay();
-  }, []);
-
-  return (
-    <div className={`w-full ${className || ""}`}>
-      <video
-        ref={videoEl}
-        src={src}
-        style={{ maxWidth: "100%", margin: "0 auto" }}
-        playsInline
-        loop
-        muted
-        controls
-      />
-    </div>
-  );
-};
+import { Video } from "@components/shared/VideoWrapper";
 
 const UnamacroProjectPage = () => {
   const [showVideos, setShowVideos] = useState(true);
@@ -301,29 +272,28 @@ const UnamacroProjectPage = () => {
         </div>
       </section>
 
-
-    <section className="max-w-6xl mx-auto my-10">
-      <div className="mb-5 px-5 lg:px-0 space-y-4">
-        <div className="flex justify-between">
-          <Link href="/projects" passHref>
-            <a
-              className="text-blue-500 hover:text-blue-600 hover:underline"
-              href=""
-            >
-              Back to projects
-            </a>
-          </Link>
-          <Link href="/projects/mejorate" passHref>
-            <a
-              className="text-blue-500 hover:text-blue-600 hover:underline"
-              href=""
-            >
-              Next project
-            </a>
-          </Link>
+      <section className="max-w-6xl mx-auto my-10">
+        <div className="mb-5 px-5 lg:px-0 space-y-4">
+          <div className="flex justify-between">
+            <Link href="/projects" passHref>
+              <a
+                className="text-blue-500 hover:text-blue-600 hover:underline"
+                href=""
+              >
+                Back to projects
+              </a>
+            </Link>
+            <Link href="/projects/mejorate" passHref>
+              <a
+                className="text-blue-500 hover:text-blue-600 hover:underline"
+                href=""
+              >
+                Next project
+              </a>
+            </Link>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </Layout>
   );
 };

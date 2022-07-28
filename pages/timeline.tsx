@@ -196,9 +196,9 @@ const TimelinePage = () => {
             title="Android and Java Developer"
             subtitle="Freelancing"
             time="January 2016 - June 2017"
-            // button={{
-            //   url: "/projects/eljuri",
-            // }}
+            button={{
+              url: "/projects/android",
+            }}
           >
             <details open={openDetails}>
               <summary className="cursor-pointer">Highlights</summary>
