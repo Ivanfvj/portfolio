@@ -39,7 +39,7 @@ const AndroidProjectPage = () => (
       </div> */}
 
       <article>
-        <div className="space-y-4 mt-5">
+        <div className="mt-5">
           <h2 className="font-semibold text-2xl">
             Augmented Reality Applications
           </h2>
@@ -48,7 +48,7 @@ const AndroidProjectPage = () => (
             Android applications with Augmented Reality (AR) using Unity, and
             Vuforia SDK.
           </p>
-          <div className="md:ml-10 space-y-4">
+          <div className="md:ml-10 space-y-4 mt-6">
             <h3 className="text-xl font-semibold">Project EducAR</h3>
             <img
               src="/projects/android/educar_logo.png"
@@ -85,6 +85,53 @@ const AndroidProjectPage = () => (
             </div>
           </div>
         </div>
+
+        <div className="mt-10">
+          <h2 className="font-semibold text-2xl">Android Games</h2>
+          <hr className="my-5" />
+          <p>Android games developed with Java, Android and game engine frameworks.</p>
+          <div className="md:ml-10 space-y-4 mt-10">
+            <h3 className="text-xl font-semibold">
+              Project 2 Dimensions - Android Game
+            </h3>
+            {/* <img
+              src="/projects/android/educar_logo.png"
+              alt="2 Dimensions - Android Game"
+              width="180"
+            /> */}
+            <p>
+              Developed an Android game using Java, Android, and LibGDX
+              framework. Users can use touchpad controls or the mobile gyroscope
+              to play. Upgradable game experience implemented Shop for in-app
+              payments and game coins.
+            </p>
+            <p>
+              The main idea is a spaceship (or similar) that navigates around
+              space orbiting in circles. The game has enemies and black holes
+              with gravity traction. The player-spaceship is safe inside the
+              circular orbits. Orbits have multiple colors with different
+              behaviors each.
+            </p>
+            <ul className="list-disc list-inside font-semibold">
+              <li>The player can buy upgrades.</li>
+              <li>Different guns are incorporated.</li>
+              <li>Simple Enemy AI behavior to follow the player.</li>
+              <li>
+                Multiple challenges - screen rotates in stages greater than 2000
+                distance.
+              </li>
+              <li>
+                Users can get multiple powerups and collectibles. (yellow coins
+                inside orbits).
+              </li>
+              <li>Gyroscope sensors.</li>
+              <li>Multiple other features.</li>
+            </ul>
+            <div>
+              <Video src="https://img.unamacro.com/2-dimensions-game.mp4" />
+            </div>
+          </div>
+        </div>
         {/* <h2 className="font-semibold text-2xl">Android Games</h2>
       <hr className="my-5" />
       <div className="md:ml-10 space-y-4">
@@ -108,8 +155,8 @@ const AndroidProjectPage = () => (
           </h2>
           <hr className="my-5" />
           <p>
-            Developed 3 Enterprise Android Applications using Android,
-            Java, ASP.NET/C#, MS SQL Server, and SAP ERP in{" "}
+            Developed 3 Enterprise Android Applications using Android, Java,
+            ASP.NET/C#, MS SQL Server, and SAP ERP in{" "}
             <u>Almacenes Juan Eljuri</u>.
           </p>
           <div>

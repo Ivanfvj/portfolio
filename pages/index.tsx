@@ -80,10 +80,9 @@ const IndexPage = () => {
               <p>
                 I'm a Software Engineer with +6 years of professional experience
                 (8 years of programming), with expertise in Backend and Frontend
-                technologies. I'm a high-energy, proactive person, analytical
-                thinking, goal-oriented with a startup growth mindset, and some
-                of my strengths are communication, project management, and
-                teamwork.
+                technologies. I'm a high-energy, proactive, and goal-oriented
+                person with a startup growth mindset and some of my strengths
+                are communication, project management, and teamwork.
               </p>
               <p>
                 I started my career developing Android Apps, and then moved to
