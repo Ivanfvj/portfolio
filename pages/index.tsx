@@ -85,7 +85,7 @@ const IndexPage = () => {
                 are communication, project management, and teamwork.
               </p>
               <p>
-                I started my career developing Android Apps, and then moved to
+                I started my career developing Android Apps and then moved to
                 Web Development and Full-Stack projects. Passionate about
                 Technology, and a self-taught person in different subjects. I'm
                 a continuous learner.

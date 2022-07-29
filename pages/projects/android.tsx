@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { Layout } from "@src/layouts/DefaultLayout";
-import { ImageGallery } from "@components/shared/ImageGallery/";
 import ActionButton from "@components/shared/material/ActionButton";
 import { Video } from "@components/shared/VideoWrapper";
 
@@ -32,24 +31,17 @@ const AndroidProjectPage = () => (
         </a>
       </Link>
 
-      {/* <h2 className="font-semibold text-2xl">Android Applications</h2>
-      <hr className="my-5" />
-      <div className="md:ml-10 space-y-4">
-        <h3 className="text-xl font-semibold">Parkeando</h3>
-      </div> */}
-
       <article>
         <div className="mt-5">
           <h2 className="font-semibold text-2xl">
             Augmented Reality Applications
           </h2>
           <hr className="my-5" />
-          <p>
-            Android applications with Augmented Reality (AR) using Unity, and
-            Vuforia SDK.
-          </p>
+          <div className="space-y-2 p-5 border-l-4 border-l-blue-500 bg-blue-50">
+            <p>Android applications with Augmented Reality (AR).</p>
+          </div>
           <div className="md:ml-10 space-y-4 mt-6">
-            <h3 className="text-xl font-semibold">Project EducAR</h3>
+            <h3 className="text-xl font-semibold">▶ Project EducAR</h3>
             <img
               src="/projects/android/educar_logo.png"
               alt="EducAR App"
@@ -84,25 +76,61 @@ const AndroidProjectPage = () => (
               <Video src="https://img.unamacro.com/educar_app_demo.mp4" />
             </div>
           </div>
+          <div className="md:ml-10 space-y-4 mt-20">
+            <h3 className="text-xl font-semibold">▶ Project Andarele</h3>
+            <img src="/img/andarele-logo.webp" alt="EducAR App" width="180" />
+            <p>
+              Worked with{" "}
+              <a
+                className="underline text-blue-500 hover:text-blue-600"
+                href="https://www.andarele.com/"
+                target="_blank"
+              >
+                Andarele Casa Editorial
+              </a>{" "}
+              providing consultancy services to implement Augmented Reality (AR)
+              Technology in their books. Andarele is a publishing house in
+              Ecuador with collections of books for schools and high schools.
+            </p>
+            <p>
+              We showed the students a glimpse of the technological areas in
+              which an Electronic Engineer is involved, and we had the
+              opportunity to show some of my work in Andarele with Augmented
+              Reality and mobile applications as an Android Developer.
+            </p>
+            <div className="relative h-0" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                width="100%"
+                height="400"
+                src="https://www.youtube.com/embed/wpPl_ErFPeo"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-20">
           <h2 className="font-semibold text-2xl">Android Games</h2>
           <hr className="my-5" />
-          <p>Android games developed with Java, Android and game engine frameworks.</p>
+          <div className="space-y-2 p-5 border-l-4 border-l-blue-500 bg-blue-50">
+            <p>
+              Android games developed with Java, Android and game engine
+              frameworks.
+            </p>
+          </div>
+
           <div className="md:ml-10 space-y-4 mt-10">
             <h3 className="text-xl font-semibold">
-              Project 2 Dimensions - Android Game
+              ▶ Project 2 Dimensions - Android Game
             </h3>
-            {/* <img
-              src="/projects/android/educar_logo.png"
-              alt="2 Dimensions - Android Game"
-              width="180"
-            /> */}
             <p>
               Developed an Android game using Java, Android, and LibGDX
               framework. Users can use touchpad controls or the mobile gyroscope
-              to play. Upgradable game experience implemented Shop for in-app
+              to play. Upgradable game experience, implemented Shop for in-app
               payments and game coins.
             </p>
             <p>
@@ -132,33 +160,18 @@ const AndroidProjectPage = () => (
             </div>
           </div>
         </div>
-        {/* <h2 className="font-semibold text-2xl">Android Games</h2>
-      <hr className="my-5" />
-      <div className="md:ml-10 space-y-4">
-        <h3 className="font-semibold">2 Dimensions</h3>
-        <div className="px-5 sm:px-0 !my-10">
-          <ImageGallery
-            images={images.map((e) => {
-              return {
-                height: e.height,
-                width: e.width,
-                imageUrl: e.url,
-                thumbnailUrl: e.url,
-              };
-            })}
-          />
-        </div>
-      </div> */}
-        <div className="space-y-4 my-10">
+        <div className="space-y-4 my-20">
           <h2 className="font-semibold text-2xl">
             Enterprise Android Applications
           </h2>
           <hr className="my-5" />
-          <p>
+
+          <div className="space-y-2 p-5 border-l-4 border-l-blue-500 bg-blue-50">
             Developed 3 Enterprise Android Applications using Android, Java,
             ASP.NET/C#, MS SQL Server, and SAP ERP in{" "}
             <u>Almacenes Juan Eljuri</u>.
-          </p>
+          </div>
+
           <div>
             <Link href="/projects/eljuri" passHref>
               <a>
