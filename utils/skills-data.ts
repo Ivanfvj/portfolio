@@ -98,6 +98,13 @@ export const SoftwareSkills = {
     category: SkillCategories.FRONTEND,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },
+  NEXT: {
+    text: "Next.js",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    category: SkillCategories.FRONTEND,
+    proficiency: ProficiencyTypes.INTERMEDIATE,
+  },
   JAVA: {
     text: "Java",
     image:
@@ -196,13 +203,7 @@ export const SoftwareSkills = {
     category: SkillCategories.FRONTEND,
     proficiency: ProficiencyTypes.INTERMEDIATE,
   },
-  NEXT: {
-    text: "Next.js",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-    category: SkillCategories.FRONTEND,
-    proficiency: ProficiencyTypes.NOOB,
-  },
+
   WORDPRESS: {
     text: "Wordpress",
     image:
