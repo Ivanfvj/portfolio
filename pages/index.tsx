@@ -18,7 +18,7 @@ const DynamicComponent = dynamic(
 
 const IndexPage = () => {
   const [showEasterEgg, setShowEasterEgg] = useState(false);
-  const [showBanner, setShowBanner] = useState(true);
+  const [showBanner, setShowBanner] = useState(false);
 
   return (
     <HomePageContext.Provider
